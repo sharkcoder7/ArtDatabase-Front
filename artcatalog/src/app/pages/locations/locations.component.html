@@ -1,0 +1,365 @@
+<div class="row section-1 d-flex ">
+  <div class="col-11  search-block" >
+    <div class="row">
+      <div class="col-xl-6 col-lg-8 d-flex flex-column">
+        <div class="search-holder m-auto  w-100">
+          <form  class="form"
+
+                 ngNativeValidate>
+
+
+
+            <div class="form-item">
+              <input type="text" class="form-control looking-field" placeholder="What are you looking for?" value="Zundert, Netherlands" aria-label="Recipient's username" aria-describedby="basic-addon2" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+              <div class="input-group-append">
+                <div class="search-icon-holder">
+                  <img class="search-icon" src="./assets/imgs/svg/magnifying-glass.svg" alt="Search">
+                </div>
+              </div>
+                  <div class="dropdown-menu w-100 p-0" aria-labelledby="dropdownMenuButton">
+                  <div class="d-flex w-100 current-location" >
+                    <a class="dropdown-item d-flex " >
+                      <img class="" src="./assets/imgs/svg/navigation.svg" style="height: 18px" alt="">
+                      <div class="d-flex flex-column"><span class="current-location-title " >Current location</span></div>
+                  </a>
+                  </div>
+                <div class="dropdown-divider m-0"></div>
+                <a class="dropdown-item" href="#/location">
+                  <div class="d-flex w-100 flex-column">
+                    <span class="drop-item-title">Zundert, Netherlands</span>
+                    <span class="drop-item-address">De Draaikes 6, 4882 BG Zundert</span>
+                  </div>
+                </a>
+                <a class="dropdown-item" href="#/location">
+                  <div class="d-flex w-100 flex-column">
+                    <span class="drop-item-title">Zundert, Netherlands</span>
+                    <span class="drop-item-address">De Draaikes 6, 4882 BG Zundert</span>
+                  </div>
+                </a>
+                <a class="dropdown-item" href="#/location">
+                  <div class="d-flex w-100 flex-column">
+                    <span class="drop-item-title">Zundert, Netherlands</span>
+                    <span class="drop-item-address">De Draaikes 6, 4882 BG Zundert</span>
+                  </div>
+                </a>
+                <a class="dropdown-item" href="#/location">
+                  <div class="d-flex w-100 flex-column">
+                    <span class="drop-item-title">Zundert, Netherlands</span>
+                    <span class="drop-item-address">De Draaikes 6, 4882 BG Zundert</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-4 d-flex flex-column">
+        <div class="options-holder m-auto">
+          <div class="row">
+            <div class="col-xl-3 col-lg-6 col-sm-3 col-6 d-flex check-item"   [ngStyle]="{'opacity':input1.disabled? 0.5 : 1}" >
+              <label class="checkbox">
+                <input  #input1 type="checkbox" disabled>
+                <span class="default"></span>
+              </label>
+              <span class="" style="margin: auto 0 auto 0.5rem" (click)="input1.click()">All</span>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-3 col-6  d-flex check-item" [ngStyle]="{'opacity':input2.disabled? 0.5 : 1}" >
+              <label   class="checkbox">
+                <input #input2 type="checkbox" >
+                <span class="default"></span>
+              </label>
+              <span class="" style="margin: auto 0 auto 0.5rem" (click)="input2.click()">Popular arts</span>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-3 col-6  d-flex check-item" [ngStyle]="{'opacity':input3.disabled? 0.5 : 1}">
+              <label class="checkbox" >
+                <input #input3  type="checkbox" />
+                <span class="default"></span>
+              </label>
+              <span class=""  style="margin: auto 0 auto 0.5rem" (click)="input3.click()">Auctions</span>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-3 col-6  d-flex check-item" [ngStyle]="{'opacity':input4.disabled? 0.5 : 1}"  >
+              <label class="checkbox">
+                <input #input4 type="checkbox" disabled>
+                <span class="default"></span>
+              </label>
+              <span class="" style="margin: auto 0 auto 0.5rem" (click)="input4.click()">Museums</span>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-sm-3 col-6  d-flex check-item" [ngStyle]="{'opacity':input5.disabled? 0.5 : 1}" >
+              <label class="checkbox">
+                <input #input5 type="checkbox" />
+                <span class="default"></span>
+              </label>
+              <span class="" style="margin: auto 0 auto 0.5rem" (click)="input5.click()">Near me</span>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-3 col-6 d-flex check-item" [ngStyle]="{'opacity':input6.disabled? 0.5 : 1}">
+              <label class="checkbox">
+                <input #input6 type="checkbox" />
+                <span class="default"></span>
+              </label>
+              <span class="" style="margin: auto 0 auto 0.5rem"  (click)="input6.click()">Exhibitions</span>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-3 col-6  d-flex check-item"[ngStyle]="{'opacity':input7.disabled? 0.5 : 1}"  >
+              <label class="checkbox">
+                <input #input7 type="checkbox" />
+                <span class="default"></span>
+              </label>
+              <span class="" style="margin: auto 0 auto 0.5rem" (click)="input7.click()">Artist Talks</span>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-3 col-6  d-flex check-item"  [ngStyle]="{'opacity':input4.disabled? 0.5 : 1}" >
+              <label class="checkbox">
+                <input #input8 type="checkbox" disabled>
+                <span class="default"></span>
+              </label>
+              <span class="" style="margin: auto 0 auto 0.5rem" (click)="input8.click()"> Openings</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-4 d-flex flex-column range-of-search" >
+        <select class="custom-select w-100">
+          <option selected>All</option>
+          <option value="1">+5km</option>
+          <option value="2">+10km</option>
+          <option value="3">+50km</option>
+          <option value="3">+100km</option>
+          <option value="3">+300km</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-11 search-block" >
+    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Advanced search
+      </button>
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+          <!-- <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Advanced search
+              </button>
+            </h5>
+          </div> -->
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12" >
+                      <!-- <form class="form" (ngSubmit)="search()" ngNativeValidate> -->
+                        <div class="form_group mb-3 mt-2">
+                            <label for="form_item">Artwork</label>
+                            <input class="form-control"  type="text" required>
+                            <small class="x-small">Title of art</small>
+                        </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label for="title">Current location</label>
+                            <input class="form-control"  type="text" required>
+                            <small class="form-text text-muted ">Comments for field</small>
+                        </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label for="title">Museums</label>
+                            <input  class="form-control"  type="date"  required>
+                            <small class="form-text text-muted ">Comments for field</small>
+                        </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label for="title">Exhibitions</label>
+                            <input class="form-control"  type="text"  required>
+                            <small class="form-text text-muted ">Comments for field</small>
+                        </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label for="title">Lectures</label>
+                            <input class="form-control"  type="text"  required>
+                            <small class="form-text text-muted ">Comments for field</small>
+                        </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label for="title">Auctions</label>
+                            <input class="form-control"  type="text" required>
+                            <small class="form-text text-muted ">Comments for field</small>
+                        </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label for="title">Openings</label>
+                            <input class="form-control"  type="text" required>
+                            <small class="form-text text-muted ">Comments for field</small>
+
+                      </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label for="title">Galleries</label>
+                            <input class="form-control"  type="text" required>
+                            <small class="form-text text-muted ">Comments for field</small>
+
+                        </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label for="title">Installations</label>
+                              <input class="form-control"  type="text" required>
+                              <small class="form-text text-muted ">Comments for field</small>
+
+                        </div>
+                        <div class="form_group mb-3 mt-2">
+                            <label class="form_item">Performances</label>
+                              <input class="form-control"  type="text" required>
+                              <small class="form-text text-muted ">Comments for field</small>
+                        </div>
+                      <!-- </form> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-default button-navigate" type="submit">Search</button>
+                </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="row section-2">
+  <div class="col-xl-6  col-md-5">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6 d-flex result-title-wrapper">
+            <h1  class="results-title">Results</h1></div>
+          </div>
+        </div>
+
+
+      <div class="col-xl-6 col-md-12 col-sm-6 col-12 d-flex p-0 result-item">
+        <div class="hovereffect m-auto">
+          <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+          <div class="overlay-2"></div>
+          <div class="overlay m-0">
+
+            <div class="col d-flex top-part-collection">
+              <span class="title-white">The Starry Night</span>
+            </div>
+            <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+              </div>
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-12 col-sm-6 col-12 d-flex p-0 result-item  active">
+        <div class="hovereffect m-auto">
+          <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+          <div class="overlay-2"></div>
+          <div class="overlay m-0">
+
+            <div class="col d-flex top-part-collection">
+              <span class="title-white">The Starry Night</span>
+            </div>
+            <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+              </div>
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-12 col-sm-6 col-12 d-flex p-0 result-item">
+        <div class="hovereffect m-auto">
+          <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+          <div class="overlay-2"></div>
+          <div class="overlay m-0">
+
+            <div class="col d-flex top-part-collection">
+              <span class="title-white">The Starry Night</span>
+            </div>
+            <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+              </div>
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-12 col-sm-6 col-12 d-flex p-0 result-item">
+        <div class="hovereffect m-auto">
+          <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+          <div class="overlay-2"></div>
+          <div class="overlay m-0">
+
+            <div class="col d-flex top-part-collection">
+              <span class="title-white">The Starry Night</span>
+            </div>
+            <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+              </div>
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-12 col-sm-6 col-12 d-flex p-0 result-item">
+        <div class="hovereffect m-auto">
+          <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+          <div class="overlay-2"></div>
+          <div class="overlay m-0">
+
+            <div class="col d-flex top-part-collection">
+              <span class="title-white">The Starry Night</span>
+            </div>
+            <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+              </div>
+              <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 col-md-7 d-flex p-0">
+    <img src="./assets/imgs/map.png" width="800px">
+    <div class="d-flex  m-auto map-container" style="display:block; width:569px;height:414px" id="map">
+      <agm-map [latitude]='latitude' [longitude]='longitude'
+      [mapTypeId]='mapType'>
+      </agm-map>
+    <!--<div class="d-flex m-auto map-container">
+      <img class="map-image" src="./assets/imgs/map.png" alt="">
+      <div class="point-wrapper d-flex" style="top: 50%; left: 50%" data-toggle="popover" data-placement="top" data-content="Exhibitions">
+        <span class="point-inside m-auto"></span>
+      </div>
+      <div class="point-wrapper-selected d-flex" style="top: 20%; left: 40%" data-toggle="popover" data-placement="top" data-content="Museum">
+        <span class="point-inside m-auto"></span>
+      </div>
+      <div class="point-wrapper d-flex" style="top: 60%; left: 10%" data-toggle="popover" data-placement="top" data-content="Openings">
+        <span class="point-inside m-auto"></span>
+      </div>
+      <div class="point-wrapper d-flex" style="top: 80%; left: 50%" data-toggle="popover" data-placement="top" data-content="Openings">
+        <span class="point-inside m-auto"></span>
+      </div>
+    </div> -->
+  </div>
+</div>

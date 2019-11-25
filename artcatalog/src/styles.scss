@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: "Courier New";
+  background-color: #F6EDE4;
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("./assets/fonts/SpaceGrotesk-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("./assets/fonts/SpaceGrotesk-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("./assets/fonts/SpaceGrotesk-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("./assets/fonts/SpaceGrotesk-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("./assets/fonts/SpaceGrotesk-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: TypeWriter;
+  src: url("./assets/fonts/typewriter.otf") format("opentype");
+}
+
+span.logo-shadow {
+  text-shadow: #ff1e66 -3px 2px;
+  font-family: "Courier New";
+  font-size: 3.5rem;
+}
+
+span.logo-text {
+  font-size: 2.2rem;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+}
+

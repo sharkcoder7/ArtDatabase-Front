@@ -1,0 +1,82 @@
+
+nav {
+  background-color: #F6EDE4;
+}
+
+div.logo-holder {
+  /*margin: auto;*/
+  margin: auto auto auto 0;
+}
+
+img.search-icon {
+  width: 18px;
+  margin: auto;
+  stroke: white;
+}
+
+div.spacer {
+  width: 100px;
+  height: 30px;
+}
+
+button.search-button {
+  display: flex;
+  padding: 0.3rem;
+  background: #000080;
+  border: 1px solid #000080;
+  border-radius: 5px;
+  margin: auto;
+  flex-direction: column;
+  background-color: #000080;
+  color: white !important;
+}
+
+.button-login, .button-search {
+  background: #000080;
+  background-color: #000080 !important;
+  color: white !important;
+  width: 100px;
+  margin: auto;
+  background-color: #000080;
+  border-color: #000080 !important;
+  box-shadow: none !important;
+}
+
+ul {
+  text-align: center;
+}
+
+li.nav-item {
+  margin: 0 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+a {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+li.nav-item a.active {
+  color: #efc25f;
+}
+
+button.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  background: white;
+
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  div.login-holder {
+    margin: 0.5rem 0 0 0;
+  }
+}

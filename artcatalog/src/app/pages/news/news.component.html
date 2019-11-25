@@ -1,0 +1,17 @@
+<div class="news-cont">
+
+  <div *ngFor="let new of news" class="row news" >
+    <div class="col-4">
+      <img [src]="new.videolink" class="img-responsive news-thumb">
+    </div>
+    <div class="col-8">
+      <h2 class="news-title" [routerLink]="['/news/', new.id]">
+        {{ new.title }}
+      </h2>
+      <p class="news-desc">
+        {{ new.description }}
+      </p>
+    </div>
+  </div>
+
+</div>
