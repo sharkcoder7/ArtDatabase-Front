@@ -1,0 +1,88 @@
+div.section-2 {
+  margin: 0 0 3rem 0;
+}
+
+h1.results-title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  width: 250px;
+}
+
+.borderSection {
+  border: solid black 1px;
+  margin-left: 40px;
+}
+
+.borderSectionRight {
+  border: solid black 1px;
+  margin-right: 40px;
+  margin-left: 5px;
+}
+
+.contentSection {
+  margin: 15px 15px 15px 15px;
+}
+
+.borderSectionStatGrow {
+  border: solid black 1px;
+  background-color: rgba(0, 255, 127, 0.2);
+  padding: 30px 30px 30px 30px;
+}
+
+.borderSectionStatDown {
+  border: solid black 1px;
+  background-color: rgba(255, 0, 0, 0.2);
+  padding: 30px 30px 30px 30px;
+}
+
+.borderSectionStatText {
+  border: solid black 1px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 10px 10px 10px;
+  margin-left: -10px;
+}
+
+.newsSectionStatDown {
+  padding: 10px 10px 10px 10px;
+}
+
+.cardPrice {
+  font-size: 50px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.cardPriceCommentsUp {
+  font-size: 20px;
+  color: rgb(5, 97, 1);
+  padding-top: 30px;
+}
+
+.cardPriceCommentsDown {
+  font-size: 20px;
+  color: rgb(243, 8, 8);
+  padding-top: 30px;
+}
+
+.cardPriceDate {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.cardPriceDetails {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.portfolioValue1 {
+  font-size: 45px;
+  color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  text-align: center;
+}
+
+.portfolioValue2 {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  text-align: center;
+}

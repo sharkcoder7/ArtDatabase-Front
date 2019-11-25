@@ -1,0 +1,151 @@
+div.section-2 {
+  margin: 6rem 0 4rem 0;
+}
+
+div.section-4 {
+  margin: 2rem 0 4rem 0;
+}
+
+div.section-2 span.section-title {
+  font-size: 44px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+div.about-left{
+  padding: 0 3rem 0 4rem;
+}
+div.about-right {
+  padding: 0 5rem 0 0;
+}
+
+p.author-story-mote-text {
+  text-align: justify;
+}
+
+
+div.section-3  div.image-holder {
+
+}
+
+div.section-3  div.image-holder  img{
+
+}
+
+span.title-left-about {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 0.5;
+}
+
+span.title-left-value {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+div.left-block-about {
+  flex-direction: column;
+}
+
+
+div.section-5 div.item-container:nth-child(even) div.service-item {
+  transform: translateY(3rem);
+}
+
+
+
+div.section-5 div.service-item {
+  border: 1px solid #c7e9f4;
+  border-radius: 4px;
+  margin: 1.5rem;
+}
+div.section-5 div.item-container div.service-item {
+  -webkit-transition:all .5s ease-in-out;
+  transition:all .5s ease-in-out;
+  height: 220px;
+  width: 220px;
+  display: flex;
+  border-radius: 4px;
+  flex-direction: column;
+}
+
+
+div.section-5 div.item-container div.service-item span.service-title {
+  -webkit-transition:all .5s ease-in-out;
+  transition:all .5s ease-in-out;
+  font-size: 18px;
+  margin: auto auto 1rem auto;
+  color: white;
+  z-index: 1;
+
+}
+
+img.service-image {
+  position: absolute;
+  -webkit-transition:all .5s ease-in-out;
+  transition:all .5s ease-in-out;
+}
+
+div.section-5 div.item-container:hover div.service-item{
+  -webkit-box-shadow: -11px 12px 25px -5px rgba(181,181,181,1);
+  -moz-box-shadow: -11px 12px 25px -5px rgba(181,181,181,1);
+  box-shadow: -11px 12px 25px -5px rgba(181,181,181,1);
+  cursor: pointer;
+}
+
+div.works-info-right {
+  padding: 0 0 0 4rem;
+}
+span.our-team-title {
+  font-size: 44px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+div.our-team-subtitle {
+  font-size: 35px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1200px) {
+  div.about-left{
+    padding: 0 3rem 0 7rem;
+  }
+  div.about-right {
+    padding: 0 5rem 0 7rem;
+  }
+  div.left-block-about {
+    flex-direction: row;
+  }
+
+
+}
+
+
+@media (max-width: 767px) {
+
+  div.about-left,
+  div.about-right {
+    padding: 0 1rem 0 1rem;
+  }
+
+  div.left-block-about {
+    flex-direction: column;
+  }
+
+  div.section-2 {
+    margin: 2rem 0 4rem 0;
+  }
+  div.section-4 {
+    margin: 2rem 0 4rem 0;
+  }
+
+
+  div.section-5 div.item-container:nth-child(even) div.service-item {
+    transform: translateY(0);
+  }
+
+
+}
+
+@media (max-width: 568px) {
+
+
+}
+

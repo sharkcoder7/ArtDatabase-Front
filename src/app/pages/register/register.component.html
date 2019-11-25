@@ -1,0 +1,79 @@
+<div class="row section2 m-0">
+  <div class="col-xl-4 col-md-3 d-none d-md-block left-block">
+    <div class="img-holder">
+      <img src="./assets/imgs/28.png" alt="img" style="margin: auto 30px auto 0">
+    </div>
+    <div class="img-holder">
+      <img src="./assets/imgs/39.png" alt="img" style="margin: auto auto auto 30px">
+    </div>
+  </div>
+  <div class="col-xl-4 col-md-6 col-10 m-auto middle-block">
+    <h1><b><span class="logo-shadow">Register</span> to discover<br> the world of art</b></h1>
+
+    <form  [formGroup]="registerForm" class="form" (ngSubmit)="register()" ngNativeValidate>
+      <div class="form_group">
+        <label class="form_item">
+          <input formControlName="firstName" type="text" placeholder="First name" required>
+        </label>
+      </div>
+      <div class="form_group">
+        <label class="form_item">
+          <input formControlName="lastName" type="text" placeholder="Last name" required>
+        </label>
+      </div>
+      <div class="form_group">
+        <label class="form_item">
+          <input formControlName="email" type="email" placeholder="Email" required>
+        </label>
+      </div>
+      <div class="form_group">
+        <label class="form_item">
+          <input formControlName="phone" type="phone" placeholder="Phone number" required>
+        </label>
+      </div>
+      <div class="form_group">
+        <label class="form_item">
+          <input formControlName="password" type="password" placeholder="Password" title="" required>
+        </label>
+        <div *ngIf="f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+      </div>
+      <div class="form_group">
+        <label class="form_item">
+          <input formControlName="confirmPassword" type="password" placeholder="Confirm password" title="" required></label>
+      </div>
+      <div class="form_group check-item">
+        <label class="checkbox">
+          <input formControlName="isAgree" type="checkbox" checked/>
+          <span class="default"></span>
+        </label>
+        <span class="" style="margin: auto 0 auto 0.5rem" required>I agree to <a routerLink='/terms'>terms and conditions</a></span>
+      </div>
+      <div class="form_group">
+        <div class="">
+          <button class="btn btn-link" type="button">Forgot Password?</button>
+        </div>
+      </div>
+
+      <div class="form_group">
+        <button class="btn btn-warning button-login" type="submit">Register</button>
+      </div>
+      <div class="form_group">
+        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+      </div>
+
+    </form>
+    <div style="font-size: 14px; margin: 3rem 0 0  0">I have an account. <a routerLink="/login" routerLinkActive="active" class="register">Login</a>
+    </div>
+  </div>
+  <div class="col-xl-4 col-md-3 d-none d-md-block right-block">
+    <div class=" col d-flex p-0">
+      <img src="./assets/imgs/142.png" alt="img" style="margin: 0 30px 30px auto; height: 171px">
+    </div>
+    <div class=" col d-flex p-0">
+      <img src="./assets/imgs/155.png" alt="img" style="margin: 0 0 30px auto">
+    </div>
+  </div>
+</div>

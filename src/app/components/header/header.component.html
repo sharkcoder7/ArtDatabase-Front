@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bgsticky-top">
+  <div class="logo-holder col-xl-3 col-lg-3 col-md-4 col-sm-4 col d-flex"><a  routerLink="/"   routerLinkActive="active" class="m-auto"><span class="logo-text">&lt;&#47;artdatabase&gt;</span></a></div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link" routerLink='/database' routerLinkActive="active">Database</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/works' routerLinkActive="active">ArtMarket</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/location' routerLinkActive="active">ArtMap</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/collection' routerLinkActive="active">MyCollection</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/about' routerLinkActive="active">About</a>
+      </li>
+      <li class="nav-item d-flex">
+        <!-- <button class=" btn btn-warning search-button d-flex flex-column" routerLink="/database"><img class="search-icon" src="./assets/imgs/svg/magnifying-glass.svg" alt="Search"></button> -->
+      </li>
+
+    </ul>
+    <div class="input-group mr-2 ml-2">
+        <input type="text" class="form-control looking-field" placeholder="What are you looking for?" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class=" btn btn-default d-flex flex-column" routerLink="/database"><img class="search-icon" src="./assets/imgs/svg/magnifying-glass.svg" alt="Search"></button>
+        </div>
+      </div>
+    <div class="d-flex login-holder">
+      <button type="button" class="btn btn-warning button-login"  routerLink="/login"   routerLinkActive="active">Login</button>
+    </div>
+  </div>
+<!--  <div class="d-flex login-holder">
+    <button class="btn btn-link avatar"><img src="./assets/imgs/avatar.jpg"></button>
+  </div>-->
+</nav>

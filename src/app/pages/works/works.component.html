@@ -1,0 +1,142 @@
+<div class="row section-1">
+  <div class="col-xl-6 col-md-6  col-12  d-flex works-info">
+    <div class="d-flex">
+      <div class="img-wrapper"><img class="middle-img" src="{{artwork['img']}}" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 col-md-6 col-12  d-flex flex-column work-info-right text-left ">
+    <div class="w-100 author-years"><span>{{artwork['yearCreated']}}</span></div>
+    <div class="d-flex flex-column w-100 author-name" style="margin: 0 0 1rem 0">
+      <span class=" w-100">{{artwork['title']}}<br></span>
+    </div>
+    <div class="d-flex" style="margin: 0.5rem 0">
+      <div class="w-100 d-flex">
+        <div style="height: 15px; margin: 0 1rem 0 0;">
+          <img src="./assets/imgs/svg/user-black.svg" style="height: 20px; margin: auto 0;">
+        </div>
+        <span class="info2">{{artwork['author']['fullLabel']}}</span>
+      </div>
+
+    </div>
+    <div class="d-flex" style="margin: 0.5rem 0">
+      <div class="w-100 d-flex">
+        <div style="height: 15px; margin: 0 1rem 0 0;">
+          <img src="./assets/imgs/svg/increase-size-option.svg" style="height: 20px; margin: auto 0;">
+        </div>
+        <span class="info2">{{artwork['type']}}</span>
+      </div>
+
+    </div>
+    <div class="d-flex" style="margin: 0.5rem 0">
+      <div class="w-100 d-flex">
+        <div style="height: 15px; margin: 0 1rem 0 0;">
+          <img src="./assets/imgs/svg/maps-and-flags-black.svg" style="height: 20px; margin: auto 0;">
+        </div>
+        <span class="info2">{{artwork['location']}}</span>
+      </div>
+    </div>
+    <div class="author-story">
+      <p>{{artwork['author']['bio']}}</p>
+    </div>
+  </div>
+</div>
+<div class="row section-2">
+  <div class="col-xl-3 col-12 about-left">
+    <span class="section-title">Provenance</span>
+  </div>
+  <div class="col-xl col-12 about-right">
+    <div class="content hideContent" [class.showContent]="showMoreFlag">
+      <p #authorStory class="author-story-mote-text">{{artwork['description']}}</p>
+      <div class="author-story-more"></div>
+    </div>
+    <div class="m-auto d-flex w-100 show-more" *ngIf="showLess">
+
+      <button class="btn btn-light button-show-more" (click)="showMore()"><span
+        *ngIf="!showMoreFlag">Read MORE</span><span *ngIf="showMoreFlag">Read Less</span></button>
+    </div>
+  </div>
+  <div _ngcontent-c4="" class="col-xl-12 col-12 about-left" style="margin: 2rem 0 0 0">
+    <table _ngcontent-c4="" class="table">
+      <thead _ngcontent-c4="">
+      <tr _ngcontent-c4="">
+        <th _ngcontent-c4="" scope="col">#</th>
+        <th _ngcontent-c4="" scope="col">Possessor</th>
+        <th _ngcontent-c4="" scope="col">Location</th>
+        <th _ngcontent-c4="" scope="col">Date</th>
+        <th _ngcontent-c4="" scope="col">Type</th>
+      </tr>
+      </thead>
+      <tbody _ngcontent-c4="">
+      <tr _ngcontent-c4="">
+        <th _ngcontent-c4="" scope="row">1</th>
+        <td _ngcontent-c4="">Mark</td>
+        <td _ngcontent-c4="">Ottawa</td>
+        <td _ngcontent-c4="">08.11.2019</td>
+        <td _ngcontent-c4="">Donation</td>
+      </tr>
+      <tr _ngcontent-c4="">
+        <th _ngcontent-c4="" scope="row">2</th>
+        <td _ngcontent-c4="">Jacob</td>
+        <td _ngcontent-c4="">Mexico</td>
+        <td _ngcontent-c4="">08.12.2019</td>
+        <td _ngcontent-c4="">Sale</td>
+
+      </tr>
+      <tr _ngcontent-c4="">
+        <th _ngcontent-c4="" scope="row">3</th>
+        <td _ngcontent-c4="">Larry</td>
+        <td _ngcontent-c4="">Chicago</td>
+        <td _ngcontent-c4="">11.11.2019</td>
+        <td _ngcontent-c4="">Movement</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row section-3">
+  <div class="col-xl  col-md  col-12    place-left d-flex ">
+    <div class="hovereffect w-100">
+      <img class="place-img" src="./assets/imgs/merlin.png" alt="" style="width: 100%">
+      <div class="overlay row m-0">
+        <div class="col d-flex bot-part">
+
+          <div class="d-flex" style="margin: auto 0  2rem 1.5rem">
+            <img src="./assets/imgs/svg/maps-and-flags.svg" style="height: 20px; margin: 0 0 auto 0;">&nbsp;&nbsp;<span
+            class="info2">{{artwork['location']}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="col-xl-2 col-md-3 col-12 place-right  works-data">
+
+    <div class="col m-auto d-flex flex-column">
+      <span class="m-100  author-works-title">Works</span>
+      <span class="m-100  author-works-number">26</span>
+    </div>
+    <div class="col m-auto d-flex flex-column">
+      <span class="m-100 author-works-title">Exhibitions</span>
+      <span class="m-100 author-works-number">326</span>
+    </div>
+    <div class="col m-auto d-flex flex-column">
+      <span class="m-100  author-works-title">Sales Records</span>
+      <span class="m-100 author-works-number">12</span>
+    </div>
+
+
+  </div>
+  <div class="col-xl-3  d-none d-lg-block "></div>-->
+</div>
+<div class="row section-4">
+  <div class="col-12 d-flex"><span class="section-title m-auto">Sources</span></div>
+  <div _ngcontent-c4="" class="col-12 d-flex place-left">
+    <ul _ngcontent-c4="" class="list-group">
+      <li _ngcontent-c4="" class="list-group-item">Author</li>
+      <li _ngcontent-c4="" class="list-group-item">Title</li>
+      <li _ngcontent-c4="" class="list-group-item">Date</li>
+      <li _ngcontent-c4="" class="list-group-item">Link</li>
+    </ul>
+  </div>
+</div>
+
