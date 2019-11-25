@@ -1,0 +1,79 @@
+<div class="row museum-container">
+  <div class="col-lg-12 firstcontainer">
+    <div class="row">
+      <div class="col-lg-4 textarea">
+        <h2>{{ museum.name }},</h2>
+        <h3>{{ museum.city }},</h3>
+        <h4>{{ museum.street }},</h4>
+        <p>{{ museum.description }}</p>
+        <button class="btn btn-outline-dark bnt-md" style="margin-bottom: 20px;">Save Museum?</button>
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-info next-arrow-transp"><img style="height: 12px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-left.svg"></button>
+            <button class="btn btn-info next-arrow-transp"><img style="height: 12px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-right.svg"></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 interior">
+        <img [src]="museum.interior">
+      </div>
+      <div class="col-lg-4">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 building">
+            <img [src]="museum.building">
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 building">
+            <img [src]="museum.interior1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12 attribute-area">
+    <p>A more in depth description of museum attributes, location, significats, etc.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim as minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in volupatate velit esse sillum dolore eu fugiat m=nulla pariatur. Excepteur sint occaecat cupidatat</p>
+  </div>
+
+  <div class="col-lg-12 mapinfo-container">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12 d-flex p-0">
+        <div class="d-flex m-auto map-container" id="map">
+        </div>
+      </div>
+      <div class="col-lg-3 textarea">
+        <p>{{museum.establishedDate}}</p>
+        <p>{{museum.held}}</p>
+      </div>
+      <div class="col-lg-3 textarea" >
+        <p> {{ museum.exhibitionLink }} </p>
+        <p> {{ museum.exhibitionArts }} </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="col-md-12">
+        <carousel [itemsPerSlide]="itemsPerSlide"
+                  [singleSlideOffset]="singleSlideOffset"
+                  [noWrap]="noWrap"
+                  [interval]="3000"
+                  [noPause]="false"
+                  [startFromIndex]="0">
+          <slide *ngFor="let image of images; let index=index" style="margin: auto;">
+            <div class="image-container">
+              <div class="image-card">
+                <img [src]="image.url" class="image-item">
+              </div>
+              <div class="image-title">
+                <h5>{{ image.title }}</h5>
+              </div>
+            </div>
+          </slide>
+        </carousel>
+      </div>
+    </div>
+  </div>
+
+</div>
