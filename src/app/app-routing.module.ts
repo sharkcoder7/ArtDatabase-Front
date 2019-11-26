@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'password/forget', component: ForgetPasswordComponent},
   {path: 'password/reset/:token', component: ResetPasswordComponent},
   {path: 'collection', canActivate: [ProtectedGuard], component: CollectionComponent},
-  {path: 'authors', component: AuthorsComponent},
+  {path: 'authors/:id', component: AuthorsComponent},
   {path: 'works/:id', component: WorksComponent},
   {path: 'about', component: AboutComponent},
   {path: 'location', component: LocationsComponent},
