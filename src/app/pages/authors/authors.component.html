@@ -1,12 +1,12 @@
 <div class="row section-1">
   <div class="col-xl-4 col-md-6 col-12  d-flex flex-column text-left author-info">
 
-      <div class="w-100 author-years"><span>1853 - 1890</span></div>
+      <div class="w-100 author-years"><span>{{author['birthYear']}} - {{author['deathYear']}}</span></div>
       <div class="d-flex flex-column w-100 author-name">
-        <span class=" w-100">Vincent<br></span>
-        <span class=" w-100">Van Gogh</span>
+        <span class=" w-100">{{author['firstName']}}<br></span>
+        <span class=" w-100">{{author['lastName']}}</span>
       </div>
-      <div class="author-story"><p>Vincent Willem van Gogh (30 March 1853 – 29 July 1890) was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art.</p></div>
+      <div class="author-story"><p> {{author['bio']}}</p></div>
       <div class=" d-flex w-100">
         <button class="btn btn-warning button-save">Save artist</button>
       </div>
@@ -22,18 +22,18 @@
 
   <div class="col-xl-4   d-none d-xl-flex flex-column">
     <div class="col d-flex">
-        <div class="img-wrapper"><img class="middle-img" src="./assets/imgs/vincent-vangogh-2-authors.png" alt="">
+        <div class="img-wrapper"><img class="middle-img borderImage" src="./assets/imgs/vincent-vangogh-2-authors.png" alt="">
           </div>
         </div>
         <div class="col d-flex">
-        <div class="img-wrapper"><img class="middle-img" src="./assets/imgs/vincent-vangogh-1-authors.png" alt="">
+        <div class="img-wrapper"><img class="middle-img borderImage" src="./assets/imgs/vincent-vangogh-1-authors.png" alt="">
           </div>
        </div>
     </div>
   <div class="col-xl-4 col-md-6  col-12  d-flex">
     <div class="col d-flex">
       <div class="right-img-wrapper">
-      <img class="right-img" src="./assets/imgs/vincent-vangogh-3-authors.png" alt="">
+      <img class="right-img " src="./assets/imgs/vincent-vangogh-3-authors.png" alt="">
     </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
   </div>
 </div>
 <div class="row section-3">
-  <div class="col-xl  col-md  col-12    place-left d-flex ">
+  <!-- <div class="col-xl  col-md  col-12    place-left d-flex ">
     <div class="hovereffect w-100">
       <img class="place-img" src="./assets/imgs/zundert.png" alt="" style="width: 100%">
       <div class="overlay row m-0">
@@ -62,7 +62,19 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <div class="col-xl  col-md  col-12    place-left d-flex ">
+      <div class="hovereffect w-100">
+        <img class="" src="../../../assets/imgs/map.png" alt="" style="width: 100%">
+        <div class="row m-0">
+          <div class="col d-flex bot-part">
+              <div class="d-flex" style="margin: auto 0  2rem 1.5rem">
+              <img src="../../../assets/imgs/svg/maps-and-flags.svg" style="height: 20px; margin: 0 0 auto 0;">&nbsp;&nbsp;<span class="info2">Zundert, Netherlands</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <div class="col-xl-2 col-md-3 col-12 place-right  works-data">
 
     <div class="col m-auto d-flex flex-column">
@@ -115,7 +127,6 @@
             </div>
           </div>
           <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0">
-
             <div class="hovereffect m-auto">
               <img class="img-responsive" src="./assets/imgs/vincent-authors.png" alt="" >
               <div class="overlay-2"></div>
@@ -182,7 +193,99 @@
           <button class="btn btn-warning view-all m-auto" (click)="viewAllGallery()"><span *ngIf="!showMoreGallery">View all</span><span *ngIf="showMoreGallery">View first</span></button>
         </div>
       </div>
-
     </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-12 col-12" >
+          <div class="row gallery-block" [class.show]="showMoreGallery">
+            <div class="col-xl col-lg-4 col-md-6 col-12 d-flex  p-0">
+  
+              <div class="hovereffect m-auto">
+  
+                <img class="img-responsive" src="./assets/imgs/night-authors.png" alt="" >
+                <div class="overlay-2"></div>
+                <div class="overlay row m-0">
+                  <!--<h2>Hover effect 1</h2>-->
+                  <div class="col d-flex top-part">
+                    <span class="title">Oil on canvas</span>
+                  </div>
+                  <div class="col d-flex bot-part">
+                    <div>
+                      <span class="info">The Starry Night</span>
+                    </div>
+                    <div class="d-flex" style="margin: 10px 0  2rem 0">
+                      <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Vincent van Gogh, 1888</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0">
+              <div class="hovereffect m-auto">
+                <img class="img-responsive" src="./assets/imgs/vincent-authors.png" alt="" >
+                <div class="overlay-2"></div>
+                <div class="overlay row m-0">
+                  <!--<h2>Hover effect 1</h2>-->
+                  <div class="col d-flex top-part">
+                    <span class="title">Oil on canvas</span>
+                  </div>
+                  <div class="col d-flex bot-part">
+                    <div>
+                      <span class="info">Self-portrait</span>
+                    </div>
+                    <div class="d-flex" style="margin: 10px 0  2rem 0">
+                      <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;<span class="info2">Vincent van Gogh, 1887</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl col-lg-4 col-md-6 col-12  d-flex  p-0">
+  
+              <div class="hovereffect m-auto">
+                <img class="img-responsive" src="./assets/imgs/muse-authors.png" alt="" >
+                <div class="overlay-2"></div>
+                <div class="overlay row m-0">
+                  <!--<h2>Hover effect 1</h2>-->
+                  <div class="col d-flex top-part">
+                    <span class="title">Oil on canvas</span>
+                  </div>
+                  <div class="col d-flex bot-part">
+                    <div>
+                      <span class="info">Musee d’Orsay</span>
+                    </div>
+                    <div class="d-flex" style="margin: 10px 0  2rem 0">
+                      <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Vincent van Gogh, 1608-1614</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl col-lg-4 col-md-6 col-12 d-flex  p-0">
+  
+              <div class="hovereffect m-auto">
+                <img class="img-responsive" src="./assets/imgs/39-collection.png" alt="" >
+                <div class="overlay-2"></div>
+                <div class="overlay row m-0">
+                  <!--<h2>Hover effect 1</h2>-->
+                  <div class="col d-flex top-part">
+                    <span class="title">Oil on canvas</span>
+                  </div>
+                  <div class="col d-flex bot-part">
+                    <div>
+                      <span class="info">Portrait of Adele Bloch-Bauer I</span>
+                    </div>
+                    <div class="d-flex" style="margin: 10px 0  2rem 0">
+                      <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Gustav Klimt, 1907</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex w-100" style="margin: 2rem 0 0 0 ">
+            <button class="btn btn-warning view-all m-auto" (click)="viewAllGallery()"><span *ngIf="!showMoreGallery">View all</span><span *ngIf="showMoreGallery">View first</span></button>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
