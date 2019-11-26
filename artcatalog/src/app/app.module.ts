@@ -6,6 +6,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {AgmCoreModule} from '@agm/core';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { NgbModule, NgbModalModule, NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
+import { SliderModule } from '@syncfusion/ej2-angular-inputs';
 
 import {AppComponent} from './app.component';
 
@@ -71,8 +73,12 @@ import {
     FormsModule,
     ReactiveFormsModule,
     FullCalendarModule,
-    CarouselModule.forRoot(),
     AngularFontAwesomeModule,
+    SliderModule,
+    NgbModule,
+    NgbButtonsModule,
+    CarouselModule.forRoot(),
+    NgbModalModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAdCdzc_SvwQ0j4xZjl9RI2szAO4jc4toA'
     })
