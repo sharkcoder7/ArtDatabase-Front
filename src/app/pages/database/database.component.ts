@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../../services/data.service';
-declare var $:any;
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-database',
