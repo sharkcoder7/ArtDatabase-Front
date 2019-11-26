@@ -28,6 +28,10 @@ export class DataService {
     return this.httpClient.get(this.REST_API_SERVER + 'artists');
   }
 
+  public getArtist(id) {
+    return this.httpClient.get(this.REST_API_SERVER + 'artists/' + id);
+  }
+
   public getLocations() {
     return this.httpClient.get(this.REST_API_SERVER + 'locations');
   }
