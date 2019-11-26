@@ -1,0 +1,734 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<script>
+  $( document ).ready(function() {
+    var ctx = document.getElementById('myChart');
+    
+    var stars = [135850, 52122, 148825, 16939, 9763];
+    var frameworks = ['React', 'Angular', 'Vue', 'Hyperapp', 'Omi'];
+    
+    var myChart = new Chart(ctx, {
+     type: 'line',
+     data: {
+        labels: frameworks,
+        datasets: [{
+            label: 'Github Stars',
+            data: stars
+        }]
+     },
+    })
+    });
+</script>
+
+<div class="row justify-content-center" style="margin: 4rem 0 0 0">
+    <div class="col-11 m-auto text-center">
+      <h1 class="featured">My Collection</h1>
+    </div>
+    <div class="row second-menu-box">
+        <div class="col-7 m-auto ">
+             <ul class="nav nav-tabs row">
+              <li class="active col-xl col-md-4 col-6 d-flex "><a   class="m-auto active"data-toggle="tab" href="#home"><span class="menu-item">Home</span></a></li>
+              <li class="col-xl col-md-4 col-6 d-flex" ><a  class="m-auto " data-toggle="tab" href="#collection"><span class="menu-item">Collection</span></a></li>
+              <li class="col-xl  col-md-4 col-6 d-flex"><a class="m-auto " data-toggle="tab" href="#market"><span class="menu-item">ArtMarket</span></a></li>
+              <li class="col-xl col-md-4 col-6 d-flex"><a  class="m-auto " data-toggle="tab" href="#database"><span class="menu-item">Database</span></a></li>
+              <li class="col-xl col-md-4 col-6 d-flex"><a  class="m-auto" data-toggle="tab" href="#transaction"><span class="menu-item">Transaction</span></a></li>
+              <li class="col-xl col-md-4 col-6 d-flex"><a  class="m-auto" data-toggle="tab" href="#account"><span class="menu-item">Account</span></a></li>
+             </ul>
+        </div>
+    </div>
+    <div class="col-xl-11 col-12 m-auto section4">
+      <div class="tab-content">
+          <div id="home" class="tab-pane active in  slider">
+              <div class="row" >
+                  <div class="col-xl-6 col-sm-12 d-flex ">
+                    <div class="charts-left-part">
+                      <h5>Market Value</h5>
+                      <div class="wrapper">                      
+                        <canvas id="MarketValueChart" width="487" height="312"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-sm-12 d-flex ">
+                   <div class="charts-right-part">
+                      <h5>Statistics Of Artworks</h5>
+                      <div class="wrapper">                      
+                        <canvas id="StatisticOfArtworks" width="487" height="312"></canvas>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="row justify-content-center artworks-block">
+                  <div class="col-xl-11 col-12 d-flex">
+                    <span class="block-name m-auto">Artworks</span>
+                  </div>
+              </div>
+
+              <div class="row justify-content-center  artworks-block" style="overflow: hidden; height: 400px">
+                  <div class="col-xl-11 col-12">                  
+                    <div class="row gallery-block" [class.show]="showMoreGallery">
+                        <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
+                            <div class="overlay-2"></div>
+                            <div class="hovereffect m-auto overlay">
+                              <div style="text-align: center;">
+                                  Oil on canvas
+                              </div>
+                              <div style="text-align: center;">
+                                  The Starry Night
+                              </div>
+                              <div style="text-align: center;">
+                                <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;">Vincent van Gogh, 1888
+                              </div>
+                              <div class="hovereffect m-auto d-flex col">
+                                  <img class="img-responsive borderImage" src="./assets/imgs/night-authors.png" alt="" width="100%" >
+                                </div>
+                              </div>
+                        </div>
+
+                        <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
+                            <div style="text-align: center;">
+                              Oil on canvas
+                            </div>
+                            <div style="text-align: center;">
+                                Opening of the Fifth Seal
+                            </div>
+                            <div style="text-align: center;">
+                              <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;"> Vincent van Gogh, 1887
+                            </div>
+                            <div class="hovereffect m-auto d-flex col">
+                                <img class="img-responsive borderImage" src="./assets/imgs/vincent-authors.png" alt="" width="100%" >
+                              </div>
+                        </div>
+
+                        <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
+                            <div style="text-align: center;">
+                              Oil on canvas
+                            </div>
+                            <div style="text-align: center;">
+                                Musee d’Orsay
+                            </div>
+                            <div style="text-align: center;">
+                              <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;"> Vincent van Gogh, 1608-1614
+                            </div>
+                            <div class="hovereffect m-auto d-flex col">
+                                <img class="img-responsive borderImage" src="./assets/imgs/muse-authors.png" alt="" width="100%" >
+                              </div>
+                        </div>
+
+                        <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
+                            <div style="text-align: center;">
+                              Oil on canvas
+                            </div>
+                            <div style="text-align: center;">
+                                Portrait of Adele Bloch-Bauer I
+                            </div>
+                            <div style="text-align: center;">
+                              <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;">Gustav Klimt, 1907
+                            </div>
+                            <div class="hovereffect m-auto d-flex col">
+                                <img class="img-responsive borderImage" src="./assets/imgs/39-collection.png" alt="" width="100%" >
+                              </div>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+          </div>
+          <div id="collection" class="tab-pane  fade">
+
+
+            <div class="row justify-content-center works-block">
+              <div class="col-xl-11 col-12 d-flex">
+                <span class="block-name m-auto">Works</span>
+              </div>
+            </div>
+            <div class="row m-auto artworks-block" >
+
+              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
+                <div class="row m-auto">
+                  <div class="col-lg-6 col-12">
+                    <div class="card-wrapper-collection">
+                      <div class="hovereffect m-auto" style="width: 270px">
+                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+                        <div class="overlay-2"></div>
+                        <div class="overlay m-0">
+
+                          <div class="col d-flex top-part-collection">
+                            <span class="title-white">The Starry Night</span>
+                          </div>
+                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+                            </div>
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
+                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Current value</span></div>
+                          <div class="m-auto"><span class="currency-amount">90$</span></div>
+                        </div>
+                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
+                          <div class="m-auto"><span class="currency-amount">100$</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="m-auto chart-box-collection">
+                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
+                <div class="row m-auto">
+                  <div class="col-lg-6 col-12">
+                    <div class="card-wrapper-collection">
+                      <div class="hovereffect m-auto" style="width: 270px">
+                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+                        <div class="overlay-2"></div>
+                        <div class="overlay m-0">
+
+                          <div class="col d-flex top-part-collection">
+                            <span class="title-white">The Starry Night</span>
+                          </div>
+                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+                            </div>
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
+                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Current value</span></div>
+                          <div class="m-auto"><span class="currency-amount">90$</span></div>
+                        </div>
+                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
+                          <div class="m-auto"><span class="currency-amount">100$</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="m-auto chart-box-collection">
+                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
+                <div class="row m-auto">
+                  <div class="col-lg-6 col-12">
+                    <div class="card-wrapper-collection">
+                      <div class="hovereffect m-auto" style="width: 270px">
+                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+                        <div class="overlay-2"></div>
+                        <div class="overlay m-0">
+
+                          <div class="col d-flex top-part-collection">
+                            <span class="title-white">The Starry Night</span>
+                          </div>
+                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+                            </div>
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
+                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Current value</span></div>
+                          <div class="m-auto"><span class="currency-amount">90$</span></div>
+                        </div>
+                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
+                          <div class="m-auto"><span class="currency-amount">100$</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="m-auto chart-box-collection">
+                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item ">
+                <div class="row m-auto">
+                  <div class="col-lg-6 col-12">
+                    <div class="card-wrapper-collection">
+                      <div class="hovereffect m-auto" style="width: 270px">
+                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+                        <div class="overlay-2"></div>
+                        <div class="overlay m-0">
+
+                          <div class="col d-flex top-part-collection">
+                            <span class="title-white">The Starry Night</span>
+                          </div>
+                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+                            </div>
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
+                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Current value</span></div>
+                          <div class="m-auto"><span class="currency-amount">90$</span></div>
+                        </div>
+                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
+                          <div class="m-auto"><span class="currency-amount">100$</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="m-auto chart-box-collection">
+                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
+                <div class="row m-auto">
+                  <div class="col-lg-6 col-12">
+                    <div class="card-wrapper-collection">
+                      <div class="hovereffect m-auto" style="width: 270px">
+                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+                        <div class="overlay-2"></div>
+                        <div class="overlay m-0">
+
+                          <div class="col d-flex top-part-collection">
+                            <span class="title-white">The Starry Night</span>
+                          </div>
+                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+                            </div>
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
+                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Current value</span></div>
+                          <div class="m-auto"><span class="currency-amount">90$</span></div>
+                        </div>
+                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
+                          <div class="m-auto"><span class="currency-amount">100$</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="m-auto chart-box-collection">
+                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
+                <div class="row m-auto">
+                  <div class="col-lg-6 col-12">
+                    <div class="card-wrapper-collection">
+                      <div class="hovereffect m-auto" style="width: 270px">
+                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
+                        <div class="overlay-2"></div>
+                        <div class="overlay m-0">
+
+                          <div class="col d-flex top-part-collection">
+                            <span class="title-white">The Starry Night</span>
+                          </div>
+                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+
+                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
+
+                            </div>
+                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
+                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
+                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Current value</span></div>
+                          <div class="m-auto"><span class="currency-amount">90$</span></div>
+                        </div>
+                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
+                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
+                          <div class="m-auto"><span class="currency-amount">100$</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="m-auto chart-box-collection">
+                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+          <div id="market" class="tab-pane  fade">
+           <div class="alert alert-success row" style="width: 100%" role="alert">
+              <div class="col-xl-11 col" style="color: #FF6298; ">
+                Contemporary art 2.05%
+              </div>
+              <div class="col-xl-1 col-1 d-flex">
+                <div class="m-auto" style="width: fit-content">
+                  <img class="" src="./assets/imgs/svg/error.svg" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-xl-6 col-sm-12 d-flex ">
+                  <div class="charts-left-part">
+                    <h5>Market Value</h5>
+                    <div class="chart-container" style="position: relative; height:312px; width:480px;">
+                        <canvas id="ArtMarket1"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-sm-12 d-flex ">
+                 <div class="charts-right-part">
+                    <h5>Statistics Of Artworks</h5>
+                    <div class="chart-container" style="position: relative; height:312px; width:480px;">
+                      <canvas id="MarketIndex1"></canvas>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin: 4rem 0 0 0">
+              <div class="col-xl-6 col-sm-12 d-flex flex-column ">
+                <div class="m-auto" style="width: 538px">
+                  <div class="charts-left-part">
+                  <h5 style="margin-bottom: 2rem">Biggest Climbers/Fallers</h5>
+                  <div class="m-auto chart-box" style="padding: 1rem 1.75rem;">
+                    <table class="table table-hover table-sm">
+                      <thead>
+                      <tr>
+                        <td  scope="col-8" colspan="2" style="width: 75%; " >Name of artist</td>
+                        <td  scope="col" style="width: 25%; text-align: center" >Current value</td>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr scope="row">
+                        <td align="center">
+
+                            <img  src="./assets/imgs/svg/arrow-up-green.svg" alt="" style="height: 11px; margin: 0 0 3px 0;">
+
+                        </td>
+                        <td>Vincent Van Gogh</td>
+                        <td style="font-size: 15px; text-align: center">75%</td>
+                      </tr>
+                      <tr scope="row">
+                        <td align="center">
+                          <img src="./assets/imgs/svg/arrow-down-red.svg" alt="" style="height: 11px; margin: 0 0 3px 0;"> </td>
+                        <td>Oscar-Claude Monet</td>
+                        <td class="table-current-value">50%</td>
+                      </tr>
+                      <tr scope="row">
+                        <td align="center">
+                          <img src="./assets/imgs/svg/arrow-down-red.svg" alt="" style="height: 11px; margin: 0 0 3px 0;"> </td>
+                        <td>Eugène Henri Paul Gauguin</td>
+                        <td class="table-current-value">75%</td>
+                      </tr>
+                      <tr scope="row">
+                        <td align="center">
+                          <img src="./assets/imgs/svg/arrow-up-green.svg" alt="" style="height: 11px; margin: 0 0 3px 0;"> </td>
+                        <td>Henri Émile Benoît Matisse</td>
+                        <td class="table-current-value">50%</td>
+                      </tr>
+                      <tr scope="row">
+                        <td align="center">
+                          <img src="./assets/imgs/svg/arrow-down-red.svg" alt="" style="height: 11px; margin: 0 0 3px 0;"> </td>
+                        <td>Oscar-Claude Monet</td>
+                        <td class="table-current-value">75%</td>
+                      </tr>
+                      <tr scope="row">
+                        <td align="center">
+                          <img src="./assets/imgs/svg/arrow-up-green.svg" alt="" style="height: 11px; margin: 0 0 3px 0;"> </td>
+                        <td>Eugène Henri Paul Gauguin</td>
+                        <td class="table-current-value">50%</td>
+                      </tr>
+                      <tr scope="row">
+                        <td align="center">
+                          <img src="./assets/imgs/svg/arrow-up-green.svg" alt="" style="height: 11px; margin: 0 0 3px 0;"> </td>
+                        <td>Henri Émile Benoît Matisse</td>
+                        <td class="table-current-value">50%</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-sm-12 d-flex flex-column">
+                <div class="m-auto" style="width: 538px">
+                  <div class="charts-right-part">
+                  <h5 style="margin-bottom: 2rem">Biggest Steals</h5>
+                  <div class="m-auto chart-box" style="padding: 1rem 1.75rem;  overflow: scroll; height: 294px;">
+                    <table class="table table-hover table-sm">
+                      <thead>
+                      <tr>
+                        <td  scope="col-8" style="width: 60%;  font-size: 12px">Title</td>
+                        <td  scope="col" style="  text-align: center" >Current value</td>
+                        <td  scope="col" style="  text-align: center" >Purchase Price</td>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr scope="row">
+                        <td>Eclipse of the Sun</td>
+                        <td class="table-current-value">90$</td>
+                        <td class="table-current-value">100$</td>
+                      </tr>
+                      <tr scope="row">
+                        <td>Skull</td>
+                        <td class="table-current-value">100$</td>
+                        <td class="table-current-value">90$</td>
+                      </tr>
+                      <tr scope="row">
+                        <td>Opening of the Fifth Seal</td>
+                        <td class="table-current-value">90$</td>
+                        <td class="table-current-value">100$</td>
+                      </tr>
+                      <tr scope="row">
+                        <td>Portrait of Adele Bloch-Bauer I</td>
+                        <td class="table-current-value">100$</td>
+                        <td class="table-current-value">90$</td>
+                      </tr>
+                      <tr scope="row">
+                        <td>Eclipse of the Sun</td>
+                        <td class="table-current-value">100$</td>
+                        <td class="table-current-value">90$</td>
+                      </tr>
+                      <tr scope="row">
+                        <td>Skull</td>
+                        <td class="table-current-value">90$</td>
+                        <td class="table-current-value">100$</td>
+                      </tr>
+                      <tr scope="row">
+                        <td>Opening of the Fifth Seal</td>
+                        <td class="table-current-value">100$</td>
+                        <td class="table-current-value">90$</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div id="database" class="tab-pane  fade">
+            <div class="row justify-content-center artworks-block">
+              <div class="col-xl-11 col-12 d-flex">
+                <span class="block-name m-auto">Artworks</span>
+              </div>
+            </div>
+
+            <div class="row justify-content-center  artworks-block" style="overflow: hidden; height: 400px">
+                <div class="col-xl-11 col-12">                  
+                  <div class="row gallery-block" [class.show]="showMoreGallery">
+                      <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
+                          <div class="overlay-2"></div>
+                          <div class="hovereffect m-auto overlay">
+                            <div style="text-align: center;">
+                                Oil on canvas
+                            </div>
+                            <div style="text-align: center;">
+                                Eclipse of the sun
+                            </div>
+                            <div style="text-align: center;">
+                              <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;">Vincent van Gogh, 1888
+                            </div>
+                            <div class="hovereffect m-auto d-flex col">
+                                <img class="img-responsive borderImage" src="./assets/imgs/eclipse-collection.png" alt="" width="100%" >
+                              </div>
+                            </div>
+                      </div>
+
+                      <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
+                          <div style="text-align: center;">
+                            Oil on canvas
+                          </div>
+                          <div style="text-align: center;">
+                            Skull
+                          </div>
+                          <div style="text-align: center;">
+                            <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;"> Vincent van Gogh, 1887
+                          </div>
+                          <div class="hovereffect m-auto d-flex col">
+                              <img class="img-responsive borderImage" src="./assets/imgs/skull-collection.png" alt="" width="100%" >
+                            </div>
+                      </div>
+
+                      <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
+                          <div style="text-align: center;">
+                            Oil on canvas
+                          </div>
+                          <div style="text-align: center;">
+                              Opening of the Fifth Seal 
+                          </div>
+                          <div style="text-align: center;">
+                            <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;"> El Greco, 1608-1614
+                          </div>
+                          <div class="hovereffect m-auto d-flex col">
+                              <img class="img-responsive borderImage" src="./assets/imgs/31-collection.png" alt="" width="100%" >
+                            </div>
+                      </div>
+
+                      <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
+                          <div style="text-align: center;">
+                            Oil on canvas
+                          </div>
+                          <div style="text-align: center;">
+                              Portrait of Adele Bloch-Bauer I
+                          </div>
+                          <div style="text-align: center;">
+                            <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;">Gustav Klimt, 1907
+                          </div>
+                          <div class="hovereffect m-auto d-flex col">
+                              <img class="img-responsive borderImage" src="./assets/imgs/39-collection.png" alt="" width="100%" >
+                            </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+            <div class="row justify-content-center artworks-block">
+              <div class="col-xl-11 col-12 d-flex">
+                <span class="block-name m-auto">Artists</span>
+              </div>
+            </div>
+            <div class="row justify-content-center  artworks-block" >
+              <div class="col-xl-11 col-12">
+                <div class="row">
+                  <div class="col-xl col-sm-6 d-flex flex-column p-0">
+
+                    <div class="hovereffect m-auto">
+
+                      <img class="img-responsive" src="./assets/imgs/Vincent.png" alt="" class="borderImage" width="100%" >
+                      <div class="overlay-2"></div>
+                      <div class="overlay row m-0">
+                        <div class="col d-flex bot-part">
+                          <div>
+                            <span class="info">Vincent<br>Van Gogh</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl col-sm-6 d-flex flex-column p-0">
+
+                    <div class="hovereffect m-auto">
+                      <img class="img-responsive" src="./assets/imgs/Oscar.png" alt="" class="borderImage" width="100%" >
+                      <div class="overlay-2"></div>
+                      <div class="overlay row m-0">
+
+                        <div class="col d-flex bot-part">
+                          <div>
+                            <span class="info">Oscar-Claude Monet</span>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl col-sm-6 d-flex flex-column p-0">
+
+                    <div class="hovereffect m-auto">
+                      <img class="img-responsive" src="./assets/imgs/Eugene.png" alt="" class="borderImage" width="100%" >
+                      <div class="overlay-2"></div>
+                      <div class="overlay row m-0">
+
+
+                        <div class="col d-flex bot-part">
+                          <div>
+                            <span class="info">Eugène Henri Paul Gauguin</span>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl col-sm-6 d-flex flex-column p-0">
+
+                    <div class="hovereffect m-auto">
+                      <img class="img-responsive" src="./assets/imgs/Henri.png" alt="" class="borderImage" width="100%" >
+                      <div class="overlay-2"></div>
+                      <div class="overlay row m-0">
+                        <div class="col d-flex bot-part">
+                          <div>
+                            <span class="info">Henri Émile Benoît Matisse</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div id="transaction" class="tab-pane fade">
+            <h3>Transaction</h3>
+            <p>Some content in transactions</p>
+          </div>
+          <div id="account" class="tab-pane fade">
+            <h3>Account</h3>
+            <p>Some content in account</p>
+          </div>
+      </div>
+  </div>
+</div>

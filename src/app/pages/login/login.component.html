@@ -1,0 +1,55 @@
+<div class="row section2 m-0">
+  <div class="col-xl-4 col-md-3 d-none d-md-block left-block">
+    <div class="img-holder">
+      <img src="./assets/imgs/43.png" alt="img" style="margin: auto 30px auto 0">
+    </div>
+    <div class="img-holder">
+      <img src="./assets/imgs/21.png" alt="img" style="margin: auto auto auto 30px; height: 200px;">
+    </div>
+  </div>
+  <div class="col-xl-4 col-md-6 m-auto    middle-block">
+    <h1><b>Join<span class="logo-shadow"> the Art World</span> </b></h1>
+    <p>Login to unlock the full potential of ArtDatabase</p>
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+      <strong>Error!</strong> {{error}}
+    </div>
+    <div *ngIf="user" class="alert alert-warning" role="alert">
+      <strong>Welcome, {{ user['name'] }}, you need to confirm your email first!</strong>
+    </div>
+    <form [formGroup]="loginForm" class="form" (ngSubmit)="login()" ngNativeValidate>
+      <div class="form_group">
+        <label class="form_item">
+          <input formControlName="email" type="text" placeholder="Email ot Phone" required>
+        </label>
+      </div>
+      <div class="form_group">
+        <label class="form_item">
+          <input formControlName="password" type="password" placeholder="" title="" required></label>
+      </div>
+      <div class="form_group">
+        <div class="">
+          <button class="btn btn-link" type="button">Forgot Password?</button>
+        </div>
+      </div>
+      <div class="form_group">
+        <button class="btn btn-warning button-login">
+          Login
+          <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+        </button>
+      </div>
+    </form>
+
+    <div style="font-size: 14px; margin: 3rem 0 0  0">Don’t Have an Account? Register Today!
+      <a class="register" routerLink="/register" routerLinkActive="active">Register</a>
+    </div>
+  </div>
+  <div class="col-xl-4 col-md-3 d-none d-md-block right-block">
+    <div class=" col d-flex p-0">
+      <img src="./assets/imgs/134.png" alt="img" style="margin: 0 30px 30px auto; height: 171px">
+    </div>
+    <div class=" col d-flex p-0">
+      <img src="./assets/imgs/140.png" alt="img" style="margin: 0 0 30px auto">
+    </div>
+
+  </div>
+</div>
