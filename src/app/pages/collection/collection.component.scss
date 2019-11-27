@@ -319,6 +319,316 @@ div {
   padding: 1px;
 }
 
+
+
+
+
+.collection-detail {
+
+
+  .main-art {
+    padding: 15px;
+
+
+    &-cont{
+      width: 100%;
+      position: relative;
+
+      img{
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-detail{
+      position: absolute;
+      bottom: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    &-name{
+      color: #fff;
+
+    }
+
+    &-author,
+    &-location{
+      color: #fff;
+    }
+
+
+  }
+
+  .art-chart {
+    margin-top: 15px;
+    padding: 15px;
+
+    canvas{
+      width: 100%;
+    }
+
+
+    &-data{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .art-stat{
+    &-row{
+      display: flex;
+      flex-direction: row;
+      align-items:center;
+      justify-content: space-between;
+    }
+    &-cart{
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+    &-about{
+      margin-top:40px;
+      margin-bottom:40px;
+    }
+
+    &-additional-cont{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-additional-column{
+      & > div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+    }
+
+
+  }
+}
+
+.chart-labels{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span{
+    cursor: pointer;
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    font-weight: bold;
+    color: #333;
+
+
+    &.active{
+      color: #efc25f;
+      border-bottom: 2px solid #efc25f;
+    }
+
+    &:nth-child(1){
+      margin-left: 0;
+    }
+
+  }
+}
+
+
+
+
+.hotline{
+  width: 100%;
+  height: 40px;
+  background: #333;
+  margin: 10px 0;
+  padding: 0 20px;
+  overflow: hidden;
+  position: relative;
+
+
+  &-scroll{
+    width: max-content;
+    margin-top: 9px;
+    left: -100px;
+    position: absolute;
+  }
+
+  &-cont{
+    color: #f00;
+    margin-left: 100px;
+    display: inline-block;
+
+
+    &:nth-child(1){
+      margin-left: 0;
+    }
+    &.positive{
+      color: #0f0;
+    }
+  }
+
+  &-name{
+
+
+  }
+
+  &-value{
+
+  }
+
+  &-recent{
+
+  }
+
+}
+
+.collection{
+
+  &-detail{
+
+  }
+
+  &-sidebar{
+
+    .looking-field{
+      margin-bottom: 15px;
+    }
+    .collection-card{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      border: 1px solid #70707026;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      cursor: pointer;
+
+      & > div{
+        width: 100%;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+
+  }
+
+}
+
+.news-cont{
+
+
+  .news{
+    margin-top: 15px;
+
+    &-thumb{
+      width: 100%;
+    }
+
+    &-title{
+      cursor: pointer;
+
+      &:hover{
+        color: #efc25f;
+      }
+
+    }
+
+    &-desc{
+
+    }
+
+  }
+
+}
+
+.chart{
+  width: 100%;
+  margin-bottom: 20px;
+
+  &-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-title{
+
+    }
+  }
+
+  &-body{
+    margin-top: 20px;
+    canvas{
+      width: 100%;
+    }
+
+    input{
+      padding: 5px 20px;
+      z-index: 1;
+      border: 1px solid #efc25f;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    a{
+      color: #efc25f;
+    }
+  }
+
+  &-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". ." ". .";
+  }
+
+  &-labels{
+    display: flex;
+    align-items: center;
+  }
+
+  .chart-labels{
+    width: auto;
+    span{
+      margin-left: 5px;
+    }
+  }
+
+  &-footer{
+
+
+  }
+
+  &-btn{
+    background: #000080;
+    border-radius: 4px;
+    color: #fff;
+  }
+
+  &-btn-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    buttom{
+      width: 30%;
+    }
+  }
+
+}
+
+
+
+
 @media (max-width: 1215px) {
   div {
     &.charts-left-part img, &.charts-right-part img {
