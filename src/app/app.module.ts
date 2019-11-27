@@ -10,6 +10,7 @@ import { NgbModule, NgbModalModule, NgbButtonsModule } from '@ng-bootstrap/ng-bo
 import { SliderModule } from '@syncfusion/ej2-angular-inputs';
 
 import {AppComponent} from './app.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import {AppRoutingModule} from './app-routing.module';
 import {DataService} from './services/data.service';
@@ -40,6 +41,8 @@ import {
   SocialAuthComponent,
   NewsDetailComponent
 } from './pages';
+import {ChartsModule} from "ng2-charts";
+import { NewsCardComponent } from './components/news-card/news-card.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,8 @@ import {
     CalendarComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    SocialAuthComponent
+    SocialAuthComponent,
+    NewsCardComponent
   ],
   imports: [
     BrowserModule,
@@ -77,11 +81,13 @@ import {
     SliderModule,
     NgbModule,
     NgbButtonsModule,
+    ChartsModule,
     CarouselModule.forRoot(),
     NgbModalModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAdCdzc_SvwQ0j4xZjl9RI2szAO4jc4toA'
-    })
+    }),
+    Ng2SmartTableModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
