@@ -8,7 +8,7 @@
       </div>
       <div class="author-story"><p> {{author['bio']}}</p></div>
       <div class=" d-flex w-100">
-        <button class="btn btn-warning button-save">Save artist</button>
+        <button class="btn save-artist">Save artist</button>
       </div>
 
     <div class="d-flex arrows-holder">
@@ -101,191 +101,33 @@
         <span class="block-name m-auto">Work Gallery</span>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-xl-12 col-12" >
-        <div class="row gallery-block" [class.show]="showMoreGallery">
-          <div class="col-xl col-lg-4 col-md-6 col-12 d-flex  p-0">
-
-            <div class="hovereffect m-auto">
-
-              <img class="img-responsive" src="./assets/imgs/night-authors.png" alt="" >
-              <div class="overlay-2"></div>
-              <div class="overlay row m-0">
-                <!--<h2>Hover effect 1</h2>-->
-                <div class="col d-flex top-part">
-                  <span class="title">Oil on canvas</span>
-                </div>
-                <div class="col d-flex bot-part">
-                  <div>
-                    <span class="info">The Starry Night</span>
-                  </div>
-                  <div class="d-flex" style="margin: 10px 0  2rem 0">
-                    <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Vincent van Gogh, 1888</span>
-                  </div>
-                </div>
+    <div class="row justify-content-center artworks-block">
+      <div class="col-xl-11 col-12">
+        <div class="row gallery-block show" id="galleryGrid">
+          <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column" *ngFor="let artwork of artworks">
+            <div class="hovereffect m-auto flex-column" [routerLink]="['/works/' + artwork.id]">
+              <div class="slider-block"> {{artwork['title']}}</div>
+              <div>
+                <img class="img-responsive borderImage" src="./assets/imgs/eclipse.png" alt="" width="100%" >
               </div>
-            </div>
-          </div>
-          <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0">
-            <div class="hovereffect m-auto">
-              <img class="img-responsive" src="./assets/imgs/vincent-authors.png" alt="" >
-              <div class="overlay-2"></div>
-              <div class="overlay row m-0">
-                <!--<h2>Hover effect 1</h2>-->
-                <div class="col d-flex top-part">
-                  <span class="title">Oil on canvas</span>
-                </div>
-                <div class="col d-flex bot-part">
-                  <div>
-                    <span class="info">Self-portrait</span>
+              <div class="slider-block"> {{artwork['technique']}}</div>
+              <div style="align-self: center;">
+                  <div style="text-align: left;padding-right: 40px;">
+                    <img src="./assets/imgs/svg/user.svg" style=" height: 18px; margin: auto 0;"> Author {{artwork['author']['fullLabel']}} <br>
+                    <img src="./assets/imgs/svg/clock.svg" style="height: 18px; margin: auto 0;"> Year <br>
+                    <img src="./assets/imgs/svg/medium.svg" style="height: 18px; margin: auto 0;"> Medium <br>
+                    <img src="./assets/imgs/svg/location.svg" style="height: 18px; margin: auto 0;"> Location
                   </div>
-                  <div class="d-flex" style="margin: 10px 0  2rem 0">
-                    <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;<span class="info2">Vincent van Gogh, 1887</span>
-                  </div>
-                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-xl col-lg-4 col-md-6 col-12  d-flex  p-0">
-
-            <div class="hovereffect m-auto">
-              <img class="img-responsive" src="./assets/imgs/muse-authors.png" alt="" >
-              <div class="overlay-2"></div>
-              <div class="overlay row m-0">
-                <!--<h2>Hover effect 1</h2>-->
-                <div class="col d-flex top-part">
-                  <span class="title">Oil on canvas</span>
-                </div>
-                <div class="col d-flex bot-part">
-                  <div>
-                    <span class="info">Musee d’Orsay</span>
-                  </div>
-                  <div class="d-flex" style="margin: 10px 0  2rem 0">
-                    <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Vincent van Gogh, 1608-1614</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl col-lg-4 col-md-6 col-12 d-flex  p-0">
-
-            <div class="hovereffect m-auto">
-              <img class="img-responsive" src="./assets/imgs/39-collection.png" alt="" >
-              <div class="overlay-2"></div>
-              <div class="overlay row m-0">
-                <!--<h2>Hover effect 1</h2>-->
-                <div class="col d-flex top-part">
-                  <span class="title">Oil on canvas</span>
-                </div>
-                <div class="col d-flex bot-part">
-                  <div>
-                    <span class="info">Portrait of Adele Bloch-Bauer I</span>
-                  </div>
-                  <div class="d-flex" style="margin: 10px 0  2rem 0">
-                    <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Gustav Klimt, 1907</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+           </div>
           </div>
         </div>
-        <div class="d-flex w-100" style="margin: 2rem 0 0 0 ">
-          <button class="btn btn-warning view-all m-auto" (click)="viewAllGallery()"><span *ngIf="!showMoreGallery">View all</span><span *ngIf="showMoreGallery">View first</span></button>
-        </div>
+        <div class="pb-0 pt-3">
+          <a class="btn btn-default button-navigate" (click)="getArtworks(artworksPagination['prev'])">Prev</a>
+          <a class="btn btn-default button-navigate" (click)="getArtworks(artworksPagination['next'])">Next</a>
+          <!--  <button class="btn btn-warning view-all m-auto" (click)="viewAllGallery()"><span *ngIf="!showMoreGallery">View all</span><span *ngIf="showMoreGallery">View first</span></button> -->
       </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-xl-12 col-12" >
-          <div class="row gallery-block" [class.show]="showMoreGallery">
-            <div class="col-xl col-lg-4 col-md-6 col-12 d-flex  p-0">
-  
-              <div class="hovereffect m-auto">
-  
-                <img class="img-responsive" src="./assets/imgs/night-authors.png" alt="" >
-                <div class="overlay-2"></div>
-                <div class="overlay row m-0">
-                  <!--<h2>Hover effect 1</h2>-->
-                  <div class="col d-flex top-part">
-                    <span class="title">Oil on canvas</span>
-                  </div>
-                  <div class="col d-flex bot-part">
-                    <div>
-                      <span class="info">The Starry Night</span>
-                    </div>
-                    <div class="d-flex" style="margin: 10px 0  2rem 0">
-                      <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Vincent van Gogh, 1888</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0">
-              <div class="hovereffect m-auto">
-                <img class="img-responsive" src="./assets/imgs/vincent-authors.png" alt="" >
-                <div class="overlay-2"></div>
-                <div class="overlay row m-0">
-                  <!--<h2>Hover effect 1</h2>-->
-                  <div class="col d-flex top-part">
-                    <span class="title">Oil on canvas</span>
-                  </div>
-                  <div class="col d-flex bot-part">
-                    <div>
-                      <span class="info">Self-portrait</span>
-                    </div>
-                    <div class="d-flex" style="margin: 10px 0  2rem 0">
-                      <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;<span class="info2">Vincent van Gogh, 1887</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl col-lg-4 col-md-6 col-12  d-flex  p-0">
-  
-              <div class="hovereffect m-auto">
-                <img class="img-responsive" src="./assets/imgs/muse-authors.png" alt="" >
-                <div class="overlay-2"></div>
-                <div class="overlay row m-0">
-                  <!--<h2>Hover effect 1</h2>-->
-                  <div class="col d-flex top-part">
-                    <span class="title">Oil on canvas</span>
-                  </div>
-                  <div class="col d-flex bot-part">
-                    <div>
-                      <span class="info">Musee d’Orsay</span>
-                    </div>
-                    <div class="d-flex" style="margin: 10px 0  2rem 0">
-                      <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Vincent van Gogh, 1608-1614</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl col-lg-4 col-md-6 col-12 d-flex  p-0">
-  
-              <div class="hovereffect m-auto">
-                <img class="img-responsive" src="./assets/imgs/39-collection.png" alt="" >
-                <div class="overlay-2"></div>
-                <div class="overlay row m-0">
-                  <!--<h2>Hover effect 1</h2>-->
-                  <div class="col d-flex top-part">
-                    <span class="title">Oil on canvas</span>
-                  </div>
-                  <div class="col d-flex bot-part">
-                    <div>
-                      <span class="info">Portrait of Adele Bloch-Bauer I</span>
-                    </div>
-                    <div class="d-flex" style="margin: 10px 0  2rem 0">
-                      <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0">&nbsp;&nbsp;<span class="info2">Gustav Klimt, 1907</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex w-100" style="margin: 2rem 0 0 0 ">
-            <button class="btn btn-warning view-all m-auto" (click)="viewAllGallery()"><span *ngIf="!showMoreGallery">View all</span><span *ngIf="showMoreGallery">View first</span></button>
-          </div>
-        </div>
-      </div>
+
   </div>
 </div>
