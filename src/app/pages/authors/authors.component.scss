@@ -337,7 +337,7 @@ div {
       }
     }
 
-    button.view-all {
+    button.view-all, button.save-artist {
       color: white !important;
       padding: 0.3rem;
       background: #000080;
@@ -346,6 +346,21 @@ div {
       width: 230px;
       text-align: center;
       height: 40px;
+    }
+
+    .button-navigate {
+      border-color: #000080;
+      width: 100px;
+      margin: auto;
+      box-shadow: none !important;
+      background: #000080;
+      background-color: #000080;
+      border: 1px solid #000080;
+      border-radius: 5px;
+      margin: auto;
+      margin-right: 4px;
+      flex-direction: column;
+      color: white !important;
     }
 
     div.gallery-block {
