@@ -3,10 +3,10 @@
 <script>
   $( document ).ready(function() {
     var ctx = document.getElementById('myChart');
-    
+
     var stars = [135850, 52122, 148825, 16939, 9763];
     var frameworks = ['React', 'Angular', 'Vue', 'Hyperapp', 'Omi'];
-    
+
     var myChart = new Chart(ctx, {
      type: 'line',
      data: {
@@ -27,23 +27,228 @@
     <div class="row second-menu-box">
         <div class="col-7 m-auto ">
              <ul class="nav nav-tabs row">
-              <li class="active col-xl col-md-4 col-6 d-flex "><a   class="m-auto active"data-toggle="tab" href="#home"><span class="menu-item">Home</span></a></li>
-              <li class="col-xl col-md-4 col-6 d-flex" ><a  class="m-auto " data-toggle="tab" href="#collection"><span class="menu-item">Collection</span></a></li>
-              <li class="col-xl  col-md-4 col-6 d-flex"><a class="m-auto " data-toggle="tab" href="#market"><span class="menu-item">ArtMarket</span></a></li>
-              <li class="col-xl col-md-4 col-6 d-flex"><a  class="m-auto " data-toggle="tab" href="#database"><span class="menu-item">Database</span></a></li>
-              <li class="col-xl col-md-4 col-6 d-flex"><a  class="m-auto" data-toggle="tab" href="#transaction"><span class="menu-item">Transaction</span></a></li>
-              <li class="col-xl col-md-4 col-6 d-flex"><a  class="m-auto" data-toggle="tab" href="#account"><span class="menu-item">Account</span></a></li>
+              <li class="active col-xl col-md-4 col-6 d-flex ">
+                <a   class="m-auto "data-toggle="tab" (click)="changeTab('home')" [ngClass]="{'active': seletedTab === 'home'}">
+                  <span class="menu-item">
+                    Home
+                  </span>
+                </a>
+              </li>
+              <li class="col-xl col-md-4 col-6 d-flex" >
+                <a  class="m-auto " data-toggle="tab" (click)="changeTab('collection')" [ngClass]="{'active': seletedTab === 'collection'}">
+                  <span class="menu-item">
+                    Collection
+                  </span>
+                </a>
+              </li>
+               <li class="col-xl col-md-4 col-6 d-flex" >
+                <a  class="m-auto " data-toggle="tab" (click)="changeTab('dashboard')" [ngClass]="{'active': seletedTab === 'dashboard'}">
+                  <span class="menu-item">
+                    Dashboard
+                  </span>
+                </a>
+              </li>
+              <li class="col-xl col-md-4 col-6 d-flex">
+                <a class="m-auto " data-toggle="tab" (click)="changeTab('market')" [ngClass]="{'active': seletedTab === 'market'}">
+                  <span class="menu-item">
+                    ArtMarket
+                  </span>
+                </a>
+              </li>
+              <li class="col-xl col-md-4 col-6 d-flex">
+                <a  class="m-auto " data-toggle="tab" (click)="changeTab('database')" [ngClass]="{'active': seletedTab === 'database'}">
+                  <span class="menu-item">
+                    Database
+                  </span>
+                </a>
+              </li>
+              <li class="col-xl col-md-4 col-6 d-flex">
+                <a  class="m-auto" data-toggle="tab" (click)="changeTab('transaction')" [ngClass]="{'active': seletedTab === 'transaction'}">
+                  <span class="menu-item">
+                    Transaction
+                  </span>
+                </a>
+              </li>
+              <li class="col-xl col-md-4 col-6 d-flex">
+                <a  class="m-auto" data-toggle="tab" (click)="changeTab('account')" [ngClass]="{'active': seletedTab === 'account'}">
+                  <span class="menu-item">
+                    Account
+                  </span>
+                </a>
+              </li>
              </ul>
         </div>
     </div>
     <div class="col-xl-11 col-12 m-auto section4">
+      <div class="hotline">
+        <div class="hotline-scroll" #hotline>
+          <div class="hotline-cont" [ngClass]="{'positive': checkNumberPositive(item.recent)}" *ngFor="let item of liveMarkets">
+        <span class="hotline-name">
+          {{item.name}}
+        </span>
+            <span class="hotline-value">
+          {{item.value}}
+        </span>
+            <span class="hotline-recent">
+          {{checkNumberPositive(item.recent) ? '+' : ''}}{{item.recent}}%
+        </span>
+          </div>
+        </div>
+      </div>
+
       <div class="tab-content">
-          <div id="home" class="tab-pane active in  slider">
+        <div id="dashboard" [ngClass]="{'active': seletedTab === 'dashboard'}" class="tab-pane ">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="chart">
+                <div class="chart-head">
+                  <h3 class="chart-head-title">
+                    Portfolio Overview
+                  </h3>
+                  <button class="chart-btn btn">See More</button>
+                </div>
+
+                <div class="chart-body">
+                  <canvas baseChart height="200"
+                          [options]="lineChartOptions"
+                          [labels]="lineChartLabels"
+                          [datasets]="chartData"
+                          [chartType]="lineChartType"
+                  ></canvas>
+                </div>
+
+              </div>
+              <div class="chart">
+                <div class="chart-head">
+                  <h3 class="chart-head-title">
+                    My Collection
+                  </h3>
+                  <button class="chart-btn btn">See More</button>
+                </div>
+
+                <div class="chart-body">
+                  <input #search class="search" type="text" placeholder="Search..." (keydown.enter)="onSearch(search.value)">
+                  <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+                </div>
+
+                <div class="chart-footer chart-btn-group">
+                    <button type="button" class="btn chart-btn">ADD/UPDATE WORKS</button>
+                    <button type="button" class="btn chart-btn">VIEW TRANSANCTIONS</button>
+                    <button type="button" class="btn chart-btn">SECURITIES INFO</button>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-6">
+
+
+
+              <div class="chart">
+                <div class="chart-head">
+                  <h3 class="chart-head-title">
+                    Markets Trends
+                  </h3>
+                  <div class="chart-labels">
+                    <span (click)="this.chartMarketsData = this.selectedArt.DayData; chartPeriodMarketId = 0 " [ngClass]="{'active' : chartPeriodMarketId == 0 }">
+                  1D
+                </span>
+                    <span (click)="this.chartMarketsData = this.selectedArt.WeekData; chartPeriodMarketId = 1 " [ngClass]="{'active' : chartPeriodMarketId == 1 }">
+                  1W
+                </span>
+                    <span (click)="this.chartMarketsData = this.selectedArt.MonthData; chartPeriodMarketId = 2 " [ngClass]="{'active' : chartPeriodMarketId == 2 }">
+                  1M
+                </span>
+                    <span (click)="this.chartMarketsData = this.selectedArt.ThreeMonthData; chartPeriodMarketId = 3 " [ngClass]="{'active' : chartPeriodMarketId == 3 }">
+                  3M
+                </span>
+                    <span (click)="this.chartMarketsData = this.selectedArt.YearMonthData; chartPeriodMarketId = 4 " [ngClass]="{'active' : chartPeriodMarketId == 4 }">
+                  1Y
+                </span>
+                    <span (click)="this.chartMarketsData = this.selectedArt.AllMonthData; chartPeriodMarketId = 5 " [ngClass]="{'active' : chartPeriodMarketId == 5 }">
+                  ALL
+                </span>
+                  </div>
+                </div>
+
+                <div class="chart-body chart-grid">
+                  <canvas baseChart height="200"
+                          [options]="lineChartMarketOptions"
+                          [labels]="lineChartLabels"
+                          [datasets]="chartMarketsData"
+                          [chartType]="lineChartType"
+                  ></canvas>
+                  <canvas baseChart height="200"
+                          [options]="lineChartMarketOptions"
+                          [labels]="lineChartLabels"
+                          [datasets]="chartMarketsData"
+                          [chartType]="lineChartType"
+                  ></canvas>
+                  <canvas baseChart height="200"
+                          [options]="lineChartMarketOptions"
+                          [labels]="lineChartLabels"
+                          [datasets]="chartMarketsData"
+                          [chartType]="lineChartType"
+                  ></canvas>
+                  <canvas baseChart height="200"
+                          [options]="lineChartMarketOptions"
+                          [labels]="lineChartLabels"
+                          [datasets]="chartMarketsData"
+                          [chartType]="lineChartType"
+                  ></canvas>
+                </div>
+
+              </div>
+
+
+
+
+              <div class="chart">
+                <div class="chart-head">
+                  <h3 class="chart-head-title">
+                    Recent Sales
+                  </h3>
+                </div>
+
+                <div class="chart-body">
+                  <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+                </div>
+
+              </div>
+
+              <div class="chart">
+                <div class="chart-head">
+                  <h3 class="chart-head-title">
+                    News
+                  </h3>
+                </div>
+
+                <div class="chart-body">
+                  <app-news-card  *ngFor="let new of news" data="{{new | json}}"> </app-news-card>
+
+                </div>
+
+              </div>
+
+
+
+
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+
+          <div id="home" [ngClass]="{'active': seletedTab === 'home'}" class="tab-pane ">
               <div class="row" >
                   <div class="col-xl-6 col-sm-12 d-flex ">
                     <div class="charts-left-part">
                       <h5>Market Value</h5>
-                      <div class="wrapper">                      
+                      <div class="wrapper">
                         <canvas id="MarketValueChart" width="487" height="312"></canvas>
                       </div>
                     </div>
@@ -51,7 +256,7 @@
                   <div class="col-xl-6 col-sm-12 d-flex ">
                    <div class="charts-right-part">
                       <h5>Statistics Of Artworks</h5>
-                      <div class="wrapper">                      
+                      <div class="wrapper">
                         <canvas id="StatisticOfArtworks" width="487" height="312"></canvas>
                       </div>
                   </div>
@@ -64,7 +269,7 @@
               </div>
 
               <div class="row justify-content-center  artworks-block" style="overflow: hidden; height: 400px">
-                  <div class="col-xl-11 col-12">                  
+                  <div class="col-xl-11 col-12">
                     <div class="row gallery-block" [class.show]="showMoreGallery">
                         <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
                             <div class="overlay-2"></div>
@@ -134,286 +339,338 @@
                 </div>
 
           </div>
-          <div id="collection" class="tab-pane  fade">
+          <div id="collection" [ngClass]="{'active': seletedTab === 'collection'}" class="tab-pane ">
+          <div class="row">
 
 
-            <div class="row justify-content-center works-block">
-              <div class="col-xl-11 col-12 d-flex">
-                <span class="block-name m-auto">Works</span>
+
+
+
+            <div class="col-lg-8 collection-detail" >
+
+
+              <div *ngIf="selectedArt" class=" m-auto main-art-cont" >
+                <img [src]="selectedArt.thumb" class="img-responsive" alt="" >
+                <div class="main-art-detail">
+
+                  <div class="main-art-name">
+                    <span>
+                      {{selectedArt.name}}
+                    </span>
+                  </div>
+
+                  <div >
+                    <div class="d-flex main-art-author" >
+
+                      <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;
+                      <span class="info2-collection">
+                        {{selectedArt.author}}
+                      </span>
+
+                    </div>
+                    <div class="d-flex main-art-location icon-wrapper">
+                      <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;
+                      <span class="info2-collection">
+                        {{selectedArt.location}}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <div *ngIf="selectedArt" class="art-chart">
+
+
+                <div class="art-chart-data">
+                </div>
+
+
+                <canvas baseChart height="200"
+                        [options]="lineChartOptions"
+                        [labels]="lineChartLabels"
+                        [datasets]="chartData"
+                        [chartType]="lineChartType"
+                ></canvas>
+
+                <div class="chart-labels">
+                  <span (click)="this.chartData = this.selectedArt.DayData; chartPeriodId = 0 " [ngClass]="{'active' : chartPeriodId == 0 }">
+                  1D
+                </span>
+                  <span (click)="this.chartData = this.selectedArt.WeekData; chartPeriodId = 1 " [ngClass]="{'active' : chartPeriodId == 1 }">
+                  1W
+                </span>
+                  <span (click)="this.chartData = this.selectedArt.MonthData; chartPeriodId = 2 " [ngClass]="{'active' : chartPeriodId == 2 }">
+                  1M
+                </span>
+                  <span (click)="this.chartData = this.selectedArt.ThreeMonthData; chartPeriodId = 3 " [ngClass]="{'active' : chartPeriodId == 3 }">
+                  3M
+                </span>
+                  <span (click)="this.chartData = this.selectedArt.YearMonthData; chartPeriodId = 4 " [ngClass]="{'active' : chartPeriodId == 4 }">
+                  1Y
+                </span>
+                  <span (click)="this.chartData = this.selectedArt.AllMonthData; chartPeriodId = 5 " [ngClass]="{'active' : chartPeriodId == 5 }">
+                    ALL
+                  </span>
+                </div>
+              </div>
+
+              <div *ngIf="selectedArt" class="col-lg-12">
+                <div class="row">
+
+
+                  <div class="col-lg-6">
+                    <div class="art-stat-cart">
+                    <span>
+                      Your Equity
+                    </span>
+                      <h3>
+                        <b>${{selectedArt.equity}}</b>
+                      </h3>
+                      <div>
+                        <div class="art-stat-row">
+                        <span>
+                          Cost
+                        </span>
+                          <span>
+                          ${{selectedArt.cost}}
+                        </span>
+                        </div>
+                        <div class="art-stat-row">
+                        <span>
+                          Today's Return
+                        </span>
+                          <span>
+                          {{selectedArt.todayReturn}}
+                        </span>
+                        </div>
+                        <div class="art-stat-row">
+                        <span>
+                          Total Return
+                        </span>
+                          <span>
+                          {{selectedArt.totalReturn}}
+                        </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="art-stat-cart">
+                    <span>
+                      Your Average Cost
+                    </span>
+                      <h3>
+                        <b>${{selectedArt.averageCost}}</b>
+                      </h3>
+                      <div>
+                        <div class="art-stat-row">
+                        <span>
+                          Shares
+                        </span>
+                          <span>
+                          {{selectedArt.shares}}
+                        </span>
+                        </div>
+                        <div class="art-stat-row">
+                        <span>
+                          Portfolio Diversity
+                        </span>
+                          <span>
+                          {{selectedArt.portfolioDiversity}}%
+                        </span>
+                        </div>
+                        <div class="art-stat-row">
+                        <span>
+                          Cash hold for Exercise
+                        </span>
+                          <span>
+                          ${{selectedArt.cashholdExercise}}
+                        </span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div *ngIf="selectedArt" class="col-lg-12">
+                <div class="art-stat-about">
+                  <h3>
+                    About
+                  </h3>
+                  <p>
+                    {{selectedArt.about}}
+                  </p>
+                </div>
+              </div>
+              <div *ngIf="selectedArt" class="col-lg-12">
+                <div class="art-stat-additional-cont">
+                  <div class="art-stat-additional-column">
+                    <div >
+                      <span>CEO</span>
+                      <span>
+                      <a href="#">
+                        {{selectedArt.ceo ? selectedArt.ceo : '-'}}
+                      </a>
+                    </span>
+                    </div>
+                    <div >
+                      <span>Employees</span>
+                      <span>
+                      {{selectedArt.employees ? selectedArt.employees : '-'}}
+                    </span>
+                    </div>
+                    <div >
+                      <span>Headquarters</span>
+                      <span>
+                      {{selectedArt.headquarters ? selectedArt.headquarters : '-'}}
+                    </span>
+                    </div>
+                    <div >
+                      <span>Founded</span>
+                      <span>
+                      {{selectedArt.founded ? selectedArt.founded : '-'}}
+                    </span>
+                    </div>
+                  </div>
+
+                  <div class="art-stat-additional-column">
+
+                    <div >
+                      <span>Market Cup</span>
+                      <span>
+                      {{selectedArt.marketCup ? selectedArt.marketCup : '-'}}
+                    </span>
+                    </div>
+                    <div >
+                      <span>Price-Earnings Ratio</span>
+                      <span>
+                      {{selectedArt.priceEarningsRatio ? selectedArt.priceEarningsRatio : '-'}}
+                    </span>
+                    </div>
+                    <div >
+                      <span>Dividend Yield</span>
+                      <span>
+                      {{selectedArt.dividendYield ? selectedArt.dividendYield : '-'}}
+                    </span>
+                    </div>
+                    <div >
+                      <span>Average Volume</span>
+                      <span>
+                      {{selectedArt.averageVolume ? selectedArt.averageVolume : '-'}}
+                    </span>
+                    </div>
+
+                  </div>
+
+                  <div class="art-stat-additional-column">
+                    <div >
+                      <span>High Today</span>
+                      <span>
+                      ${{selectedArt.highToday ? selectedArt.highToday : '-'}}
+                    </span>
+                    </div>
+                    <div >
+                      <span>Low Today</span>
+                      <span>
+                      ${{selectedArt.lowToday ? selectedArt.lowToday : '-'}}
+                    </span>
+                    </div>
+                    <div >
+                      <span>Open Price</span>
+                      <span>
+                      ${{selectedArt.openPrice ? selectedArt.openPrice : '-'}}
+                    </span>
+                    </div>
+                  </div>
+
+                  <div class="art-stat-additional-column">
+                    <div >
+                      <span>Volume</span>
+                      <span>
+                      {{selectedArt.volume ? selectedArt.volume : '-'}}K
+                    </span>
+                    </div>
+                    <div >
+                      <span>52 Week High</span>
+                      <span>
+                      {{selectedArt.weekHigh ? selectedArt.weekHigh : '-'}}
+                    </span>
+                    </div>
+                    <div >
+                      <span>52 Week Low</span>
+                      <span>
+                      ${{selectedArt.weekLow ? selectedArt.weekLow : '-'}}
+                    </span>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+              </div>
+
             </div>
-            <div class="row m-auto artworks-block" >
 
-              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
-                <div class="row m-auto">
-                  <div class="col-lg-6 col-12">
-                    <div class="card-wrapper-collection">
-                      <div class="hovereffect m-auto" style="width: 270px">
-                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
-                        <div class="overlay-2"></div>
-                        <div class="overlay m-0">
 
-                          <div class="col d-flex top-part-collection">
-                            <span class="title-white">The Starry Night</span>
-                          </div>
-                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
 
-                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
 
-                            </div>
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
-                            </div>
-                          </div>
-                        </div>
+
+            <div class="col-lg-4 collection-sidebar">
+              <input type="text" class="form-control looking-field" (keyup)="myCollectionSearch($event)" placeholder="What are you looking for?" aria-label="Recipient's username" aria-describedby="basic-addon2">
+
+              <div class="collection-card" (click)="openDetail(art)" *ngFor="let art of artArr">
+                <div class="hovereffect m-auto">
+                  <img [src]="art.thumb" class="img-responsive" alt="" >
+                  <div class="overlay-2"></div>
+                  <div class="overlay m-0">
+
+                    <div class="col d-flex top-part-collection">
+                    <span class="title-white">
+                      {{art.name}}
+                    </span>
+                    </div>
+                    <div class="col d-flex bot-part-collection">
+                      <div class="d-flex  icon-wrapper">
+
+                        <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;
+                        <span class="info2-collection">
+                        {{art.author}}
+                      </span>
+
                       </div>
-                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
-                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Current value</span></div>
-                          <div class="m-auto"><span class="currency-amount">90$</span></div>
-                        </div>
-                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
-                          <div class="m-auto"><span class="currency-amount">100$</span></div>
-                        </div>
+                      <div class="d-flex  icon-wrapper">
+                        <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;
+                        <span class="info2-collection">
+                        {{art.location}}
+                      </span>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-6 col-12">
-                    <div class="m-auto chart-box-collection">
-                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
-                    </div>
+                </div>
+                <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
+                  <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
+                    <div class="m-auto"><span class="currency-title">Current value</span></div>
+                    <div class="m-auto"><span class="currency-amount">{{art.currentVal}}$</span></div>
+                  </div>
+                  <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
+                    <div class="m-auto"><span class="currency-title">Purchase price</span></div>
+                    <div class="m-auto"><span class="currency-amount">{{art.purchasedPrice}}$</span></div>
                   </div>
                 </div>
               </div>
 
-
-              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
-                <div class="row m-auto">
-                  <div class="col-lg-6 col-12">
-                    <div class="card-wrapper-collection">
-                      <div class="hovereffect m-auto" style="width: 270px">
-                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
-                        <div class="overlay-2"></div>
-                        <div class="overlay m-0">
-
-                          <div class="col d-flex top-part-collection">
-                            <span class="title-white">The Starry Night</span>
-                          </div>
-                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-
-                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
-
-                            </div>
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
-                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Current value</span></div>
-                          <div class="m-auto"><span class="currency-amount">90$</span></div>
-                        </div>
-                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
-                          <div class="m-auto"><span class="currency-amount">100$</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-12">
-                    <div class="m-auto chart-box-collection">
-                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
-                <div class="row m-auto">
-                  <div class="col-lg-6 col-12">
-                    <div class="card-wrapper-collection">
-                      <div class="hovereffect m-auto" style="width: 270px">
-                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
-                        <div class="overlay-2"></div>
-                        <div class="overlay m-0">
-
-                          <div class="col d-flex top-part-collection">
-                            <span class="title-white">The Starry Night</span>
-                          </div>
-                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-
-                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
-
-                            </div>
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
-                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Current value</span></div>
-                          <div class="m-auto"><span class="currency-amount">90$</span></div>
-                        </div>
-                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
-                          <div class="m-auto"><span class="currency-amount">100$</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-12">
-                    <div class="m-auto chart-box-collection">
-                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item ">
-                <div class="row m-auto">
-                  <div class="col-lg-6 col-12">
-                    <div class="card-wrapper-collection">
-                      <div class="hovereffect m-auto" style="width: 270px">
-                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
-                        <div class="overlay-2"></div>
-                        <div class="overlay m-0">
-
-                          <div class="col d-flex top-part-collection">
-                            <span class="title-white">The Starry Night</span>
-                          </div>
-                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-
-                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
-
-                            </div>
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
-                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Current value</span></div>
-                          <div class="m-auto"><span class="currency-amount">90$</span></div>
-                        </div>
-                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
-                          <div class="m-auto"><span class="currency-amount">100$</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-12">
-                    <div class="m-auto chart-box-collection">
-                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
-                <div class="row m-auto">
-                  <div class="col-lg-6 col-12">
-                    <div class="card-wrapper-collection">
-                      <div class="hovereffect m-auto" style="width: 270px">
-                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
-                        <div class="overlay-2"></div>
-                        <div class="overlay m-0">
-
-                          <div class="col d-flex top-part-collection">
-                            <span class="title-white">The Starry Night</span>
-                          </div>
-                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-
-                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
-
-                            </div>
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
-                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Current value</span></div>
-                          <div class="m-auto"><span class="currency-amount">90$</span></div>
-                        </div>
-                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
-                          <div class="m-auto"><span class="currency-amount">100$</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-12">
-                    <div class="m-auto chart-box-collection">
-                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-xl-6 col-lg-12 d-flex flex-column collection-item">
-                <div class="row m-auto">
-                  <div class="col-lg-6 col-12">
-                    <div class="card-wrapper-collection">
-                      <div class="hovereffect m-auto" style="width: 270px">
-                        <img src="./assets/imgs/136-collection-smooth.png" class="img-responsive" alt="" >
-                        <div class="overlay-2"></div>
-                        <div class="overlay m-0">
-
-                          <div class="col d-flex top-part-collection">
-                            <span class="title-white">The Starry Night</span>
-                          </div>
-                          <div class="col d-flex bot-part-collection" _ngcontent-c3="">
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-
-                              <svg style="margin: auto 0; height: 10px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="10" viewBox="0 0 13 13"><g transform="translate(-0.001)"><g transform="translate(0.001)"><path class="a" d="M6.5,0A6.5,6.5,0,1,0,13,6.5,6.5,6.5,0,0,0,6.5,0Zm.02,9.567H3.7c0-2.03,1.783-2.03,2.179-2.561l.045-.242A1.941,1.941,0,0,1,4.98,5.008,1.739,1.739,0,0,1,6.5,3.113a1.739,1.739,0,0,1,1.521,1.9,1.947,1.947,0,0,1-.934,1.749l.052.275C7.573,7.537,9.3,7.57,9.3,9.567Z" transform="translate(-0.001)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Vincent van Gogh</span>
-
-                            </div>
-                            <div class="d-flex  icon-wrapper" _ngcontent-c3="">
-                              <svg style="margin: auto 0; height: 12px; width: 10px" xmlns="http://www.w3.org/2000/svg"  height="12" viewBox="0 0 14 19.328"><g transform="translate(-70.573)"><g transform="translate(70.573)"><path class="a" d="M77.573,0a7.008,7.008,0,0,0-7,7c0,4.79,6.264,11.822,6.531,12.119a.631.631,0,0,0,.938,0c.267-.3,6.531-7.329,6.531-12.119A7.008,7.008,0,0,0,77.573,0Zm0,10.522A3.522,3.522,0,1,1,81.095,7,3.526,3.526,0,0,1,77.573,10.522Z" transform="translate(-70.573 0)"/></g></g></svg>&nbsp;<span class="info2-collection" _ngcontent-c3="">Zundert, Netherlands</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row" style="margin: auto; width: 270px; padding: 1rem 0px; ">
-                        <div class="col d-flex flex-column" style="border-right: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Current value</span></div>
-                          <div class="m-auto"><span class="currency-amount">90$</span></div>
-                        </div>
-                        <div class="col d-flex flex-column" style="border-left: 0.5px solid #707070">
-                          <div class="m-auto"><span class="currency-title">Purchase price</span></div>
-                          <div class="m-auto"><span class="currency-amount">100$</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-12">
-                    <div class="m-auto chart-box-collection">
-                      <img src="./assets/imgs/chart1.png" style="height: 192px; width: 270px;" alt="">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
             </div>
-
-
           </div>
-          <div id="market" class="tab-pane  fade">
+        </div>
+          <div id="market" [ngClass]="{'active': seletedTab === 'market'}" class="tab-pane  ">
            <div class="alert alert-success row" style="width: 100%" role="alert">
               <div class="col-xl-11 col" style="color: #FF6298; ">
                 Contemporary art 2.05%
@@ -565,9 +822,9 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
-          <div id="database" class="tab-pane  fade">
+          <div id="database" [ngClass]="{'active': seletedTab === 'database'}" class="tab-pane  ">
             <div class="row justify-content-center artworks-block">
               <div class="col-xl-11 col-12 d-flex">
                 <span class="block-name m-auto">Artworks</span>
@@ -575,7 +832,7 @@
             </div>
 
             <div class="row justify-content-center  artworks-block" style="overflow: hidden; height: 400px">
-                <div class="col-xl-11 col-12">                  
+                <div class="col-xl-11 col-12">
                   <div class="row gallery-block" [class.show]="showMoreGallery">
                       <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column">
                           <div class="overlay-2"></div>
@@ -615,7 +872,7 @@
                             Oil on canvas
                           </div>
                           <div style="text-align: center;">
-                              Opening of the Fifth Seal 
+                              Opening of the Fifth Seal
                           </div>
                           <div style="text-align: center;">
                             <img src="./assets/imgs/svg/user.svg" style="height: 18px; margin: auto 0;"> El Greco, 1608-1614
@@ -721,11 +978,11 @@
             </div>
 
           </div>
-          <div id="transaction" class="tab-pane fade">
+          <div id="transaction" [ngClass]="{'active': seletedTab === 'transaction'}" class="tab-pane ">
             <h3>Transaction</h3>
             <p>Some content in transactions</p>
           </div>
-          <div id="account" class="tab-pane fade">
+          <div id="account" [ngClass]="{'active': seletedTab === 'account'}" class="tab-pane ">
             <h3>Account</h3>
             <p>Some content in account</p>
           </div>

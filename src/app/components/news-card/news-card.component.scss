@@ -1,0 +1,21 @@
+.news{
+  margin-top: 20px;
+
+  &-thumb{
+    width: 100%;
+  }
+
+  &-title{
+    cursor: pointer;
+
+    &:hover{
+      color: #efc25f;
+    }
+
+  }
+
+  &-desc{
+
+  }
+
+}
