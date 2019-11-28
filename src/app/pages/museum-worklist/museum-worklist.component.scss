@@ -1,0 +1,53 @@
+.allarts-container {
+  margin: 50px 50px 70px 50px;
+}
+.art-container {
+  width: 90%;
+  height: 450px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.art-card {
+  width: 100%;
+  height: 400px;
+}
+
+.art-item {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.art-title {
+  width: 100%;
+  height: 50px;
+  margin: auto;
+  text-align: left;
+  padding-top: 20px;
+}
+
+.art-arttitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: .2em;
+  text-transform: capitalize;
+}
+
+.art-artist {
+  font-size: 1.0em;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+}
+
+dyn-page {
+  display: block;
+}
+
+dyn-page:nth-child(even) {
+  background-color: #ccc;
+}
+
+.loading {
+  text-align: center;
+}

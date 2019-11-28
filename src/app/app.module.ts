@@ -15,6 +15,11 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import {AppRoutingModule} from './app-routing.module';
 import {DataService} from './services/data.service';
 import {AuthenticationModule} from './shared';
+import { NguiInviewComponent } from './ngui-inview.component';
+import { NguiInviewDirective } from './ngui-inview.directive';
+
+import { DynamicPageComponent } from './pages/museum-worklist/dynamic-page.component';
+import { DynamicComponentService } from './pages/museum-worklist/dynamic.component.service';
 
 import {
   HeaderComponent,
@@ -40,6 +45,7 @@ import {
   ResetPasswordComponent,
   SocialAuthComponent,
   NewsDetailComponent,
+  MusuemWorklistComponent,
   ExhibitionComponent
 } from './pages';
 import {ChartsModule} from "ng2-charts";
@@ -68,6 +74,10 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     ForgetPasswordComponent,
     ResetPasswordComponent,
     SocialAuthComponent,
+    MusuemWorklistComponent,
+    NguiInviewComponent,
+    NguiInviewDirective,
+    DynamicPageComponent
     NewsCardComponent,
     ExhibitionComponent
   ],
@@ -91,7 +101,8 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     }),
     Ng2SmartTableModule
   ],
-  providers: [DataService],
+  providers: [DataService, DynamicComponentService],
+  entryComponents: [ DynamicPageComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
