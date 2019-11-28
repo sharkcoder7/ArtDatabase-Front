@@ -21,6 +21,17 @@ div.author-info {
   div.author-years {
     margin: auto 0 1.5rem 0;
   }
+
+  button.save-artist {
+    color: white !important;
+    padding: 0.3rem;
+    background: #000080;
+    border: 1px solid #000080;
+    border-radius: 5px;
+    width: 230px;
+    text-align: center;
+    height: 40px;
+  }
 }
 
 img.img-responsive {
@@ -284,6 +295,10 @@ div {
         margin: auto 0;
       }
     }
+
+    div.works-navigation{
+      text-align: center;
+    }
   }
 
   &.section-3 div.hovereffect span.info2 {
@@ -328,16 +343,18 @@ div {
       }
 
       &.artworks-block {
-        margin: 0 0 3rem 0;
+        margin: 0 0 5rem 0;
+        text-align: center;
 
         span.block-name {
           font-size: 44px;
           color: rgba(0, 0, 0, 0.5);
         }
+
       }
     }
 
-    button.view-all, button.save-artist {
+    button.view-all {
       color: white !important;
       padding: 0.3rem;
       background: #000080;
@@ -374,8 +391,19 @@ div {
     }
   }
 
+  &.section-5 {
+    .exhibition-block {
+      margin: 0 0 3em 0 !important;
+      text-align: center;
+  }
+
   &.gallery-block div.flex-column {
     margin: 0.5rem 0;
+  }
+
+  span.block-name {
+    font-size: 44px;
+    color: rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -446,4 +474,5 @@ div {
       }
     }
   }
+}
 }

@@ -19,6 +19,9 @@ import {NewsComponent} from './pages/news/news.component';
 import {NewsDetailComponent} from './pages/news-detail/news-detail.component';
 import { MuseumsComponent } from './pages/museums/museums.component';
 import { CalendarComponent } from './pages';
+import { ExhibitionComponent } from './pages/exhibition/exhibition.component';
+
+ExhibitionComponent
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -38,6 +41,8 @@ const routes: Routes = [
   {path: 'calendar', component: CalendarComponent},
   {path: 'news', component: NewsComponent},
   {path: 'news/:id', component: NewsDetailComponent},
+  {path: 'exhibition/:id', component: ExhibitionComponent},
+
   {path: '**', redirectTo: '/'}
 ];
 
