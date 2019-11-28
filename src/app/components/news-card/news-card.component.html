@@ -1,0 +1,13 @@
+<div  class="row news" >
+  <div class="col-4">
+    <img [src]="news.videolink" class="img-responsive news-thumb">
+  </div>
+  <div class="col-8">
+    <h2 class="news-title" [routerLink]="['/news/', news.id]">
+      {{ news.title }}
+    </h2>
+    <p class="news-desc">
+      {{ news.description }}
+    </p>
+  </div>
+</div>
