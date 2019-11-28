@@ -39,7 +39,8 @@ import {
   ForgetPasswordComponent,
   ResetPasswordComponent,
   SocialAuthComponent,
-  NewsDetailComponent
+  NewsDetailComponent,
+  ExhibitionComponent
 } from './pages';
 import {ChartsModule} from "ng2-charts";
 import { NewsCardComponent } from './components/news-card/news-card.component';
@@ -67,7 +68,8 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     ForgetPasswordComponent,
     ResetPasswordComponent,
     SocialAuthComponent,
-    NewsCardComponent
+    NewsCardComponent,
+    ExhibitionComponent
   ],
   imports: [
     BrowserModule,
