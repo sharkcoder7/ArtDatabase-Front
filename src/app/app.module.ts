@@ -77,7 +77,7 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     MusuemWorklistComponent,
     NguiInviewComponent,
     NguiInviewDirective,
-    DynamicPageComponent
+    DynamicPageComponent,
     NewsCardComponent,
     ExhibitionComponent
   ],
