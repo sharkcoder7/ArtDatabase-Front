@@ -45,7 +45,8 @@ import {
   ResetPasswordComponent,
   SocialAuthComponent,
   NewsDetailComponent,
-  MusuemWorklistComponent
+  MusuemWorklistComponent,
+  ExhibitionComponent
 } from './pages';
 import {ChartsModule} from "ng2-charts";
 import { NewsCardComponent } from './components/news-card/news-card.component';
@@ -77,7 +78,8 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     NguiInviewComponent,
     NguiInviewDirective,
     DynamicPageComponent
-    NewsCardComponent
+    NewsCardComponent,
+    ExhibitionComponent
   ],
   imports: [
     BrowserModule,

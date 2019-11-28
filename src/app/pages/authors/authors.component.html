@@ -7,16 +7,14 @@
         <span class=" w-100">{{author['lastName']}}</span>
       </div>
       <div class="author-story"><p> {{author['bio']}}</p></div>
-      <div class=" d-flex w-100">
-        <button class="btn save-artist">Save artist</button>
+      <div class="d-flex w-100">
+        <button class="btn btn-warning save-artist">Save Artist</button>
       </div>
 
     <div class="d-flex arrows-holder">
       <button class="btn btn-light next-arrow-transp"><img style="height: 20px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-left.svg"></button>
       <button class="btn btn-light next-arrow-transp"><img style="height: 20px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-right-gray.svg"></button>
     </div>
-
-
   </div>
 
 
@@ -33,7 +31,7 @@
   <div class="col-xl-4 col-md-6  col-12  d-flex">
     <div class="col d-flex">
       <div class="right-img-wrapper">
-      <img class="right-img " src="./assets/imgs/vincent-vangogh-3-authors.png" alt="">
+      <img class="right-img borderImage" src="./assets/imgs/vincent-vangogh-3-authors.png" alt="">
     </div>
     </div>
   </div>
@@ -94,11 +92,11 @@
   </div>
   <div class="col-xl-3  d-none d-lg-block "></div>
 </div>
-<div class="row section-4">
+<div class="row section-4 col-12">
   <div class="col about-left">
     <div class="row justify-content-center artworks-block">
       <div class="col-xl-12 col-12 d-flex">
-        <span class="block-name m-auto">Work Gallery</span>
+        <span class="block-name m-auto">Works</span>
       </div>
     </div>
     <div class="row justify-content-center artworks-block">
@@ -122,12 +120,45 @@
            </div>
           </div>
         </div>
-        <div class="pb-0 pt-3">
+        <div class="works-navigation">
           <a class="btn btn-default button-navigate" (click)="getArtworks(artworksPagination['prev'])">Prev</a>
           <a class="btn btn-default button-navigate" (click)="getArtworks(artworksPagination['next'])">Next</a>
-          <!--  <button class="btn btn-warning view-all m-auto" (click)="viewAllGallery()"><span *ngIf="!showMoreGallery">View all</span><span *ngIf="showMoreGallery">View first</span></button> -->
       </div>
     </div>
-
   </div>
 </div>
+
+<div class="row section-5 col-12">
+    <div class="col about-left">
+      <div class="row justify-content-center exhibition-block">
+        <div class="col-xl-12 col-12 d-flex">
+          <span class="block-name m-auto">Exhibitions</span>
+        </div>
+      </div>
+      <div class="row justify-content-center exhibition-block">
+          <div class="col-xl-11 col-12">
+            <div class="row cshow" id="galleryGrid">
+              <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column" *ngFor="let exhibition of exhibitions">
+                <div class="hovereffect m-auto flex-column" [routerLink]="['/exhibition/' + exhibition.id]">
+                  <div class="slider-block"> {{exhibition['title']}}</div>
+                  <div>
+                    <img class="img-responsive borderImage" src="{{exhibition['imageLink']}}" alt="" width="100%" >
+                  </div>
+                  <div class="slider-block"> {{exhibition['description']}}</div>
+                  <div style="align-self: center;">
+                      <div style="text-align: left;padding-right: 40px;">
+                        <img src="./assets/imgs/svg/clock.svg" style="height: 18px; margin: auto 0;"> Year <br>
+                        <img src="./assets/imgs/svg/location.svg" style="height: 18px; margin: auto 0;"> Location
+                      </div>
+                  </div>
+               </div>
+              </div>
+            </div>
+            <div class="works-navigation">
+              <a class="btn btn-default button-navigate" (click)="getArtworks(artworksPagination['prev'])">Prev</a>
+              <a class="btn btn-default button-navigate" (click)="getArtworks(artworksPagination['next'])">Next</a>
+          </div>
+        </div>
+    </div>
+</div>
+

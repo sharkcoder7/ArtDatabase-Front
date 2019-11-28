@@ -17,3 +17,4 @@ export * from './forget-password/forget-password.component';
 export * from './reset-password/reset-password.component';
 export * from './news-detail/news-detail.component';
 export * from './museum-worklist/museum-worklist.component';
+export * from './exhibition/exhibition.component';
