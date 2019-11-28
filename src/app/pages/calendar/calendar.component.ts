@@ -32,9 +32,10 @@ export class CalendarComponent implements OnInit {
   calendarSelectable = true;
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
   calendarWeekends = true;
+  eventLimit = true;
   calendarEvents: EventInput[] = [
     { title: 'Awesome Exhibition', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 1',id: 'one', tprice: '$120' },
-    { title: 'Exhibition One', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 2', id: 'two', tprice: '$100' }
+    { title: 'Exhibition One', start: new Date(), end: new Date('2019-11-27 15:30:00'), museum: 'Museum 2', id: 'two', tprice: '$100' }
   ];
   modalData = {
     title: '',
@@ -73,7 +74,6 @@ export class CalendarComponent implements OnInit {
   }
 
   eventClick(arg): void {
-    console.log(arg);
     for (let event in this.calendarEvents) {
       if (this.calendarEvents[event].id == arg.id) {
         this.modalData.tprice = this.calendarEvents[event].tprice;

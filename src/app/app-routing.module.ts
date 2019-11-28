@@ -18,7 +18,8 @@ import {ResetPasswordComponent} from './pages/reset-password/reset-password.comp
 import {NewsComponent} from './pages/news/news.component';
 import {NewsDetailComponent} from './pages/news-detail/news-detail.component';
 import { MuseumsComponent } from './pages/museums/museums.component';
-import { CalendarComponent } from './pages';
+import { CalendarComponent } from './pages/calendar/calendar.component';
+import { MusuemWorklistComponent } from './pages/museum-worklist/museum-worklist.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'terms', component: ConditionsComponent},
   {path: 'dashboard', component: DashbboardComponent},
   {path: 'museums', component: MuseumsComponent},
+  {path: 'museums/:id', component: MusuemWorklistComponent},
   {path: 'calendar', component: CalendarComponent},
   {path: 'news', component: NewsComponent},
   {path: 'news/:id', component: NewsDetailComponent},
