@@ -1,6 +1,7 @@
 import {Component, OnInit, HostListener, ElementRef, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DataService} from "../../services/data.service";
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-authors',
@@ -21,12 +22,14 @@ export class AuthorsComponent implements OnInit {
   author = [];
   artworks = [];
   artworksPagination = [];
+  exhibitions = [];
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.getArtworks();
+    this.getExhibitions(this.route.snapshot.paramMap.get('idAuthor'));
     
     this.dataService.getArtist(this.route.snapshot.paramMap.get('id')).subscribe((data: any[]) => {
       console.log(data);
@@ -54,8 +57,35 @@ export class AuthorsComponent implements OnInit {
     });
   }
 
-
-
+  getExhibitions(idAuthor){
+    this.exhibitions = [
+      {
+        title: 'Serial Classic',
+        description: 'Exhibition ‘Serial Classic’',
+        imageLink: './assets/imgs/exhibition1.jpg',
+        id: 1
+      },
+      {
+        title: 'PichiAvo',
+        description: 'Classic art and sculpture meets graffiti ',
+        imageLink: './assets/imgs/exhibition2.jpg',
+        id: 2
+      },
+      {
+        title: 'MADSAKI',
+        description: 'MADSAKI reveals that the',
+        imageLink: './assets/imgs/exhibition1.jpg',
+        id: 3
+      },
+      {
+        title: 'Exhibition 4',
+        description: 'Exhibition 1 description',
+        imageLink: './assets/imgs/exhibition4.jpg',
+        id: 4
+      }
+    ];
+   
+  }
 
   showMore() {
     this.showMoreFlag = !this.showMoreFlag;
