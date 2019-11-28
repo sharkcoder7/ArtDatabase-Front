@@ -15,7 +15,7 @@ export class MuseumsComponent implements OnInit {
   lat = -73.958965;
   lng = 40.782933;
   images;
-  itemsPerSlide = 3;
+  itemsPerSlide = 4;
   singleSlideOffset = true;
   noWrap = false;
 
@@ -24,6 +24,8 @@ export class MuseumsComponent implements OnInit {
       name: 'Guggenheim',
       city: 'New York',
       street: 'New York',
+      opentime: '10:00 ~ 18:00',
+      ticketprice: '$200',
       description: 'A very brief, but still description summary of what artworkm styles, ad artists are popularly kept in this museum, when it was built, and any prominent cultural significance',
       building: 'https://i0.wp.com/www.guggenheim.org/wp-content/uploads/2016/05/gen-news20160526-bluestarmuseums-srgm2.jpg.jpg?w=870&zoom=2',
       interior: 'https://images.squarespace-cdn.com/content/v1/575ebcef2eeb81ff5b6cede9/1465921183763-OPFRLUU2TYW9E4OIPFHR/ke17ZwdGBToddI8pDm48kL9Y0ApcsgXOnv9LqlH3ohZ7gQa3H78H3Y0txjaiv_0fMpLXJDHshpzSe4ApxGrjXRcoGvJngZE4O0LzcE_YvX8YQuTHq4TUfa9obxc6bUph8eSOYnNd9sCB8xjAo8q6BvApyh6NsI3juLutxTva2hgqXPCabsorJQnZknVrmngl-XRv0YPUlDSm2SgGNJ8Z5A/D+Guggenheim+38.JPG',
@@ -32,6 +34,7 @@ export class MuseumsComponent implements OnInit {
       exhibitionLink: 'Exhibitions Held/Being Currnetly Held',
       held: 'Exhibitions Held/Being Currnetly Held',
       exhibitionArts: 'Each exhibition has works that belong to it that were exhibited there. ',
+      id: '1'
     }
     this.images = [
       {url: './assets/imgs/16.png', title: 'Painting by Artist'},

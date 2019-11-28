@@ -5,12 +5,14 @@
         <h2>{{ museum.name }},</h2>
         <h3>{{ museum.city }},</h3>
         <h4>{{ museum.street }},</h4>
+        <h5><i>{{ museum.opentime }},</i></h5>
+        <h5>{{ museum.ticketprice }},</h5>
         <p>{{ museum.description }}</p>
         <button class="btn btn-outline-dark bnt-md" style="margin-bottom: 20px;">Save Museum?</button>
         <div class="row">
           <div class="col-md-12">
-            <button class="btn btn-info next-arrow-transp"><img style="height: 12px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-left.svg"></button>
-            <button class="btn btn-info next-arrow-transp"><img style="height: 12px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-right.svg"></button>
+            <button class="btn btn-info next-arrow-transp" style="margin-right: 5px;"><img style="height: 12px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-left.svg"></button>
+            <button class="btn btn-info next-arrow-transp" style="margin-left: 5px;"><img style="height: 12px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-right.svg"></button>
           </div>
         </div>
       </div>
@@ -51,10 +53,12 @@
       </div>
     </div>
   </div>
-
   <div class="col-lg-12">
     <div class="row">
       <div class="col-md-12">
+        <div class="seeall-section">
+          <a [routerLink]="['/museums/', museum.id]">See All</a>
+        </div>
         <carousel [itemsPerSlide]="itemsPerSlide"
                   [singleSlideOffset]="singleSlideOffset"
                   [noWrap]="noWrap"
