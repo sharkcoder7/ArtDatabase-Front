@@ -14,6 +14,11 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {DataService} from './services/data.service';
 import {AuthenticationModule} from './shared';
+import { NguiInviewComponent } from './ngui-inview.component';
+import { NguiInviewDirective } from './ngui-inview.directive';
+
+import { DynamicPageComponent } from './pages/museum-worklist/dynamic-page.component';
+import { DynamicComponentService } from './pages/museum-worklist/dynamic.component.service';
 
 import {
   HeaderComponent,
@@ -38,7 +43,8 @@ import {
   ForgetPasswordComponent,
   ResetPasswordComponent,
   SocialAuthComponent,
-  NewsDetailComponent
+  NewsDetailComponent,
+  MusuemWorklistComponent
 } from './pages';
 
 @NgModule({
@@ -63,7 +69,11 @@ import {
     CalendarComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    SocialAuthComponent
+    SocialAuthComponent,
+    MusuemWorklistComponent,
+    NguiInviewComponent,
+    NguiInviewDirective,
+    DynamicPageComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +93,8 @@ import {
       apiKey: 'AIzaSyAdCdzc_SvwQ0j4xZjl9RI2szAO4jc4toA'
     })
   ],
-  providers: [DataService],
+  providers: [DataService, DynamicComponentService],
+  entryComponents: [ DynamicPageComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

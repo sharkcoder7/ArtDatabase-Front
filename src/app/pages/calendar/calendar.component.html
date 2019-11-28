@@ -7,6 +7,7 @@
             <div class='app-calendar'>
               <full-calendar
                 #calendar
+                [eventLimit]="eventLimit"
                 [selectable]="calendarSelectable"
                 [header]="{
                   left: 'prev,next today',
@@ -74,10 +75,10 @@
     </div>
   </div>
   <ng-template #modalContent let-close="close">
-    <div class="modal-header">
+    <div class="modal-header" style="background-color: #f6ede4;">
       <h5 class="modal-title">Event Description</h5>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" style="background-color: #f6ede4;">
       <div>
         Title:
         <pre>{{ modalData?.title }}</pre>
@@ -99,7 +100,7 @@
         <pre>{{ modalData?.tprice }}</pre>
       </div>
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer" style="background-color: #f6ede4;">
       <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
     </div>
   </ng-template>
