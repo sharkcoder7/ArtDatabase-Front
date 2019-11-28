@@ -19,10 +19,15 @@ export class AuthorsComponent implements OnInit {
   showMoreGallery = false;
   showMoreFlag = false;
   author = [];
+  artworks = [];
+  artworksPagination = [];
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
   }
+
   ngOnInit() {
+    this.getArtworks();
+    
     this.dataService.getArtist(this.route.snapshot.paramMap.get('id')).subscribe((data: any[]) => {
       console.log(data);
       this.author = data['data'];
@@ -42,6 +47,12 @@ export class AuthorsComponent implements OnInit {
    this.showMoreGallery = !this.showMoreGallery;
   }
 
+  getArtworks(url?: string) {
+    this.dataService.getArtworks(url).subscribe((data: any[]) => {
+      this.artworks = data['data'];
+      this.artworksPagination = data['links'];
+    });
+  }
 
 
 
