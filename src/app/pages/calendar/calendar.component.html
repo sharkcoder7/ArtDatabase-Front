@@ -26,17 +26,17 @@
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 secondsection">
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-6">
-          <button class="btn btn-outline-dark btn-lg">View Exhibitions</button>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pressed="true" autocomplete="off" (click)="viewExibitions()">View Exhibitions</button>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-          <button class="btn btn-outline-dark btn-lg">View Lectures and Talks</button>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pressed="true" autocomplete="off" (click)="viewLectures()">View Lectures and Talks</button>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-          <button class="btn btn-outline-dark btn-lg">View Actions</button>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pressed="true" autocomplete="off" (click)="viewActions()">View Actions</button>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-6">
-          <button class="btn btn-outline-dark btn-lg">View Museum Events</button>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pressed="true" autocomplete="off" (click)="viewEvents()">View Museum Events</button>
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
               <div class="radiosection">
                 <div class="form-check" style="margin-bottom: .5em;">
                   <label class="form-check-label" for="radio1">
-                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1"> <span style="padding-left: .5em;">Kilometers</span>
+                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked> <span style="padding-left: .5em;">Kilometers</span>
                   </label>
                 </div>
                 <div class="form-check">
@@ -69,9 +69,6 @@
           <p></p>
         </div>
       </div>
-    </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 forthsection">
-      <p></p>
     </div>
   </div>
   <ng-template #modalContent let-close="close">
