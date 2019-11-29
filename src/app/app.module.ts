@@ -17,8 +17,6 @@ import {DataService} from './services/data.service';
 import {AuthenticationModule} from './shared';
 import { NguiInviewComponent } from './ngui-inview.component';
 import { NguiInviewDirective } from './ngui-inview.directive';
-
-import { DynamicPageComponent } from './pages/museum-worklist/dynamic-page.component';
 import { DynamicComponentService } from './pages/museum-worklist/dynamic.component.service';
 
 import {
@@ -46,7 +44,9 @@ import {
   SocialAuthComponent,
   NewsDetailComponent,
   MusuemWorklistComponent,
-  ExhibitionComponent
+  ExhibitionComponent,
+  ScrollTopComponent,
+  DynamicPageComponent
 } from './pages';
 import {ChartsModule} from "ng2-charts";
 import { NewsCardComponent } from './components/news-card/news-card.component';
@@ -79,7 +79,8 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     NguiInviewDirective,
     DynamicPageComponent,
     NewsCardComponent,
-    ExhibitionComponent
+    ExhibitionComponent,
+    ScrollTopComponent
   ],
   imports: [
     BrowserModule,
