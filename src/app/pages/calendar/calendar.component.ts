@@ -33,10 +33,17 @@ export class CalendarComponent implements OnInit {
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
   calendarWeekends = true;
   eventLimit = true;
-  calendarEvents: EventInput[] = [
-    { title: 'Awesome Exhibition', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 1',id: 'one', tprice: '$120' },
-    { title: 'Exhibition One', start: new Date(), end: new Date('2019-11-27 15:30:00'), museum: 'Museum 2', id: 'two', tprice: '$100' }
-  ];
+  calendarEvents: EventInput[] = [];
+  allData = [
+    { title: 'Awesome Actions', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 1',id: 'one', tprice: '$120', type: 'action' },
+    { title: 'Awesome Lectures', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 2',id: 'one', tprice: '$120', type: 'lecture' },
+    { title: 'Awesome Exhibitions', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 3',id: 'one', tprice: '$120', type: 'exhibition' },
+    { title: 'Awesome Events', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 4',id: 'one', tprice: '$120', type: 'event' },
+    { title: 'Action One', start: new Date('2019-11-29 14:30:00'), end: new Date('2019-11-29 19:30:00'), museum: 'Museum 1', id: 'two', tprice: '$100', type: 'action' },
+    { title: 'Lecture One', start: new Date('2019-11-29 14:30:00'), end: new Date('2019-11-29 19:30:00'), museum: 'Museum 2', id: 'two', tprice: '$100', type: 'lecture' },
+    { title: 'Exhibition One', start: new Date('2019-11-29 14:30:00'), end: new Date('2019-11-29 19:30:00'), museum: 'Museum 3', id: 'two', tprice: '$100', type: 'exhibition' },
+    { title: 'Event One', start: new Date('2019-11-29 14:30:00'), end: new Date('2019-11-29 19:30:00'), museum: 'Museum 4', id: 'two', tprice: '$100', type: 'event' }
+   ];
   modalData = {
     title: '',
     museum: '',
@@ -45,6 +52,10 @@ export class CalendarComponent implements OnInit {
     tprice: '',
   };
   model = 1;
+  viewExhibition = false;
+  viewLecture = false;
+  viewAction = false;
+  viewEvent = false;
   constructor(private modal: NgbModal) { }
 
   onCreated(): void {
@@ -70,7 +81,7 @@ export class CalendarComponent implements OnInit {
     }
   }
   ngOnInit() {
-
+    this.showEvent();
   }
 
   eventClick(arg): void {
@@ -91,6 +102,51 @@ export class CalendarComponent implements OnInit {
     let slider: any = [this.eventSlider];
     slider.forEach((slider: any) => {
         slider.refreshTooltip(slider.tooltipTarget);
+    });
+  }
+  viewExibitions() {
+    this.viewExhibition = !this.viewExhibition;
+    this.showEvent();
+  }
+  viewLectures() {
+    this.viewLecture = !this.viewLecture;
+    this.showEvent();
+  }
+  viewActions() {
+    this.viewAction = !this.viewAction;
+    this.showEvent();
+  }
+  viewEvents() {
+    this.viewEvent = !this.viewEvent;
+    this.showEvent();
+  }
+  showEvent() {
+    this.calendarEvents = [];
+    for (let index in this.allData) {
+      if (!this.viewAction && !this.viewEvent && !this.viewExhibition && !this.viewLecture) {
+        this.calendarEvents = this.allData;
+      } else {
+        if(this.viewAction && this.allData[index].type == 'action') {
+          this.setCalendarEvent(this.allData[index]);
+        }
+        if(this.viewEvent && this.allData[index].type == 'event') {
+          this.setCalendarEvent(this.allData[index]);
+        }
+        if(this.viewLecture && this.allData[index].type == 'lecture') {
+          this.setCalendarEvent(this.allData[index]);
+        }
+        if(this.viewExhibition && this.allData[index].type == 'exhibition') {
+          this.setCalendarEvent(this.allData[index]);
+        }
+      }
+    }
+  }
+  setCalendarEvent (rowData) {
+    this.calendarEvents = this.calendarEvents.concat({
+      title: rowData.title,
+      start: rowData.start,
+      end: rowData.end,
+      id: rowData.id
     });
   }
 }

@@ -25,18 +25,18 @@ export class MusuemWorklistComponent implements OnInit {
       city: 'New York'
     };
     this.artlists = [
-      {title: 'titel1', url: './assets/imgs/16.png', artist: 'person1', edate: ''},
-      {title: 'titel2', url: './assets/imgs/21.png', artist: 'person2', edate: ''},
-      {title: 'titel3', url: './assets/imgs/25.png', artist: 'person3', edate: ''},
-      {title: 'titel4', url: './assets/imgs/28.png', artist: 'person4', edate: ''},
-      {title: 'titel5', url: './assets/imgs/39.png', artist: 'person5', edate: ''},
-      {title: 'titel6', url: './assets/imgs/42.png', artist: 'person6', edate: ''},
-      {title: 'titel7', url: './assets/imgs/43.png', artist: 'person7', edate: ''},
-      {title: 'titel8', url: './assets/imgs/48.png', artist: 'person8', edate: ''},
-      {title: 'titel9', url: './assets/imgs/134.png', artist: 'person9', edate: ''},
-      {title: 'titel10', url: './assets/imgs/137.png', artist: 'person10', edate: ''},
-      {title: 'titel11', url: './assets/imgs/140.png', artist: 'person11', edate: ''},
-      {title: 'titel12', url: './assets/imgs/142.png', artist: 'person12', edate: ''},
+      {title: 'David Hockney', url: './assets/imgs/16.png', artist: 'A Bigger Splash', edate: ''},
+      {title: 'Edouard Manet', url: './assets/imgs/21.png', artist: 'Boating', edate: ''},
+      {title: 'Egon Schiele', url: './assets/imgs/25.png', artist: 'Alt Mühle', edate: ''},
+      {title: 'Egon Schiele', url: './assets/imgs/28.png', artist: 'Self-portrait with his head down', edate: ''},
+      {title: 'Gustav Klimt', url: './assets/imgs/39.png', artist: 'Portrait of Adele Bloch-Bauer I', edate: ''},
+      {title: 'Gustav Klimt', url: './assets/imgs/42.png', artist: 'Water Serpents II', edate: ''},
+      {title: 'Gustav Klimt', url: './assets/imgs/43.png', artist: 'Mia and Me', edate: ''},
+      {title: 'Henri Rousseau', url: './assets/imgs/48.png', artist: 'Nukkuva mustalaisnainen', edate: ''},
+      {title: 'Vincent van Gogh', url: './assets/imgs/134.png', artist: 'Starry Night Over the Rhone', edate: ''},
+      {title: 'Vincent van Gogh', url: './assets/imgs/137.png', artist: 'Cafe Terrace at Night', edate: ''},
+      {title: 'Vincent van Gogh', url: './assets/imgs/140.png', artist: 'Portrait of Theo van Gogh', edate: ''},
+      {title: 'Vincent van Gogh', url: './assets/imgs/142.png', artist: 'Portrait of the Postman Joseph Roulin', edate: ''},
     ]
   }
 
@@ -65,5 +65,4 @@ export class MusuemWorklistComponent implements OnInit {
       });
     }
   }
-
 }
