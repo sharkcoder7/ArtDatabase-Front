@@ -1,38 +1,109 @@
 <div class="row section-1">
-        <div class="col-xl-4 col-md-6 col-12  d-flex flex-column text-left author-info">
-      
-            <div class="w-100 author-years"><span>National Portrait Gallery, 2018 </span></div>
-            <div class="d-flex flex-column w-100 author-name">
-              <span class=" w-100"><br></span>
-              <span class=" w-100"></span>
+    <div class="d-flex justify-content-center align-items-end col-xl-4">
+        <div class="exhibition-info">National Portraint Gallery, 2018</div>
+    </div>
+    <div class="col-xl-4 d-none d-xl-flex flex-column justify-content-center">
+      <div class="col d-flex align-items-end">
+          <div class="img-wrapper"><img class="middle-img borderImage" src="./assets/imgs/exhibition7.jpg" alt="" width="500px">
+          </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6  col-12  d-flex">
+      <div class="col d-flex justify-content-center">
+        <div class="right-img-wrapper">
+        <img class="right-img borderImage" src="./assets/imgs/exhibition5.jpg" alt="" width="200px">
+      </div>
+      </div>
+    </div>
+</div>
+<div class="row section-2">
+      <div class="col-4 d-flex flex-column justify-content-center">
+          <div class="d-flex justify-content-center exhibition-description">A very brief, but still descriptive summary of what art work, styles, and artists
+                  are popularly kept in this exhibition, when it was built , and any prominent
+                  cultural significance
+          </div>
+        <div class="d-flex w-100 justify-content-center">
+              <button class="btn btn-warning save-exhibition">Save Exhibition</button>
             </div>
-            <div class="author-story"><p> </p></div>
-            <div class="d-flex w-100">
-              <button class="btn btn-warning save-artist">Save Artist</button>
-            </div>
-      
-          <div class="d-flex arrows-holder">
+          <div class="d-flex arrows-holder justify-content-center">
             <button class="btn btn-light next-arrow-transp"><img style="height: 20px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-left.svg"></button>
             <button class="btn btn-light next-arrow-transp"><img style="height: 20px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-right-gray.svg"></button>
           </div>
-        </div>
-      
-      
-        <div class="col-xl-4   d-none d-xl-flex flex-column">
-          <div class="col d-flex">
-              <div class="img-wrapper"><img class="middle-img borderImage" src="./assets/imgs/vincent-vangogh-2-authors.png" alt="">
-                </div>
+      </div>
+      <div class="col-2 d-flex flex-column"></div>
+      <div class="col-6 d-flex flex-column">
+          <img class="middle-img borderImage" src="./assets/imgs/exhibition6.jpg" alt="" width="800px" height="150px">
+      </div>
+  
+</div>
+<div class="row section-3" >
+    <div class="col-xl col-12 about-right place-left" >
+      <div class="exhibition-content">Vincent Willem van Gogh (30 March 1853 – 29 July 1890) was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade he created about 2,100 artworks, including around 860 oil paintings, most of them in the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. He was not commercially successful, and his suicide at 37 came after years of mental illness and poverty.
+      </div>
+    </div>
+</div>
+<div class="row section-4">
+    <div class="col-xl  col-md  col-12 place-left d-flex ">
+        <div class="hovereffect w-100">
+          <img class="" src="../../../assets/imgs/map.png" alt="" style="width: 500px">
+          <div class="row m-0">
+            <div class="col d-flex bot-part">
+                <div class="d-flex" style="margin: auto 0  2rem 1.5rem">
+                <img src="../../../assets/imgs/svg/maps-and-flags.svg" style="height: 20px; margin: 0 0 auto 0;">&nbsp;&nbsp;<span class="info2">Zundert, Netherlands</span>
               </div>
-              <div class="col d-flex">
-              <div class="img-wrapper"><img class="middle-img borderImage" src="./assets/imgs/vincent-vangogh-1-authors.png" alt="">
-                </div>
-             </div>
-          </div>
-        <div class="col-xl-4 col-md-6  col-12  d-flex">
-          <div class="col d-flex">
-            <div class="right-img-wrapper">
-            <img class="right-img borderImage" src="./assets/imgs/vincent-vangogh-3-authors.png" alt="">
-          </div>
+            </div>
           </div>
         </div>
       </div>
+    <div class="col-xl-2 col-md-3 col-12 place-right  works-data">
+  
+      <div class="col m-auto d-flex flex-column">
+        <span class="m-100  exhibition-works-title">Date established</span>
+        <span class="m-100  exhibition-works-number">2008</span>
+      </div>
+      <div class="col m-auto d-flex flex-column">
+        <span class="m-100 exhibition-works-title">Works held</span>
+        <span class="m-100 exhibition-works-number">326</span>
+      </div>
+    </div>
+    <div class="col-xl-3 d-none d-lg-block "></div>
+</div>
+<div class="row section-5 col-12">
+    <div class="col about-left">
+        <div class="row justify-content-center artworks-block">
+          <div class="col-xl-12 col-12 d-flex">
+            <span class="block-name m-auto">List of all works</span>
+          </div>
+        </div>
+    <div class="row justify-content-center artworks-block">
+        <div class="col-xl-11 col-12">
+          <div class="row gallery-block show" id="galleryGrid">
+            <div class="col-xl col-lg-4 col-md-6 col-12 d-flex p-0 flex-column" *ngFor="let artwork of artworks">
+              <div class="hovereffect m-auto flex-column" [routerLink]="['/works/' + artwork.id]">
+                <div class="slider-block"> {{artwork['title']}}</div>
+                <div>
+                  <img class="img-responsive borderImage" src="./assets/imgs/eclipse.png" alt="" width="100%" >
+                </div>
+                <div class="slider-block"> {{artwork['technique']}}</div>
+                <div style="align-self: center;">
+                    <div style="text-align: left;padding-right: 40px;">
+                      <img src="./assets/imgs/svg/user.svg" style=" height: 18px; margin: auto 0;"> Author <br>
+                      <img src="./assets/imgs/svg/clock.svg" style="height: 18px; margin: auto 0;"> Year <br>
+                      <img src="./assets/imgs/svg/medium.svg" style="height: 18px; margin: auto 0;"> Medium <br>
+                      <img src="./assets/imgs/svg/location.svg" style="height: 18px; margin: auto 0;"> Location
+                    </div>
+                </div>
+             </div>
+            </div>
+          </div>
+          <div class="works-navigation">
+            <a class="btn btn-default button-navigate" (click)="getArtworks(artworksPagination['prev'])">Prev</a>
+            <a class="btn btn-default button-navigate" (click)="getArtworks(artworksPagination['next'])">Next</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

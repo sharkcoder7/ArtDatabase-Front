@@ -392,7 +392,7 @@
                 <div class="slider-block"> {{artwork['technique']}}</div>
                 <div style="align-self: center;">
                     <div style="text-align: left;padding-right: 40px;">
-                      <img src="./assets/imgs/svg/user.svg" style=" height: 18px; margin: auto 0;"> Author {{artwork['author']['fullLabel']}} <br>
+                      <img src="./assets/imgs/svg/user.svg" style=" height: 18px; margin: auto 0;"> Author <br>
                       <img src="./assets/imgs/svg/clock.svg" style="height: 18px; margin: auto 0;"> Year <br>
                       <img src="./assets/imgs/svg/medium.svg" style="height: 18px; margin: auto 0;"> Medium <br>
                       <img src="./assets/imgs/svg/location.svg" style="height: 18px; margin: auto 0;"> Location
@@ -417,7 +417,7 @@
         <div class="col-xl-11 col-12">
           <div class="row">
             <div class="col-xl col-sm-6 d-flex flex-column p-0" *ngFor="let artist of artists">
-              <div class="hovereffect m-auto">
+              <div class="hovereffect m-auto flex-column" [routerLink]="['/authors/' + artist.id]">
                 <img class="img-responsive" src="./assets/imgs/Vincent.png" alt="" class="borderImage" width="100%">
                 <div class="overlay-2"></div>
                 <div class="overlay row m-0">
