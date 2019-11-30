@@ -6,6 +6,17 @@ div {
   &.section-2 {
     margin: 4rem 0 0 0;
     height: 220px;
+
+    .save-exhibition {
+      border-color: #000080;
+      box-shadow: none !important;
+      background: #000080;
+      background-color: #000080;
+      border: 1px solid #000080;
+      border-radius: 5px;
+      margin: auto;
+      color: white !important;
+    }
   }
 
   &.section-3 {
@@ -94,13 +105,14 @@ div {
     font-size: 40px;
     color: rgba(0, 0, 0, 0.5);
     width: 200px;
+    text-align: center;
   }
 
   &.exhibition-description
   {
     margin: 0 0 1rem 4rem;
     font-size: 14px;
-    width: 300px;
+    //width: 300px;
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
   }
@@ -112,5 +124,10 @@ div {
     color: rgba(0, 0, 0, 0.5);
     margin: 0 3rem 0 3rem;
   }
-
 }
+
+.borderImage {
+  border: 1px solid #000000;
+  padding: 1px;
+}
+
