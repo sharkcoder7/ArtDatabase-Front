@@ -1,0 +1,116 @@
+div {
+  &.section-1 {
+    margin: 4rem 0 0 0;
+    height: 400px;
+  }
+  &.section-2 {
+    margin: 4rem 0 0 0;
+    height: 220px;
+  }
+
+  &.section-3 {
+    margin: 4rem 0 0 0;
+  }
+
+  &.section-4 {
+    margin: 3rem 0 8rem 0;
+
+    span {
+      &.exhibition-works-title {
+        color: #242128;
+        opacity: 0.5;
+        margin: auto auto 0 0;
+      }
+
+      &.exhibition-works-number {
+        font-size: 44px;
+        margin: 0 auto auto 0;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  &.section-5 {
+    margin: 0 0 7rem 0;
+
+    div {
+    &.artworks-block {
+      margin: 0 0 5rem 0;
+      text-align: center;
+
+      span.block-name {
+        font-size: 44px;
+        color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+
+    div.works-navigation{
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    button.view-all {
+      color: white !important;
+      padding: 0.3rem;
+      background: #000080;
+      border: 1px solid #000080;
+      border-radius: 5px;
+      width: 230px;
+      text-align: center;
+      height: 40px;
+    }
+
+    .button-navigate {
+      border-color: #000080;
+      width: 100px;
+      margin: auto;
+      box-shadow: none !important;
+      background: #000080;
+      background-color: #000080;
+      border: 1px solid #000080;
+      border-radius: 5px;
+      margin: auto;
+      margin-right: 4px;
+      flex-direction: column;
+      color: white !important;
+    }
+
+    div.gallery-block {
+      overflow: hidden;
+      height: 400px;
+      position: relative;
+
+      &.show {
+        height: auto;
+      }
+    }
+  }
+
+  &.place-left {
+    padding: 0 0 0 7rem;
+  }
+
+  &.exhibition-info {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.5);
+    width: 200px;
+  }
+
+  &.exhibition-description
+  {
+    margin: 0 0 1rem 4rem;
+    font-size: 14px;
+    width: 300px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  &.exhibition-content
+  {
+    text-align: center;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0 3rem 0 3rem;
+  }
+
+}
