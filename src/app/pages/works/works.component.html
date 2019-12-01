@@ -1,12 +1,19 @@
 <div class="row section-1">
   <div class="col-xl-6 col-md-6  col-12  d-flex works-info">
     <div class="d-flex">
-      <div class="img-wrapper"><img class="middle-img" src="{{artwork['img']}}" alt="">
+      <div class="img-wrapper"><img class="middle-img" src="{{ artworkImage}}" alt="">
       </div>
     </div>
   </div>
   <div class="col-xl-6 col-md-6 col-12  d-flex flex-column work-info-right text-left ">
-    <div class="w-100 author-years"><span>{{artwork['yearCreated']}}</span></div>
+      <div class="author-years"><span>Artist: {{author['firstName']}} {{author['lastName']}} </span></div>
+      <div class="author-years"><span>Title: {{artwork['title']}} </span></div>
+      <div class="w-100 author-years"><span>Year created: {{artwork['yearCreated']}} </span></div>
+      <div class="w-100 author-years"><span>Date</span></div>
+      <div class="w-100 author-years"><span>Medium (Type): {{artwork['type']}}</span></div>
+      <div class="w-100 author-years"><span>Dimensions:  {{artwork['dimensions']}}</span></div>
+      <div class="w-100 author-years"><span>Location: {{artwork['location']}}</span></div>
+    <div class="w-100 author-years"><span>Year Created: {{artwork['yearCreated']}}</span></div>
     <div class="d-flex flex-column w-100 author-name" style="margin: 0 0 1rem 0">
       <span class=" w-100">{{artwork['title']}}<br></span>
     </div>
@@ -15,9 +22,8 @@
         <div style="height: 15px; margin: 0 1rem 0 0;">
           <img src="./assets/imgs/svg/user-black.svg" style="height: 20px; margin: auto 0;">
         </div>
-        <span class="info2">{{artwork['author']['fullLabel']}}</span>
+        <span class="info2">{{artwork['title']}}</span>
       </div>
-
     </div>
     <div class="d-flex" style="margin: 0.5rem 0">
       <div class="w-100 d-flex">
@@ -37,7 +43,7 @@
       </div>
     </div>
     <div class="author-story">
-      <p>{{artwork['author']['bio']}}</p>
+      <p>{{artwork['title']}}</p>
     </div>
   </div>
 </div>
@@ -51,9 +57,8 @@
       <div class="author-story-more"></div>
     </div>
     <div class="m-auto d-flex w-100 show-more" *ngIf="showLess">
-
       <button class="btn btn-light button-show-more" (click)="showMore()"><span
-        *ngIf="!showMoreFlag">Read MORE</span><span *ngIf="showMoreFlag">Read Less</span></button>
+        *ngIf="!showMoreFlag">Read Less</span><span *ngIf="showMoreFlag">Read More</span></button>
     </div>
   </div>
   <div _ngcontent-c4="" class="col-xl-12 col-12 about-left" style="margin: 2rem 0 0 0">
@@ -95,12 +100,11 @@
   </div>
 </div>
 <div class="row section-3">
-  <div class="col-xl  col-md  col-12    place-left d-flex ">
+  <div class="col-xl  col-md  col-12 place-left d-flex ">
     <div class="hovereffect w-100">
-      <img class="place-img" src="./assets/imgs/merlin.png" alt="" style="width: 100%">
-      <div class="overlay row m-0">
+      <img class="place-img" src="./assets/imgs/map.png" alt="" style="width: 700px">
+      <div class="row m-0">
         <div class="col d-flex bot-part">
-
           <div class="d-flex" style="margin: auto 0  2rem 1.5rem">
             <img src="./assets/imgs/svg/maps-and-flags.svg" style="height: 20px; margin: 0 0 auto 0;">&nbsp;&nbsp;<span
             class="info2">{{artwork['location']}}</span>
@@ -109,8 +113,7 @@
       </div>
     </div>
   </div>
-  <!--<div class="col-xl-2 col-md-3 col-12 place-right  works-data">
-
+  <div class="col-xl-2 col-md-3 col-12 place-right  works-data">
     <div class="col m-auto d-flex flex-column">
       <span class="m-100  author-works-title">Works</span>
       <span class="m-100  author-works-number">26</span>
@@ -123,10 +126,8 @@
       <span class="m-100  author-works-title">Sales Records</span>
       <span class="m-100 author-works-number">12</span>
     </div>
-
-
   </div>
-  <div class="col-xl-3  d-none d-lg-block "></div>-->
+  <div class="col-xl-3  d-none d-lg-block "></div>
 </div>
 <div class="row section-4">
   <div class="col-12 d-flex"><span class="section-title m-auto">Sources</span></div>
