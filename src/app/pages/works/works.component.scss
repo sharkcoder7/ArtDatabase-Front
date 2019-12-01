@@ -6,8 +6,6 @@ div.section-1 {
   }
 }
 
-img.middle-img {}
-
 div {
   &.works-info {
     padding: 0 0 0 7rem;
@@ -189,7 +187,7 @@ div {
   }
 
   &.section-3 img.place-img {
-    filter: brightness(60%);
+    //filter: brightness(60%);
   }
 }
 

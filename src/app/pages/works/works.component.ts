@@ -20,11 +20,15 @@ export class WorksComponent implements OnInit {
   showLess = true;
   showMoreFlag = false;
   artwork = [];
+  artworkImage;
+  author = [];
 
   ngOnInit() {
     this.dataService.getArtwork(this.route.snapshot.paramMap.get('id')).subscribe((data: any[]) => {
       console.log(data);
       this.artwork = data['data'];
+      this.artworkImage = data['data']['images'][0]['Type'];
+      this.author = data['data']['artists'][0];
     });
   }
 
