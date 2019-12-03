@@ -6,6 +6,11 @@ div.section-1 {
   }
 }
 
+.borderImage {
+  border: 1px solid #000000;
+  padding: 1px;
+}
+
 div {
   &.works-info {
     padding: 0 0 0 7rem;
@@ -140,7 +145,7 @@ div {
     text-align: center;
     margin: 0;
     padding: 20px 0;
-    background-image: linear-gradient(to bottom, transparent, white);
+    /* background-image: linear-gradient(to bottom, transparent, white); */
   }
 
   &.showContent div.author-story-more {
@@ -365,7 +370,7 @@ div {
     text-align: center;
     margin: 0;
     padding: 20px 0;
-    background-image: linear-gradient(to bottom, transparent, white);
+    /* background-image: linear-gradient(to bottom, transparent, white); */
   }
 }
 

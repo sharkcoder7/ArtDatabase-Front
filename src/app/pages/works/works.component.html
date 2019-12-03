@@ -1,18 +1,18 @@
 <div class="row section-1">
   <div class="col-xl-6 col-md-6  col-12  d-flex works-info">
     <div class="d-flex">
-      <div class="img-wrapper"><img class="middle-img" src="{{ artworkImage}}" alt="">
+      <div class="img-wrapper"><img class="middle-img borderImage" src="{{ artworkImage}}" alt="">
       </div>
     </div>
   </div>
   <div class="col-xl-6 col-md-6 col-12  d-flex flex-column work-info-right text-left ">
-      <div class="author-years"><span>Artist: {{author['firstName']}} {{author['lastName']}} </span></div>
+      <!-- <div class="author-years"><span>Artist: {{author['firstName']}} {{author['lastName']}} </span></div>
       <div class="author-years"><span>Title: {{artwork['title']}} </span></div>
       <div class="w-100 author-years"><span>Year created: {{artwork['yearCreated']}} </span></div>
       <div class="w-100 author-years"><span>Date</span></div>
       <div class="w-100 author-years"><span>Medium (Type): {{artwork['type']}}</span></div>
       <div class="w-100 author-years"><span>Dimensions:  {{artwork['dimensions']}}</span></div>
-      <div class="w-100 author-years"><span>Location: {{artwork['location']}}</span></div>
+      <div class="w-100 author-years"><span>Location: {{artwork['location']}}</span></div> -->
     <div class="w-100 author-years"><span>Year Created: {{artwork['yearCreated']}}</span></div>
     <div class="d-flex flex-column w-100 author-name" style="margin: 0 0 1rem 0">
       <span class=" w-100">{{artwork['title']}}<br></span>
@@ -22,7 +22,7 @@
         <div style="height: 15px; margin: 0 1rem 0 0;">
           <img src="./assets/imgs/svg/user-black.svg" style="height: 20px; margin: auto 0;">
         </div>
-        <span class="info2">{{artwork['title']}}</span>
+        <span class="info2">{{author['firstName']}} {{author['lastName']}}</span>
       </div>
     </div>
     <div class="d-flex" style="margin: 0.5rem 0">
@@ -30,9 +30,8 @@
         <div style="height: 15px; margin: 0 1rem 0 0;">
           <img src="./assets/imgs/svg/increase-size-option.svg" style="height: 20px; margin: auto 0;">
         </div>
-        <span class="info2">{{artwork['type']}}</span>
+        <span class="info2">Dimensions {{artwork['dimensions']}}</span>
       </div>
-
     </div>
     <div class="d-flex" style="margin: 0.5rem 0">
       <div class="w-100 d-flex">
@@ -58,7 +57,7 @@
     </div>
     <div class="m-auto d-flex w-100 show-more" *ngIf="showLess">
       <button class="btn btn-light button-show-more" (click)="showMore()"><span
-        *ngIf="!showMoreFlag">Read Less</span><span *ngIf="showMoreFlag">Read More</span></button>
+        *ngIf="!showMoreFlag">Read More</span><span *ngIf="showMoreFlag">Read Less</span></button>
     </div>
   </div>
   <div _ngcontent-c4="" class="col-xl-12 col-12 about-left" style="margin: 2rem 0 0 0">
