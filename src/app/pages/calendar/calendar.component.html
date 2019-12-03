@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" (click)="clickEvent($event)">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 firstsection">
       <div class="card">
@@ -17,8 +17,22 @@
                 [plugins]="calendarPlugins"
                 [weekends]="calendarWeekends"
                 [events]="calendarEvents"
-                (eventClick)="eventClick($event.event)"
+                (eventClick)="eventClick($event)"
               ></full-calendar>
+            </div>
+            <div class="popper-container">
+              <angular-popper [show]="currentShow"
+                              [target]="currentElement"
+                              [placement]="currentPlacement">
+                <div content style="text-align: left;">
+                  <h6>{{ modalData?.title }}</h6>
+                  <hr>
+                  <p>{{ modalData?.museum }}</p>
+                  <p>{{ modalData?.start }}</p>
+                  <p>{{ modalData?.end }}</p>
+                  <p>{{ modalData?.tprice }}</p>
+                </div>
+              </angular-popper>
             </div>
           </div>
         </div>
@@ -27,16 +41,16 @@
     <div class="col-lg-12 col-md-12 col-sm-12 secondsection">
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pressed="true" autocomplete="off" (click)="viewExibitions()">View Exhibitions</button>
+          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pssed="true" autocomplete="off" (click)="viewExibitions()">View Exhibitions</button>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pressed="true" autocomplete="off" (click)="viewLectures()">View Lectures and Talks</button>
+          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pssed="true" autocomplete="off" (click)="viewLectures()">View Lectures and Talks</button>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pressed="true" autocomplete="off" (click)="viewActions()">View Actions</button>
+          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pssed="true" autocomplete="off" (click)="viewActions()">View Actions</button>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pressed="true" autocomplete="off" (click)="viewEvents()">View Museum Events</button>
+          <button class="btn btn-outline-dark btn-lg" id="state-button" data-toggle="button" aria-pssed="true" autocomplete="off" (click)="viewEvents()">View Museum Events</button>
         </div>
       </div>
     </div>
@@ -71,34 +85,4 @@
       </div>
     </div>
   </div>
-  <ng-template #modalContent let-close="close">
-    <div class="modal-header" style="background-color: #f6ede4;">
-      <h5 class="modal-title">Event Description</h5>
-    </div>
-    <div class="modal-body" style="background-color: #f6ede4;">
-      <div>
-        Title:
-        <pre>{{ modalData?.title }}</pre>
-      </div>
-      <div>
-        Museum Name:
-        <pre>{{ modalData?.museum }}</pre>
-      </div>
-      <div>
-        Start Date:
-        <pre>{{ modalData?.start }}</pre>
-      </div>
-      <div>
-        End Date:
-        <pre>{{ modalData?.end }}</pre>
-      </div>
-      <div>
-        Ticket Price:
-        <pre>{{ modalData?.tprice }}</pre>
-      </div>
-    </div>
-    <div class="modal-footer" style="background-color: #f6ede4;">
-      <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
-    </div>
-  </ng-template>
 </div>
