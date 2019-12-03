@@ -6,6 +6,8 @@ import timeGrigPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SliderComponent, SliderChangeEventArgs } from '@syncfusion/ej2-angular-inputs';
+import Popper from 'popper.js';
+import { isArray } from 'util';
 
 @Component({
   selector: 'app-calendar',
@@ -35,14 +37,14 @@ export class CalendarComponent implements OnInit {
   eventLimit = true;
   calendarEvents: EventInput[] = [];
   allData = [
-    { title: 'Awesome Actions', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 1',id: 'one', tprice: '$120', type: 'action' },
-    { title: 'Awesome Lectures', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 2',id: 'one', tprice: '$120', type: 'lecture' },
-    { title: 'Awesome Exhibitions', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 3',id: 'one', tprice: '$120', type: 'exhibition' },
-    { title: 'Awesome Events', start: new Date(), end: new Date('2019-11-28 15:30:00'), museum: 'Museum 4',id: 'one', tprice: '$120', type: 'event' },
-    { title: 'Action One', start: new Date('2019-11-29 14:30:00'), end: new Date('2019-11-29 19:30:00'), museum: 'Museum 1', id: 'two', tprice: '$100', type: 'action' },
-    { title: 'Lecture One', start: new Date('2019-11-29 14:30:00'), end: new Date('2019-11-29 19:30:00'), museum: 'Museum 2', id: 'two', tprice: '$100', type: 'lecture' },
-    { title: 'Exhibition One', start: new Date('2019-11-29 14:30:00'), end: new Date('2019-11-29 19:30:00'), museum: 'Museum 3', id: 'two', tprice: '$100', type: 'exhibition' },
-    { title: 'Event One', start: new Date('2019-11-29 14:30:00'), end: new Date('2019-11-29 19:30:00'), museum: 'Museum 4', id: 'two', tprice: '$100', type: 'event' }
+    { title: 'Awesome Actions', start: new Date(), end: new Date('2019-12-07 15:30:00'), museum: 'Museum 1',id: 'one', tprice: '$120', type: 'action' },
+    { title: 'Awesome Lectures', start: new Date(), end: new Date('2019-12-06 15:30:00'), museum: 'Museum 2',id: 'three', tprice: '$120', type: 'lecture' },
+    { title: 'Awesome Exhibitions', start: new Date(), end: new Date('2019-12-05 15:30:00'), museum: 'Museum 3',id: 'four', tprice: '$120', type: 'exhibition' },
+    { title: 'Awesome Events', start: new Date(), end: new Date('2019-12-04 15:30:00'), museum: 'Museum 4',id: 'five', tprice: '$120', type: 'event' },
+    { title: 'Action One', start: new Date('2019-12-01 14:30:00'), end: new Date('2019-12-01 19:30:00'), museum: 'Museum 1', id: 'two', tprice: '$100', type: 'action' },
+    { title: 'Lecture One', start: new Date('2019-12-09 14:30:00'), end: new Date('2019-12-14 19:30:00'), museum: 'Museum 2', id: 'six', tprice: '$100', type: 'lecture' },
+    { title: 'Exhibition One', start: new Date('2019-12-16 14:30:00'), end: new Date('2019-12-16 19:30:00'), museum: 'Museum 3', id: 'seven', tprice: '$100', type: 'exhibition' },
+    { title: 'Event One', start: new Date('2019-12-23 14:30:00'), end: new Date('2019-12-23 19:30:00'), museum: 'Museum 4', id: 'eight', tprice: '$100', type: 'event' }
    ];
   modalData = {
     title: '',
@@ -56,6 +58,15 @@ export class CalendarComponent implements OnInit {
   viewLecture = false;
   viewAction = false;
   viewEvent = false;
+
+  currentShow = false;
+  currentPlacement = 'right auto';
+  currentElement = '';
+  currentFlag = '';
+  compareFlag = '';
+  compareCounter = 0;
+  eventContainer;
+  otherContainer;
   constructor(private modal: NgbModal) { }
 
   onCreated(): void {
@@ -85,17 +96,35 @@ export class CalendarComponent implements OnInit {
   }
 
   eventClick(arg): void {
+    this.compareFlag = arg.event.id;
+    this.eventContainer = arg.jsEvent.path;
     for (let event in this.calendarEvents) {
-      if (this.calendarEvents[event].id == arg.id) {
+      if (this.calendarEvents[event].id == arg.event.id) {
         this.modalData.tprice = this.calendarEvents[event].tprice;
         this.modalData.museum = this.calendarEvents[event].museum;
 
       }
     }
-    this.modalData.title = arg.title;
-    this.modalData.start = arg.start;
-    this.modalData.end = arg.end;
-    this.modal.open(this.modalContent, { size: 'lg' });
+    this.modalData.title = arg.event.title;
+    this.modalData.start = arg.event.start;
+    this.modalData.end = arg.event.end;
+    if (this.currentFlag != this.compareFlag) {
+      this.currentElement = arg.el;
+      this.currentShow = true;
+      this.currentFlag = this.compareFlag;
+      this.compareCounter = 1;
+    } else {
+      if (this.compareCounter == 1) {
+        this.currentElement = arg.el;
+        this.currentShow = false;
+        this.compareCounter = 0;
+      } else {
+        this.currentElement = arg.el;
+        this.currentShow = true;
+        this.compareCounter = 1;
+      }
+    }
+    console.log(Popper);
   }
 
   onScroll(): void {
@@ -148,5 +177,13 @@ export class CalendarComponent implements OnInit {
       end: rowData.end,
       id: rowData.id
     });
+  }
+  clickEvent (event) {
+    this.otherContainer = event.path;
+    if(isArray(this.eventContainer)) {
+      if (this.eventContainer.length != this.otherContainer.length) {
+        this.currentShow = false;
+      }
+    }
   }
 }

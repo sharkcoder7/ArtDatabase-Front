@@ -25,18 +25,18 @@ export class MusuemWorklistComponent implements OnInit {
       city: 'New York'
     };
     this.artlists = [
-      {title: 'David Hockney', url: './assets/imgs/16.png', artist: 'A Bigger Splash', edate: ''},
-      {title: 'Edouard Manet', url: './assets/imgs/21.png', artist: 'Boating', edate: ''},
-      {title: 'Egon Schiele', url: './assets/imgs/25.png', artist: 'Alt Mühle', edate: ''},
-      {title: 'Egon Schiele', url: './assets/imgs/28.png', artist: 'Self-portrait with his head down', edate: ''},
-      {title: 'Gustav Klimt', url: './assets/imgs/39.png', artist: 'Portrait of Adele Bloch-Bauer I', edate: ''},
-      {title: 'Gustav Klimt', url: './assets/imgs/42.png', artist: 'Water Serpents II', edate: ''},
-      {title: 'Gustav Klimt', url: './assets/imgs/43.png', artist: 'Mia and Me', edate: ''},
-      {title: 'Henri Rousseau', url: './assets/imgs/48.png', artist: 'Nukkuva mustalaisnainen', edate: ''},
-      {title: 'Vincent van Gogh', url: './assets/imgs/134.png', artist: 'Starry Night Over the Rhone', edate: ''},
-      {title: 'Vincent van Gogh', url: './assets/imgs/137.png', artist: 'Cafe Terrace at Night', edate: ''},
-      {title: 'Vincent van Gogh', url: './assets/imgs/140.png', artist: 'Portrait of Theo van Gogh', edate: ''},
-      {title: 'Vincent van Gogh', url: './assets/imgs/142.png', artist: 'Portrait of the Postman Joseph Roulin', edate: ''},
+      {artist: 'David Hockney', url: './assets/imgs/16.png', title: 'A Bigger Splash', edate: ''},
+      {artist: 'Edouard Manet', url: './assets/imgs/21.png', title: 'Boating', edate: ''},
+      {artist: 'Egon Schiele', url: './assets/imgs/25.png', title: 'Alt Mühle', edate: ''},
+      {artist: 'Egon Schiele', url: './assets/imgs/28.png', title: 'Self-portrait with his head down', edate: ''},
+      {artist: 'Gustav Klimt', url: './assets/imgs/39.png', title: 'Portrait of Adele Bloch-Bauer I', edate: ''},
+      {artist: 'Gustav Klimt', url: './assets/imgs/42.png', title: 'Water Serpents II', edate: ''},
+      {artist: 'Gustav Klimt', url: './assets/imgs/43.png', title: 'Mia and Me', edate: ''},
+      {artist: 'Henri Rousseau', url: './assets/imgs/48.png', title: 'Nukkuva mustalaisnainen', edate: ''},
+      {artist: 'Vincent van Gogh', url: './assets/imgs/134.png', title: 'Starry Night Over the Rhone', edate: ''},
+      {artist: 'Vincent van Gogh', url: './assets/imgs/137.png', title: 'Cafe Terrace at Night', edate: ''},
+      {artist: 'Vincent van Gogh', url: './assets/imgs/140.png', title: 'Portrait of Theo van Gogh', edate: ''},
+      {artist: 'Vincent van Gogh', url: './assets/imgs/142.png', title: 'Portrait of the Postman Joseph Roulin', edate: ''},
     ]
   }
 
