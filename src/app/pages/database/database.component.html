@@ -7,11 +7,6 @@
             <input type="text" class="form-control looking-field" placeholder="What are you looking for?"
                    value="Choose location from the list.." aria-label="Recipient's username" aria-describedby="basic-addon2" id="dropdownMenuButton"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="input-group-append">
-              <div class="search-icon-holder">
-                <img class="search-icon" src="./assets/imgs/svg/magnifying-glass.svg" alt="Search">
-              </div>
-            </div>
             <div class="dropdown-menu w-100 p-0" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" (click)="getArtworksByLocation(location['id'])" *ngFor="let location of locations" >
                 <div class="d-flex w-100 flex-column">

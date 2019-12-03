@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {DataService} from "../../services/data.service";
 
 
+
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
@@ -27,7 +28,7 @@ export class WorksComponent implements OnInit {
     this.dataService.getArtwork(this.route.snapshot.paramMap.get('id')).subscribe((data: any[]) => {
       console.log(data);
       this.artwork = data['data'];
-      this.artworkImage = data['data']['images'][0]['Type'];
+      this.artworkImage = data['data']['images'][0]['primary'];
       this.author = data['data']['artists'][0];
     });
   }
