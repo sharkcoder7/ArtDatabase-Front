@@ -59,14 +59,12 @@ export class CalendarComponent implements OnInit {
   viewAction = false;
   viewEvent = false;
 
-  currentShow = false;
-  currentPlacement = 'right auto';
-  currentElement = '';
   currentFlag = '';
   compareFlag = '';
   compareCounter = 0;
   eventContainer;
   otherContainer;
+  mypopper;
   constructor(private modal: NgbModal) { }
 
   onCreated(): void {
@@ -98,6 +96,10 @@ export class CalendarComponent implements OnInit {
   eventClick(arg): void {
     this.compareFlag = arg.event.id;
     this.eventContainer = arg.jsEvent.path;
+    let popper = document.querySelector('#my-popper');
+    this.mypopper = new Popper(arg.el, popper, {
+      placement: 'auto'
+    });
     for (let event in this.calendarEvents) {
       if (this.calendarEvents[event].id == arg.event.id) {
         this.modalData.tprice = this.calendarEvents[event].tprice;
@@ -109,22 +111,19 @@ export class CalendarComponent implements OnInit {
     this.modalData.start = arg.event.start;
     this.modalData.end = arg.event.end;
     if (this.currentFlag != this.compareFlag) {
-      this.currentElement = arg.el;
-      this.currentShow = true;
+      document.getElementById('my-popper').style.display = 'block';
       this.currentFlag = this.compareFlag;
       this.compareCounter = 1;
     } else {
       if (this.compareCounter == 1) {
-        this.currentElement = arg.el;
-        this.currentShow = false;
+        this.mypopper.destroy();
+        document.getElementById('my-popper').style.display = 'none';
         this.compareCounter = 0;
       } else {
-        this.currentElement = arg.el;
-        this.currentShow = true;
+        document.getElementById('my-popper').style.display = 'block';
         this.compareCounter = 1;
       }
     }
-    console.log(Popper);
   }
 
   onScroll(): void {
@@ -182,7 +181,8 @@ export class CalendarComponent implements OnInit {
     this.otherContainer = event.path;
     if(isArray(this.eventContainer)) {
       if (this.eventContainer.length != this.otherContainer.length) {
-        this.currentShow = false;
+        this.mypopper.destroy();
+        document.getElementById('my-popper').style.display = 'none';
       }
     }
   }

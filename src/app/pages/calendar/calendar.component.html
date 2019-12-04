@@ -20,19 +20,14 @@
                 (eventClick)="eventClick($event)"
               ></full-calendar>
             </div>
-            <div class="popper-container">
-              <angular-popper [show]="currentShow"
-                              [target]="currentElement"
-                              [placement]="currentPlacement">
-                <div content style="text-align: left;">
-                  <h6>{{ modalData?.title }}</h6>
-                  <hr>
-                  <p>{{ modalData?.museum }}</p>
-                  <p>{{ modalData?.start }}</p>
-                  <p>{{ modalData?.end }}</p>
-                  <p>{{ modalData?.tprice }}</p>
-                </div>
-              </angular-popper>
+            <div content style="text-align: left;" id="my-popper">
+              <div x-arrow></div>
+              <h6>{{ modalData?.title }}</h6>
+              <hr>
+              <p>{{ modalData?.museum }}</p>
+              <p>{{ modalData?.start }}</p>
+              <p>{{ modalData?.end }}</p>
+              <p>{{ modalData?.tprice }}</p>
             </div>
           </div>
         </div>
