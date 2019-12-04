@@ -88,9 +88,68 @@ h3 {
     font-size: 1.2em;
   }
 }
-.angular-popper.visible {
+
+$popper-bg: rgba(246, 236, 228, 1);
+
+#my-popper {
+  display: none;
   z-index: 99999;
   width: 300px;
   height: 250px;
   font-size: 12px;
+  background: $popper-bg;
+  padding: 10px;
+  text-align: center;
+  filter: drop-shadow(1px 1px 2px #000000);
+  [x-arrow] {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+  }
+}
+#my-popper[x-placement^="top"] {
+  margin-bottom: 15px;
+  [x-arrow] {
+    border-width: 15px 15px 0 15px;
+    border-color: $popper-bg transparent transparent transparent;
+    bottom: -15px;
+    left: calc(50% - 15px);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+#my-popper[x-placement^="bottom"] {
+  margin-top: 15px;
+  [x-arrow] {
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent $popper-bg transparent;
+    top: -15px;
+    left: calc(50% - 15px);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+#my-popper[x-placement^="right"] {
+  margin-left: 15px;
+  [x-arrow] {
+    border-width: 15px 15px 15px 0;
+    border-color: transparent $popper-bg transparent transparent;
+    left: -15px;
+    top: calc(50% - 15px);
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+#my-popper[x-placement^="left"] {
+  margin-right: 15px;
+  [x-arrow] {
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent $popper-bg;
+    right: -15px;
+    top: calc(50% - 15px);
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
