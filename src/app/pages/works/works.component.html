@@ -60,42 +60,18 @@
         *ngIf="!showMoreFlag">Read More</span><span *ngIf="showMoreFlag">Read Less</span></button>
     </div>
   </div>
-  <div _ngcontent-c4="" class="col-xl-12 col-12 about-left" style="margin: 2rem 0 0 0">
-    <table _ngcontent-c4="" class="table">
-      <thead _ngcontent-c4="">
-      <tr _ngcontent-c4="">
-        <th _ngcontent-c4="" scope="col">#</th>
-        <th _ngcontent-c4="" scope="col">Possessor</th>
-        <th _ngcontent-c4="" scope="col">Location</th>
-        <th _ngcontent-c4="" scope="col">Date</th>
-        <th _ngcontent-c4="" scope="col">Type</th>
-      </tr>
-      </thead>
-      <tbody _ngcontent-c4="">
-      <tr _ngcontent-c4="">
-        <th _ngcontent-c4="" scope="row">1</th>
-        <td _ngcontent-c4="">Mark</td>
-        <td _ngcontent-c4="">Ottawa</td>
-        <td _ngcontent-c4="">08.11.2019</td>
-        <td _ngcontent-c4="">Donation</td>
-      </tr>
-      <tr _ngcontent-c4="">
-        <th _ngcontent-c4="" scope="row">2</th>
-        <td _ngcontent-c4="">Jacob</td>
-        <td _ngcontent-c4="">Mexico</td>
-        <td _ngcontent-c4="">08.12.2019</td>
-        <td _ngcontent-c4="">Sale</td>
 
-      </tr>
-      <tr _ngcontent-c4="">
-        <th _ngcontent-c4="" scope="row">3</th>
-        <td _ngcontent-c4="">Larry</td>
-        <td _ngcontent-c4="">Chicago</td>
-        <td _ngcontent-c4="">11.11.2019</td>
-        <td _ngcontent-c4="">Movement</td>
-      </tr>
-      </tbody>
-    </table>
+  <div ngcontent-c4="" class="col-xl-12 col-12 about-left" style="margin: 2rem 0 0 0; height: 200px;">
+    <ag-grid-angular
+      style="width: 100%; height: 100%;"
+      class="ag-theme-balham"
+      [pagination]="true"
+      [paginationPageSize]="paginationPageSize"
+      [rowData]="rowData" 
+      [columnDefs]="columnDefs"
+      [modules]="modules"
+      [defaultColDef]="defaultColDef">
+    </ag-grid-angular>
   </div>
 </div>
 <div class="row section-3">
