@@ -4,6 +4,7 @@ body {
   font-family: "Courier New";
   background-color: #F6EDE4;
 }
+
 @import '../node_modules/@fullcalendar/core/main.css';
 @import '../node_modules/@fullcalendar/daygrid/main.css';
 @import '../node_modules/@fullcalendar/timegrid/main.css';
@@ -15,6 +16,33 @@ body {
 @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
 
 @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+
+@import "~@ag-grid-community/all-modules/dist/styles/ag-grid.css";
+@import "~@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css";
+
+.ag-theme-balham {
+      background-color: transparent;
+      border: 0px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      secondary-font-family:  'Courier New', Courier, monospace;
+      secondary-font-size: 14px;
+
+      .ag-row-even{
+        background-color: transparent;
+      }
+
+      .ag-row-odd{
+        background-color: transparent;
+      }
+
+      .ag-header{
+        background-color: transparent;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+      }
+}
+
 
 @font-face {
   font-family: "Courier New";

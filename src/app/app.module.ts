@@ -19,6 +19,8 @@ import {AuthenticationModule} from './shared';
 import { NguiInviewComponent } from './ngui-inview.component';
 import { NguiInviewDirective } from './ngui-inview.directive';
 import { DynamicComponentService } from './pages/museum-worklist/dynamic.component.service';
+import { AgGridModule } from '@ag-grid-community/angular';
+
 
 import {
   HeaderComponent,
@@ -102,7 +104,8 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAdCdzc_SvwQ0j4xZjl9RI2szAO4jc4toA'
     }),
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    AgGridModule.withComponents([])
   ],
   providers: [DataService, DynamicComponentService],
   entryComponents: [ DynamicPageComponent ],
