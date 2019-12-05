@@ -106,12 +106,26 @@
 </div>
 <div class="row section-4">
   <div class="col-12 d-flex"><span class="section-title m-auto">Sources</span></div>
-  <div _ngcontent-c4="" class="col-12 d-flex place-left">
+  <div _ngcontent-c4="" class="col-12 d-flex justify-content-center">
     <ul _ngcontent-c4="" class="list-group">
-      <li _ngcontent-c4="" class="list-group-item">Author</li>
+      <li _ngcontent-c4="" class="list-group-item">Artist</li>
       <li _ngcontent-c4="" class="list-group-item">Title</li>
+      <li _ngcontent-c4="" class="list-group-item">Year created</li>
       <li _ngcontent-c4="" class="list-group-item">Date</li>
+      <li _ngcontent-c4="" class="list-group-item">Medium</li>
+      <li _ngcontent-c4="" class="list-group-item">Dimensions</li>
+      <li _ngcontent-c4="" class="list-group-item">Location</li>
       <li _ngcontent-c4="" class="list-group-item">Link</li>
+    </ul>
+    <ul _ngcontent-c4="" class="list-group">
+      <li _ngcontent-c4="" class="list-group-item">{{author['firstName']}} {{author['lastName']}}</li>
+      <li _ngcontent-c4="" class="list-group-item">{{artwork['title']}}</li>
+      <li _ngcontent-c4="" class="list-group-item">{{artwork['yearCreated']}}</li>
+      <li _ngcontent-c4="" class="list-group-item">Date</li>
+      <li _ngcontent-c4="" class="list-group-item">Medium</li>
+      <li _ngcontent-c4="" class="list-group-item">Dimensions</li>
+      <li _ngcontent-c4="" class="list-group-item">{{artwork['location']}}</li>
+      <li _ngcontent-c4="" class="list-group-item">{{artwork['url']}}</li>
     </ul>
   </div>
 </div>

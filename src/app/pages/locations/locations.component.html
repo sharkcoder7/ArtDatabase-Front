@@ -7,8 +7,6 @@
 
                  ngNativeValidate>
 
-
-
             <div class="form-item">
               <input type="text" class="form-control looking-field" placeholder="What are you looking for?" value="Zundert, Netherlands" aria-label="Recipient's username" aria-describedby="basic-addon2" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
@@ -341,11 +339,16 @@
     </div>
   </div>
   <div class="col-xl-6 col-md-7 d-flex p-0">
-    <img src="./assets/imgs/map.png" width="800px">
+    <div style="width: 1000px;">
+        <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+    </div>
+    <!-- <img src="./assets/imgs/map.png" width="800px"> -->
     <div class="d-flex  m-auto map-container" style="display:block; width:569px;height:414px" id="map">
-      <agm-map [latitude]='latitude' [longitude]='longitude'
+     <!-- <agm-map [latitude]='latitude' [longitude]='longitude'
       [mapTypeId]='mapType'>
-      </agm-map>
+      </agm-map> -->
     <!--<div class="d-flex m-auto map-container">
       <img class="map-image" src="./assets/imgs/map.png" alt="">
       <div class="point-wrapper d-flex" style="top: 50%; left: 50%" data-toggle="popover" data-placement="top" data-content="Exhibitions">
@@ -362,4 +365,7 @@
       </div>
     </div> -->
   </div>
+  
 </div>
+
+
