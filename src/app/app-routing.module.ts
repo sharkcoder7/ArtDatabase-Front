@@ -9,6 +9,7 @@ import {CollectionComponent} from './pages/collection/collection.component';
 import {AuthorsComponent} from './pages/authors/authors.component';
 import {WorksComponent} from './pages/works/works.component';
 import {AboutComponent} from './pages/about/about.component';
+import {MapComponent} from './pages/map/map.component';
 import {LocationsComponent} from './pages/locations/locations.component';
 import {DatabaseComponent} from './pages/database/database.component';
 import {ConditionsComponent} from './pages/conditions/conditions.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'authors/:id', component: AuthorsComponent},
   {path: 'works/:id', component: WorksComponent},
   {path: 'about', component: AboutComponent},
+  {path: 'map', component: MapComponent},
   {path: 'location', component: LocationsComponent},
   {path: 'database', component: DatabaseComponent},
   {path: 'terms', component: ConditionsComponent},
