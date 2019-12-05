@@ -1,4 +1,5 @@
 export * from './about/about.component';
+export * from './map/map.component';
 export * from './authors/authors.component';
 export * from './collection/collection.component';
 export * from './conditions/conditions.component';
