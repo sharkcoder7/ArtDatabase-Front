@@ -9,6 +9,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { NgbModule, NgbModalModule, NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
 import { SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { NgxPopper } from 'angular-popper';
+import { NgMasonryGridModule } from 'ng-masonry-grid';
 
 import {AppComponent} from './app.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
@@ -97,6 +98,7 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     NgbButtonsModule,
     ChartsModule,
     NgxPopper,
+    NgMasonryGridModule,
     CarouselModule.forRoot(),
     NgbModalModule.forRoot(),
     AgmCoreModule.forRoot({

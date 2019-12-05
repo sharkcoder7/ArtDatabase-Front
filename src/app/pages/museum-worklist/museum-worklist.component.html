@@ -4,30 +4,38 @@
     <hr style="width: 100%;">
   </div>
   <div class="col-lg-12">
+    <div class="masonry-container">
+      <ng-masonry-grid *ngIf="showMasonry"
+        [masonryOptions]="{ transitionDuration: '0.3s', gutter: 10, horizontalOrder: true }"
+        [useAnimation]="false"
+        [useImagesLoaded]="true"
+        (onNgMasonryInit)="onNgMasonryInit($event)"
+        >
+        <ng-masonry-grid-item id="{{'masonry-item-'+ (i)}}" *ngFor="let item of masonryItems; let i = index;">
+          <div class="art-container">
+            <div class="art-card">
+              <img mat-card-image [src]="item.src" alt="Photo of a Shiba Inu" class="art-item">
+            </div>
+            <div class="art-title">
+              <span class="art-arttitle">{{item.title}}</span>
+              <br>
+              <span class="art-artist">{{item.artist}}</span>
+            </div>
+          </div>
+        </ng-masonry-grid-item>
+      </ng-masonry-grid>
+    </div>
     <div class="pages">
       <div #pages></div>
       <ngui-inview (inview)="addPage($event, pageTemplate)"></ngui-inview>
     </div>
     <ng-template #pageTemplate let-items="items">
-      <div *ngIf="items else loading" class="row">
-        <div *ngFor="let art of items" class="col-lg-4 col-md-6 col-sm-12">
-          <div class="art-container">
-            <div class="art-card">
-              <img [src]="art.url" class="art-item">
-            </div>
-            <div class="art-title">
-              <span class="art-arttitle">{{art.title}}</span>
-              <br>
-              <span class="art-artist">{{art.artist}}</span>
-            </div>
+      <div *ngIf="items else loading" style="display: none;"></div>
+        <ng-template #loading>
+          <div class="loading">
+            Loading...
           </div>
-        </div>
-      </div>
-      <ng-template #loading>
-        <div class="loading">
-          Loading...
-        </div>
-      </ng-template>
+        </ng-template>
     </ng-template>
   </div>
   <app-scroll-top></app-scroll-top>
