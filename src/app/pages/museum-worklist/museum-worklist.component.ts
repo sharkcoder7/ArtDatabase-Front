@@ -1,6 +1,8 @@
-import { Component, OnInit, ElementRef, ViewChild, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, TemplateRef, ViewContainerRef, OnDestroy } from '@angular/core';
 import { delay } from 'rxjs/internal/operators';
 import { of } from 'rxjs';
+import { Masonry, MasonryGridItem } from 'ng-masonry-grid';
+import { SubscriptionLike as ISubscription } from 'rxjs';
 
 import { DynamicComponentService } from './dynamic.component.service';
 import { DynamicPageComponent } from './dynamic-page.component';
@@ -10,11 +12,21 @@ import { DynamicPageComponent } from './dynamic-page.component';
   templateUrl: './museum-worklist.component.html',
   styleUrls: ['./museum-worklist.component.scss']
 })
-export class MusuemWorklistComponent implements OnInit {
+export class MusuemWorklistComponent implements OnInit, OnDestroy {
+  _masonry: Masonry;
+  private _removeAllSubscription: ISubscription;
+  private _removeItemSubscription: ISubscription;
+  private _removeFirstItemSubscription: ISubscription;
+  count = 0;
+  showMasonry = true;
+  animOptions = { animationEffect: 'effect-1' };
+  masonryItems: Array<any> = [];
+
   museum;
   artlists;
   pageLoading: boolean;
   lastPage = 0;
+  limit = 0;
 
   @ViewChild('pages', {read:ViewContainerRef}) vcr: ViewContainerRef;
 
@@ -34,17 +46,21 @@ export class MusuemWorklistComponent implements OnInit {
       {artist: 'Gustav Klimt', url: './assets/imgs/43.png', title: 'Mia and Me', edate: ''},
       {artist: 'Henri Rousseau', url: './assets/imgs/48.png', title: 'Nukkuva mustalaisnainen', edate: ''},
       {artist: 'Vincent van Gogh', url: './assets/imgs/134.png', title: 'Starry Night Over the Rhone', edate: ''},
+      {artist: 'Vincent van Gogh', url: './assets/imgs/134.png', title: 'Starry Night Over the Rhone', edate: ''},
+      {artist: 'Vincent van Gogh', url: './assets/imgs/137.png', title: 'Cafe Terrace at Night', edate: ''},
       {artist: 'Vincent van Gogh', url: './assets/imgs/137.png', title: 'Cafe Terrace at Night', edate: ''},
       {artist: 'Vincent van Gogh', url: './assets/imgs/140.png', title: 'Portrait of Theo van Gogh', edate: ''},
+      {artist: 'Vincent van Gogh', url: './assets/imgs/140.png', title: 'Portrait of Theo van Gogh', edate: ''},
       {artist: 'Vincent van Gogh', url: './assets/imgs/142.png', title: 'Portrait of the Postman Joseph Roulin', edate: ''},
-    ]
+    ];
   }
 
   ngOnInit() {
   }
 
   loadItems(pageNum, limit) {
-    let items = this.artlists;
+    this.limit = limit;
+    let items = [];
     return of(items);
   }
 
@@ -56,13 +72,26 @@ export class MusuemWorklistComponent implements OnInit {
       dynPageComp.template = template;
       dynPageComp.options = {page: this.lastPage};
       this.dcs.insertComponent(compRef);
-      this.loadItems(this.lastPage, 50)
+      this.loadItems(this.lastPage, 15)
       .pipe( delay(2000) )
       .subscribe(items => {
+        for (let i = 0; i < this.limit; i++) {
+          this.masonryItems.push({ src: this.artlists[i].url, count: this.count++, artist: this.artlists[i].artist, title: this.artlists[i].title});
+        }
         dynPageComp.items = items;
-        this.lastPage++;
         this.pageLoading = false;
       });
     }
+  }
+  ngOnDestroy() {
+    if (this._masonry) {
+      this._removeAllSubscription.unsubscribe();
+      this._removeItemSubscription.unsubscribe();
+      this._removeFirstItemSubscription.unsubscribe();
+    }
+  }
+
+  onNgMasonryInit($event: Masonry) {
+    this._masonry = $event;
   }
 }
