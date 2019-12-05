@@ -121,6 +121,7 @@ div {
   &.section-4 span.section-title {
     font-size: 44px;
     color: rgba(0, 0, 0, 0.5);
+    text-align: center;
   }
 
   &.about-left {
@@ -165,7 +166,7 @@ div {
 
 div {
   &.section-3 {
-    margin: 3rem 0 10rem 0;
+    margin: 3rem 0 6rem 0;
 
     span {
       &.author-works-title {
@@ -398,6 +399,10 @@ div {
   &.gallery-block div.flex-column {
     margin: 0.5rem 0;
   }
+}
+
+.list-group-item{
+  background-color: transparent;
 }
 
 @media (max-width: 1200px) {
