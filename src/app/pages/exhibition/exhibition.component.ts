@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DataService} from "../../services/data.service";
-
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-exhibition',
@@ -14,6 +14,10 @@ export class ExhibitionComponent implements OnInit {
   exhibition;
   artworks = [];
   artworksPagination = [];
+  styles = environment.googleMapStyleVintage;
+
+  lat = 40.730610;
+  lng = -73.935242;
 
   constructor(private dataService: DataService, private route: ActivatedRoute) { 
 
