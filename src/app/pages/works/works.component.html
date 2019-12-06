@@ -54,7 +54,8 @@
     <div class="content hideContent" [class.showContent]="showMoreFlag">
       <p #authorStory class="author-story-mote-text">{{artwork['description']}}</p>
       <div class="author-story-more"></div>
-    </div>
+    </div>|
+    
     <div class="m-auto d-flex w-100 show-more" *ngIf="showLess">
       <button class="btn btn-light button-show-more" (click)="showMore()"><span
         *ngIf="!showMoreFlag">Read More</span><span *ngIf="showMoreFlag">Read Less</span></button>
@@ -77,7 +78,12 @@
 <div class="row section-3">
   <div class="col-xl  col-md  col-12 place-left d-flex ">
     <div class="hovereffect w-100">
-      <img class="place-img" src="./assets/imgs/map.png" alt="" style="width: 700px">
+      <!-- <img class="place-img" src="./assets/imgs/map.png" alt="" style="width: 700px"> -->
+      <div style="width: 100%;">
+          <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+      </div>
       <div class="row m-0">
         <div class="col d-flex bot-part">
           <div class="d-flex" style="margin: auto 0  2rem 1.5rem">

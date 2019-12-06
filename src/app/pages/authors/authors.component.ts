@@ -2,6 +2,8 @@ import {Component, OnInit, HostListener, ElementRef, ViewChild} from '@angular/c
 import {ActivatedRoute} from '@angular/router';
 import {DataService} from "../../services/data.service";
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import {environment} from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-authors',
@@ -11,7 +13,6 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
     '(window:resize)': 'onResize($event)'
   }
 })
-
 
 export class AuthorsComponent implements OnInit {
   @ViewChild('authorStory') authorStoryElement: ElementRef;
@@ -23,6 +24,10 @@ export class AuthorsComponent implements OnInit {
   artworks = [];
   artworksPagination = [];
   exhibitions = [];
+  styles = environment.googleMapStyleVintage;
+
+  lat = 40.730610;
+  lng = -73.935242;
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
   }
