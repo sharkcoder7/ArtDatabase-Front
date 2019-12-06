@@ -14,7 +14,7 @@
         <ng-masonry-grid-item id="{{'masonry-item-'+ (i)}}" *ngFor="let item of masonryItems; let i = index;">
           <div class="art-container">
             <div class="art-card">
-              <img mat-card-image [src]="item.src" alt="Photo of a Shiba Inu" class="art-item">
+              <img mat-card-image [src]="item.src" alt="Photo of a Shiba Inu" class="art-item" (click)="showDetail(i)">
             </div>
             <div class="art-title">
               <span class="art-arttitle">{{item.title}}</span>
