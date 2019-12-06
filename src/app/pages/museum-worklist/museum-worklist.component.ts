@@ -1,8 +1,7 @@
-import { Component, OnInit, ElementRef, ViewChild, TemplateRef, ViewContainerRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, TemplateRef, ViewContainerRef } from '@angular/core';
 import { delay } from 'rxjs/internal/operators';
 import { of } from 'rxjs';
 import { Masonry, MasonryGridItem } from 'ng-masonry-grid';
-import { SubscriptionLike as ISubscription } from 'rxjs';
 
 import { DynamicComponentService } from './dynamic.component.service';
 import { DynamicPageComponent } from './dynamic-page.component';
@@ -12,11 +11,8 @@ import { DynamicPageComponent } from './dynamic-page.component';
   templateUrl: './museum-worklist.component.html',
   styleUrls: ['./museum-worklist.component.scss']
 })
-export class MusuemWorklistComponent implements OnInit, OnDestroy {
+export class MusuemWorklistComponent implements OnInit {
   _masonry: Masonry;
-  private _removeAllSubscription: ISubscription;
-  private _removeItemSubscription: ISubscription;
-  private _removeFirstItemSubscription: ISubscription;
   count = 0;
   showMasonry = true;
   animOptions = { animationEffect: 'effect-1' };
@@ -83,15 +79,12 @@ export class MusuemWorklistComponent implements OnInit, OnDestroy {
       });
     }
   }
-  ngOnDestroy() {
-    if (this._masonry) {
-      this._removeAllSubscription.unsubscribe();
-      this._removeItemSubscription.unsubscribe();
-      this._removeFirstItemSubscription.unsubscribe();
-    }
-  }
 
   onNgMasonryInit($event: Masonry) {
     this._masonry = $event;
+  }
+
+  showDetail(index) {
+    console.log(index);
   }
 }
