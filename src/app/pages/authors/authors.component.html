@@ -1,6 +1,5 @@
 <div class="row section-1">
   <div class="col-xl-4 col-md-6 col-12  d-flex flex-column text-left author-info">
-
       <div class="w-100 author-years"><span>{{author['birthYear']}} - {{author['deathYear']}}</span></div>
       <div class="d-flex flex-column w-100 author-name">
         <span class=" w-100">{{author['firstName']}}<br></span>
@@ -10,14 +9,11 @@
       <div class="d-flex w-100">
         <button class="btn btn-warning save-artist">Save Artist</button>
       </div>
-
     <div class="d-flex arrows-holder">
       <button class="btn btn-light next-arrow-transp"><img style="height: 20px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-left.svg"></button>
       <button class="btn btn-light next-arrow-transp"><img style="height: 20px" class="m-auto" src="./assets/imgs/svg/arrow-pointing-to-right-gray.svg"></button>
     </div>
   </div>
-
-
   <div class="col-xl-4   d-none d-xl-flex flex-column">
     <div class="col d-flex">
         <div class="img-wrapper"><img class="middle-img borderImage" src="./assets/imgs/vincent-vangogh-2-authors.png" alt="">
@@ -42,28 +38,16 @@
   </div>
   <div class="col-xl col-12 about-right" >
     <div class="content">
-  <p #authorStory class="author-story-mote-text">Vincent Willem van Gogh (30 March 1853 – 29 July 1890) was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade he created about 2,100 artworks, including around 860 oil paintings, most of them in the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. He was not commercially successful, and his suicide at 37 came after years of mental illness and poverty.</p>
-
+      <p #authorStory class="author-story-mote-text">Vincent Willem van Gogh (30 March 1853 – 29 July 1890) was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade he created about 2,100 artworks, including around 860 oil paintings, most of them in the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. He was not commercially successful, and his suicide at 37 came after years of mental illness and poverty.</p>
     </div>
   </div>
 </div>
 <div class="row section-3">
-  <!-- <div class="col-xl  col-md  col-12    place-left d-flex ">
-    <div class="hovereffect w-100">
-      <img class="place-img" src="./assets/imgs/zundert.png" alt="" style="width: 100%">
-      <div class="overlay row m-0">
-        <div class="col d-flex bot-part">
-
-          <div class="d-flex" style="margin: auto 0  2rem 1.5rem">
-            <img src="./assets/imgs/svg/maps-and-flags.svg" style="height: 20px; margin: 0 0 auto 0;">&nbsp;&nbsp;<span class="info2">Zundert, Netherlands</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="col-xl col-md col-12 place-left d-flex ">
-      <div class="hovereffect w-100">
-        <img class="" src="../../../assets/imgs/map.png" alt="" style="width: 100%">
+      <div class="hovereffect w-100" style="width: 650px">
+          <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
         <div class="row m-0">
           <div class="col d-flex bot-part">
               <div class="d-flex" style="margin: auto 0  2rem 1.5rem">
@@ -74,7 +58,6 @@
       </div>
     </div>
   <div class="col-xl-2 col-md-3 col-12 place-right  works-data">
-
     <div class="col m-auto d-flex flex-column">
       <span class="m-100  author-works-title">Works</span>
       <span class="m-100  author-works-number">26</span>
@@ -125,7 +108,6 @@
     </div>
   </div>
 </div>
-
 <div class="row section-5 col-12">
     <div class="col about-left">
       <div class="row justify-content-center exhibition-block">
