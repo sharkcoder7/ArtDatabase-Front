@@ -10,10 +10,16 @@ import {DataService} from '../../services/data.service';
 })
 export class MuseumsComponent implements OnInit {
   museum;
+  styles = environment.googleMapStyleVintage;
+
+  lat = 40.730610;
+  lng = -73.935242;
+  /*
   map: mapboxgl.Map;
   style = 'mapbox://styles/mapbox/streets-v11';
   lat = -73.958965;
-  lng = 40.782933;
+  lng = 40.782933;*/
+
   images;
   itemsPerSlide = 4;
   singleSlideOffset = true;
@@ -51,7 +57,8 @@ export class MuseumsComponent implements OnInit {
   }
 
   ngOnInit() {
-    (mapboxgl as typeof mapboxgl).accessToken = environment.mapbox.accessToken;
+
+    /*(mapboxgl as typeof mapboxgl).accessToken = environment.mapbox.accessToken;
     this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v9',
@@ -61,7 +68,7 @@ export class MuseumsComponent implements OnInit {
     new mapboxgl.Marker()
       .setLngLat([this.lat, this.lng])
       .addTo(this.map);
-    this.map.addControl(new mapboxgl.NavigationControl());
+    this.map.addControl(new mapboxgl.NavigationControl());*/
   }
 
 }

@@ -41,6 +41,9 @@
     <div class="row">
       <div class="col-lg-6 col-md-12 col-sm-12 d-flex p-0">
         <div class="d-flex m-auto map-container" id="map">
+            <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
         </div>
       </div>
       <div class="col-lg-3 textarea">
