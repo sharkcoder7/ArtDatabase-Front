@@ -8,6 +8,9 @@
 .art-card {
   width: 100%;
 }
+.art-card:hover .art-item {
+  opacity: 0.7;
+}
 
 .art-item {
   display: block;
