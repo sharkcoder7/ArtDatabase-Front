@@ -44,8 +44,10 @@
 </div>
 <div class="row section-4">
     <div class="col-xl  col-md  col-12 place-left d-flex ">
-        <div class="hovereffect w-100">
-          <img class="" src="../../../assets/imgs/map.png" alt="" style="width: 650px">
+        <div class="hovereffect w-100" style="width: 650px">
+            <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
           <div class="row m-0">
             <div class="col d-flex bot-part">
                 <div class="d-flex" style="margin: auto 0  2rem 1.5rem">
@@ -56,7 +58,6 @@
         </div>
       </div>
     <div class="col-xl-2 col-md-3 col-12 place-right  works-data">
-  
       <div class="col m-auto d-flex flex-column">
         <span class="m-100 exhibition-works-title">Date established</span>
         <span class="m-100 exhibition-works-number">2008</span>

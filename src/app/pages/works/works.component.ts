@@ -2,9 +2,7 @@ import {Component, OnInit, HostListener, ElementRef, ViewChild} from '@angular/c
 import {ActivatedRoute} from '@angular/router';
 import {DataService} from "../../services/data.service";
 import {AllCommunityModules} from '@ag-grid-community/all-modules';
-
-
-
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-works',
@@ -14,6 +12,7 @@ import {AllCommunityModules} from '@ag-grid-community/all-modules';
     '(window:resize)': 'onResize($event)'
   }
 })
+
 export class WorksComponent implements OnInit {
   @ViewChild('authorStory') authorStoryElement: ElementRef;
 
@@ -31,6 +30,7 @@ export class WorksComponent implements OnInit {
   artwork = [];
   artworkImage;
   author = [];
+  styles = environment.googleMapStyleVintage;
 
   columnDefs = [
     {headerName: '#', field: 'number', width: 150  },
@@ -52,6 +52,9 @@ export class WorksComponent implements OnInit {
   ];
 
   modules = AllCommunityModules;
+
+  lat = 40.730610;
+  lng = -73.935242;
 
   ngOnInit() {
     this.dataService.getArtwork(this.route.snapshot.paramMap.get('id')).subscribe((data: any[]) => {
