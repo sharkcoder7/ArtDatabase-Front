@@ -1,3 +1,5 @@
+import { from } from 'rxjs';
+
 export * from './about/about.component';
 export * from './map/map.component';
 export * from './authors/authors.component';
@@ -21,3 +23,4 @@ export * from './museum-worklist/museum-worklist.component';
 export * from './exhibition/exhibition.component';
 export * from './scroll-top/scroll-top.component';
 export * from './museum-worklist/dynamic-page.component';
+export * from './artmap/artmap.component';

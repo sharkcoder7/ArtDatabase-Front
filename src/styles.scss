@@ -8,6 +8,7 @@ body {
 @import '../node_modules/@fullcalendar/core/main.css';
 @import '../node_modules/@fullcalendar/daygrid/main.css';
 @import '../node_modules/@fullcalendar/timegrid/main.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 @import '../node_modules/@syncfusion/ej2-angular-inputs/styles/material.css';
 
@@ -25,8 +26,6 @@ body {
       border: 0px;
       font-family: 'Courier New', Courier, monospace;
       font-size: 14px;
-      secondary-font-family:  'Courier New', Courier, monospace;
-      secondary-font-size: 14px;
 
       .ag-row-even{
         background-color: transparent;
@@ -72,6 +71,20 @@ body {
 @font-face {
   font-family: TypeWriter;
   src: url("./assets/fonts/typewriter.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Brave Sans";
+  src: url("./assets/fonts/BraveSans-Regular.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-RegularItalic.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-Bold.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-BoldItalic.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-ExtraBold.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-ExtraBoldItalic.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-Light.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-LightItalic.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-Medium.otf") format("opentype"),
+    url("./assets/fonts/BraveSans-MediumItalic.otf") format("opentype");
 }
 
 span.logo-shadow {

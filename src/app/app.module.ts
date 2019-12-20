@@ -10,6 +10,7 @@ import { NgbModule, NgbModalModule, NgbButtonsModule } from '@ng-bootstrap/ng-bo
 import { SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { NgxPopper } from 'angular-popper';
 import { NgMasonryGridModule } from 'ng-masonry-grid';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import {AppComponent} from './app.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
@@ -21,6 +22,7 @@ import { NguiInviewComponent } from './ngui-inview.component';
 import { NguiInviewDirective } from './ngui-inview.directive';
 import { DynamicComponentService } from './pages/museum-worklist/dynamic.component.service';
 import { AgGridModule } from '@ag-grid-community/angular';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import {
@@ -51,8 +53,10 @@ import {
   MusuemWorklistComponent,
   ExhibitionComponent,
   ScrollTopComponent,
-  DynamicPageComponent
+  DynamicPageComponent,
+  ArtmapComponent
 } from './pages';
+
 import {ChartsModule} from "ng2-charts";
 import { NewsCardComponent } from './components/news-card/news-card.component';
 
@@ -86,7 +90,8 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     DynamicPageComponent,
     NewsCardComponent,
     ExhibitionComponent,
-    ScrollTopComponent
+    ScrollTopComponent,
+    ArtmapComponent
   ],
   imports: [
     BrowserModule,
@@ -103,6 +108,8 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     ChartsModule,
     NgxPopper,
     NgMasonryGridModule,
+    NgxPaginationModule,
+    NgSelectModule,
     CarouselModule.forRoot(),
     NgbModalModule.forRoot(),
     AgmCoreModule.forRoot({
