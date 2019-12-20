@@ -1,0 +1,176 @@
+<div class="row preview-container">
+  <div class="card search-section col-12">
+    <div class="row grid-divider">
+      <div class="col-lg-5" class="search-container">
+        <input type="search" class="form-control" id="search" placeholder="&#xF002;  Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
+      </div>
+      <div class="col-lg-5">
+        <div class="row" style="height: 100%;">
+          <div class="col-md-4 selectbox-content">
+            <span class="category-label">Categories:&nbsp;</span>
+            <ng-select [items]="categories"
+                      bindLabel="title"
+                      bindValue="id"
+                      [(ngModel)]="selectedCategory"
+                      (change)="onCategory()"
+                      class="category-content">
+            </ng-select>
+          </div>
+          <div class="col-md-4 selectbox-content">
+            <span class="sort-label">&nbsp;Sort&nbsp;by:&nbsp;</span>
+            <ng-select [items]="sorts"
+                      bindLabel="title"
+                      bindValue="id"
+                      [(ngModel)]="selectedSort"
+                      (change)="onSort()"
+                      class="sort-content">
+            </ng-select>
+          </div>
+          <div class="col-md-4 text-right advance-content">
+            <img src="./assets/imgs/Filter.svg">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="row" style="height: 100%;">
+          <div class="col-lg-12 selectbox-content">
+            <span class="location-label">Location:&nbsp;</span>
+            <ng-select [items]="locations"
+                      bindLabel="title"
+                      bindValue="id"
+                      (change)="onLocation()"
+                      [(ngModel)]="selectedLocation"
+                      class="location-content">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="list-container">
+    <div class="card-section">
+      <div class="row card-detail card" *ngFor="let data of datas | paginate: config let i = index">
+        <div class="card-carousel">
+          <div attr.id="cardCarousel{{i}}" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li attr.data-target="#cardCarousel{{i}}" data-slide-to="0" class="active"></li>
+              <li attr.data-target="#cardCarousel{{i}}" data-slide-to="1"></li>
+              <li attr.data-target="#cardCarousel{{i}}" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let image of data.images; let j = index" [ngClass]="j==0? 'active': ''">
+                <img [src]="image.url">
+              </div>
+            </div>
+            <a class="carousel-control-prev" attr.href="#cardCarousel{{i}}" data-slide="prev" style="opacity: 1.0;">
+              <div class="back-content"></div>
+              <div class="hover-content">
+                <i class="fas fa-chevron-left arrow-content"></i>
+              </div>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" attr.href="#cardCarousel{{i}}" data-slide="next" style="opacity: 1.0;">
+              <div class="back-content"></div>
+              <div class="hover-content">
+                <i class="fas fa-chevron-right arrow-content"></i>
+              </div>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="card-title">
+          <div class="item-label">
+            <div class="item-title">{{data.title}} <span class="item-distance">{{data.distance}} km</span></div>
+            <div class="spacer"></div>
+            <div style="line-height: 15px;">
+              <div class="card-marker">
+                <img [src]="item_url[i].url">
+              </div>
+            </div>
+          </div>
+          <div class="row item-time">
+            <div class="open-status" [ngClass]="data.open_status===1? 'show': 'none'">Open Now</div>
+            <div class="open-time">{{data.start_time}} ~ {{data.end_time}}</div>
+          </div>
+          <div class="item-detail">
+            <span>{{data.address}}</span>
+            <br />
+            <span>{{data.city}}, {{data.state}} {{data.pcode}}</span>
+          </div>
+          <div class="item-phone">
+            <span>{{data.phone_number}}</span>
+          </div>
+          <div class="item-more">
+            View details
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination-section">
+      <div class="pagination-label">
+        Showing {{totalData}} results
+      </div>
+      <div class="pagination-content row">
+        <pagination-template #p="paginationApi"
+                     [id]="config.id"
+                     (pageChange)="pageChanged($event)">
+            <div class="custom-pagination">
+                <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+                    <a *ngIf="!p.isFirstPage()" (click)="p.previous()"><i class="fas fa-chevron-left"></i></a>
+                </div>
+
+                <div *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                    <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+                        <span>{{ page.label }}</span>
+                    </a>
+                    <div *ngIf="p.getCurrent() === page.value">
+                        <span>{{ page.label }}</span>
+                    </div>
+                </div>
+
+                <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                    <a *ngIf="!p.isLastPage()" (click)="p.next()"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </pagination-template>
+      </div>
+    </div>
+  </div>
+  <div class="map-container" id="map">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13" [styles]="styles">
+      <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="currentLocation"></agm-marker>
+      <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="marker.icon" [label]="marker.label">
+        <agm-info-window>
+          <div class="marker-card-section">
+            <div class="row marker-card-detail">
+              <div class="marker-card-carousel">
+                <img [src]="marker.data.images[0].url">
+              </div>
+              <div class="marker-card-title">
+                <div class="item-label">
+                  <div class="item-title">{{marker.data.title}}</div>
+                </div>
+                <div class="row item-time">
+                  <div class="open-status" [ngClass]="marker.data.open_status===1? 'show': 'none'">Open Now</div>
+                  <div class="open-time">{{marker.data.start_time}} ~ {{marker.data.end_time}}</div>
+                </div>
+                <div class="item-detail">
+                  <span>{{marker.data.address}}</span>
+                  <br />
+                  <span>{{marker.data.city}}, {{marker.data.state}} {{marker.data.pcode}}</span>
+                </div>
+                <div class="item-phone">
+                  <span>{{marker.data.phone_number}}</span>
+                </div>
+                <div class="item-more">
+                  View details
+                </div>
+              </div>
+            </div>
+          </div>
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
+  </div>
+</div>

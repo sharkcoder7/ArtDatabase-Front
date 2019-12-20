@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61 (101010) - https://sketch.com -->
+    <title>3079AB00-34A4-4474-8CFE-AF2EE82C9FAA</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Asset-Artboard-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons/Map/Museum">
+            <rect id="Rectangle" fill="#FF76B2" fill-rule="nonzero" x="0" y="0" width="24" height="20" rx="4"></rect>
+            <g id="Group" transform="translate(4.000000, 2.000000)">
+                <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+                <g id="building" transform="translate(2.000000, 2.000000)" fill="#FFFFFF">
+                    <path d="M12,11.3041077 L12,11.9838867 L0,11.9838867 L0,11.3041077 L12,11.3041077 Z M11.4777832,3.01785278 L11.4777832,3.97247315 L12,3.97247315 L12,4.67559815 L10.657196,4.67559815 L10.8636475,9.87442017 L11.4777832,9.87442017 L11.4777832,10.6009827 L0.522216797,10.6009827 L0.522216797,9.87442017 L1.00469972,9.87442017 L1.21115112,4.67559815 L0,4.67559815 L0,3.97247315 L0.522216797,3.97247315 L0.522216797,3.01785278 L11.4777832,3.01785278 Z M4.96224976,4.67559814 L3.28665161,4.67559814 L3.49310301,9.87442017 L4.75579833,9.87442017 L4.96224976,4.67559814 Z M8.58169556,4.67559814 L7.03775024,4.67559814 L7.24420167,9.87442017 L8.37524413,9.87442017 L8.58169556,4.67559814 Z M6,0.01171875 L10.0712585,2.31472778 L1.92874146,2.31472778 L6,0.01171875 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

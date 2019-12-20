@@ -22,6 +22,7 @@ import { MuseumsComponent } from './pages/museums/museums.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { MusuemWorklistComponent } from './pages/museum-worklist/museum-worklist.component';
 import { ExhibitionComponent } from './pages/exhibition/exhibition.component';
+import { ArtmapComponent } from './pages/artmap/artmap.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent},
   {path: 'news/:id', component: NewsDetailComponent},
   {path: 'exhibition/:id', component: ExhibitionComponent},
+  {path: 'artmap', component: ArtmapComponent},
 
   {path: '**', redirectTo: '/'}
 ];

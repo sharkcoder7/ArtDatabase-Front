@@ -1,0 +1,469 @@
+.preview-container {
+  width: 1440px;
+  height: 100%;
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-section {
+  overflow: visible;
+  width: 100%;
+  height: 57px;
+  padding: 0px;
+  margin: 0px 0px 20px 0px;
+  border-color: #EFEFEF;
+}
+
+.grid-divider {
+  position: relative;
+  margin: 0px;
+  height: 100%;
+}
+
+.grid-divider > [class*="col-"]:nth-child(n + 2):after {
+  content: "";
+  background-color: #EFEFEF;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: -4px; // quickfix to center line between columns
+  }
+  @media (min-width: 768px) {
+    width: 1px;
+    height: auto;
+    left: -1px; // quickfix to hide divider on left side
+  }
+}
+
+.search-container {
+  padding-left: 0px;
+  display: flex;
+}
+
+input {
+  font-family: FontAwesome, "Brave Sans";
+  color: #111111;
+  font-size: 14px;
+  line-height: 17px;
+  opacity: 0.4;
+}
+
+#search {
+  margin: auto;
+  width: 560px;
+  border: 0px;
+  outline: none !important;
+  box-shadow: inset 0 0px 0 #ddd;
+}
+
+.category-content {
+  width: 100%;
+  margin: auto;
+  color: #7976FF;
+  font-family: "Brave Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  border: 0px;
+  box-shadow: inset 0 0px 0 #ddd;
+}
+
+.category-label {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 14px;
+  line-height: 24px;
+  margin: auto;
+}
+
+.sort-content {
+  width: 100%;
+  margin: auto;
+  color: #7976FF;
+  font-family: "Brave Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  box-shadow: inset 0 0px 0 #ddd;
+}
+
+:host ::ng-deep div.ng-select-container.ng-has-value {
+  border: 0px;
+  box-shadow: inset 0 0px 0 #ddd !important;
+}
+
+:host ::ng-deep div.ng-select-container.ng-has-value div.ng-value-container {
+  color: #7976FF;
+  font-family: "Brave Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+:host ::ng-deep div.ng-select-container.ng-has-value span.ng-clear-wrapper {
+  display: none;
+}
+
+.sort-label {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 14px;
+  line-height: 24px;
+  margin: auto;
+}
+
+.location-label {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 14px;
+  line-height: 24px;
+  margin: auto;
+}
+
+.location-content {
+  width: 100%;
+  margin: auto;
+  color: #7976FF;
+  font-family: "Brave Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  box-shadow: inset 0 0px 0 #ddd;
+}
+
+.list-container {
+  width: 540px;
+  height: 896px;
+  padding: 0px;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+agm-map {
+  width: 840px;
+  height: 896px;
+}
+
+#map {
+  display: block;
+  width: 840px;
+  height: 896px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.card-section {
+  padding-bottom: 20px;
+  margin: 0px;
+}
+
+.card-detail {
+  width: 100%;
+  height: 160px;
+  padding: 10px 10px 10px 10px;
+  margin: 0px 0px 10px 0px;
+  border-color: #EFEFEF;
+}
+
+.card-carousel {
+  position: relative;
+  padding: 0px;
+  width: 200px;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.card-carousel img {
+  width: 100%;
+  height: 138px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.card-title {
+  width: 300px;
+  height: 100%;
+  position: relative;
+  margin: 0px;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+}
+
+.carousel-indicators .active {
+  width: 6px;
+  height: 6px;
+  margin: 0;
+  background-color: white;
+}
+
+.item-label {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.item-title {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 19px;
+}
+
+.item-distance {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 12px;
+	line-height: 15px;
+  text-align: right;
+  opacity: 0.4;
+}
+
+.item-time {
+  margin: 0px 0px 6px 0px;
+}
+
+.open-status {
+  float: left;
+  color: #0AB207;
+  font-family: "Brave Sans";
+  font-size: 12px;
+  line-height: 15px;
+  margin-right: 6px;
+}
+
+.open-status.show {
+  display: inline-flex;
+}
+
+.open-status.none {
+  display: none;
+}
+
+.open-time {
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.item-detail {
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 12px;
+  line-height: 15px;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.item-phone {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 12px;
+  line-height: 15px;
+  width: 100%;
+}
+
+.item-more {
+  position: absolute;
+  width: 100%;
+	color: #9001FF;
+	font-family: "Brave Sans";
+	font-size: 12px;
+	font-weight: 500;
+  line-height: 15px;
+  bottom: 0px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.card-marker img  {
+  width: 24px;
+  height: 20px;
+  z-index: 99999;
+}
+
+.marker-card-section {
+  padding: 10px 20px 0px 10px;
+}
+
+.marker-card-carousel {
+  position: relative;
+  padding: 0px;
+  width: 160px;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.marker-card-carousel img {
+  width: 100%;
+  height: 125px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.marker-card-title {
+  width: 172px;
+  height: 100%;
+  position: relative;
+}
+
+.marker-card-detail {
+  width: 100%;
+  height: 125px;
+  margin: 0px 0px 20px 0px;
+}
+
+.pagination-section {
+  display: -webkit-box;
+  height: 26px;
+  width: 100%;
+}
+
+.pagination-content {
+  margin: 0 auto;
+}
+
+.pagination-label {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 24px;
+}
+
+:host ::ng-deep pagination-template div.custom-pagination {
+  display: flex;
+  max-width: 238px;
+  margin: auto;
+}
+:host ::ng-deep pagination-template div.custom-pagination>div {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  font-family: "Brave Sans";
+  line-height: 26px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+:host ::ng-deep pagination-template div.custom-pagination>div.current {
+  border-radius: 4px;
+  background-color: #7976ff;
+}
+:host ::ng-deep pagination-template div.custom-pagination div.pagination-previous {
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 1.5px #7976ff;
+  margin-right: 10px;
+  color: #7976FF;
+}
+:host ::ng-deep pagination-template div.custom-pagination div.pagination-previous.disabled {
+  display: none;
+}
+:host ::ng-deep pagination-template div.custom-pagination div.pagination-next {
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 1.5px #7976ff;
+  margin-left: 10px;
+  color: #7976FF;
+}
+:host ::ng-deep pagination-template div.custom-pagination div.pagination-next.disabled {
+  display: none;
+}
+
+:host ::ng-deep div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  border-color: #7976FF;
+}
+
+:host ::ng-deep .ng-select-opened>div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  border-color: #7976FF;
+}
+
+:host ::ng-deep ng-dropdown-panel div.ng-dropdown-panel-items.scroll-host {
+  overflow: visible;
+  max-height: 300px;
+  border: 0px;
+  border-color: #EFEFEF;
+}
+
+:host ::ng-deep ng-select ng-dropdown-panel {
+  border-color: #EFEFEF;
+}
+
+:host ::ng-deep ng-select ng-dropdown-panel.ng-select-bottom {
+  border-top-color: #EFEFEF;
+}
+
+:host ::ng-deep a i.right-arrow {
+  color: white !important;
+  opacity: 1 !important;
+  margin: auto;
+}
+
+.hover-content {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  opacity: 1.0;
+  border-radius: 16px;
+}
+
+.back-content {
+  position:relative;
+  width: 26px;
+  height: 26px;
+  opacity: 0.4;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.selectbox-content {
+  height: 100%;
+  padding-right: 0px;
+  display: flex;
+}
+
+.advance-content {
+  line-height: 53px;
+  height: 100%;
+}
+
+.advance-content img {
+  width: 18px;
+  height: 17px;
+  cursor: pointer;
+}
