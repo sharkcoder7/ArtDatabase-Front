@@ -24,3 +24,4 @@ export * from './exhibition/exhibition.component';
 export * from './scroll-top/scroll-top.component';
 export * from './museum-worklist/dynamic-page.component';
 export * from './artmap/artmap.component';
+export * from './artdatabase/artdatabase.component';

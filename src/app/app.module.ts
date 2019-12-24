@@ -54,7 +54,8 @@ import {
   ExhibitionComponent,
   ScrollTopComponent,
   DynamicPageComponent,
-  ArtmapComponent
+  ArtmapComponent,
+  ArtdatabaseComponent
 } from './pages';
 
 import {ChartsModule} from "ng2-charts";
@@ -91,7 +92,8 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     NewsCardComponent,
     ExhibitionComponent,
     ScrollTopComponent,
-    ArtmapComponent
+    ArtmapComponent,
+    ArtdatabaseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,703 @@
+<div class="main-container">
+  <div class="banner-container">
+    <img src="../../../assets/imgs/banner.jpeg">
+  </div>
+  <div class="tab-container">
+    <div class="nav-section">
+      <ul class="nav nav-tabs row">
+        <li class="active">
+          <a   class="m-auto "data-toggle="tab" (click)="changeTab('all')" [ngClass]="{'active': seletedTab === 'all'}">
+            <span class="menu-item">
+              All
+            </span>
+          </a>
+        </li>
+        <li class="" >
+          <a  class="m-auto " data-toggle="tab" (click)="changeTab('artworks')" [ngClass]="{'active': seletedTab === 'artworks'}">
+            <span class="menu-item">
+              Artworks
+            </span>
+          </a>
+        </li>
+        <li class="" >
+          <a  class="m-auto " data-toggle="tab" (click)="changeTab('artists')" [ngClass]="{'active': seletedTab === 'artists'}">
+            <span class="menu-item">
+              Artists
+            </span>
+          </a>
+        </li>
+         <li class="" >
+          <a  class="m-auto " data-toggle="tab" (click)="changeTab('exhibitions')" [ngClass]="{'active': seletedTab === 'exhibitions'}">
+            <span class="menu-item">
+              Exhibitions
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a class="m-auto " data-toggle="tab" (click)="changeTab('museums')" [ngClass]="{'active': seletedTab === 'museums'}">
+            <span class="menu-item">
+              Museums
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a  class="m-auto " data-toggle="tab" (click)="changeTab('galleries')" [ngClass]="{'active': seletedTab === 'galleries'}">
+            <span class="menu-item">
+              Galleries
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a  class="m-auto" data-toggle="tab" (click)="changeTab('auctions')" [ngClass]="{'active': seletedTab === 'auctions'}">
+            <span class="menu-item">
+              Auctions
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a  class="m-auto" data-toggle="tab" (click)="changeTab('discussions')" [ngClass]="{'active': seletedTab === 'discussions'}">
+            <span class="menu-item">
+              Discussions
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-section">
+      <div class="tab-content">
+        <div id="all" [ngClass]="{'active': seletedTab === 'all'}" class="tab-pane ">
+          <div class="card search-section col-12">
+            <div class="row grid-divider">
+              <div class="col-lg-10">
+                <div class="row ">
+                  <div class="col-lg-6 search-container">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="row" style="height: 100%;">
+                      <div class="col-md-12 text-right advance-content">
+                        <img src="./assets/imgs/Filter.svg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="row" style="height: 100%;">
+                  <div class="col-lg-12 selectbox-content">
+                    <span class="location-label">Location:&nbsp;</span>
+                    <ng-select [items]="locations"
+                              bindLabel="title"
+                              bindValue="id"
+                              (change)="onLocation()"
+                              [(ngModel)]="selectedLocation"
+                              class="location-content">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artworks-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Artworks Near You</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span (click)="changeTab('artworks')">View All</span></div>
+            </div>
+            <div class="row artworks-content">
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img1.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Artwork
+                  </div>
+                  <div class="label-detail">
+                    <span>Joel Reynolds</span>
+                    <br>
+                    <span>Taipei Fine Arts Museum</span>
+                    <br>
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img2.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Artwork
+                  </div>
+                  <div class="label-detail">
+                    <span>Joel Reynolds</span>
+                    <br>
+                    <span>Taipei Fine Arts Museum</span>
+                    <br>
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img3.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Artwork
+                  </div>
+                  <div class="label-detail">
+                    <span>Joel Reynolds</span>
+                    <br>
+                    <span>Taipei Fine Arts Museum</span>
+                    <br>
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artists-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Artists Near You</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span>View All</span></div>
+            </div>
+            <div class="row artists-content">
+              <div class="profile-section">
+                <div class="profile-image">
+                  <img src="../../../assets/imgs/Oscar.png" alt="">
+                </div>
+                <div class="profile-label">
+                  <div class="profile-title">Michelangelo</div>
+                  <div class="profile-detail">
+                    <span>Sculptor, Painter</span>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-section">
+                <div class="profile-image">
+                  <img src="../../../assets/imgs/first-mate.jpg" alt="">
+                </div>
+                <div class="profile-label">
+                  <div class="profile-title">Antonio Finelli</div>
+                  <div class="profile-detail">
+                    <span>Artist</span>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-section">
+                <div class="profile-image">
+                  <img src="../../../assets/imgs/fourth-mate.jpg" alt="">
+                </div>
+                <div class="profile-label">
+                  <div class="profile-title">Raffaello Sanzio da Urbino</div>
+                  <div class="profile-detail">
+                    <span>Painter, Architect</span>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-section">
+                <div class="profile-image">
+                  <img src="../../../assets/imgs/Eugene.png" alt="">
+                </div>
+                <div class="profile-label">
+                  <div class="profile-title">Aleksander Balos</div>
+                  <div class="profile-detail">
+                    <span>Artist</span>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-section">
+                <div class="profile-image">
+                  <img src="../../../assets/imgs/third-mate.jpg" alt="">
+                </div>
+                <div class="profile-label">
+                  <div class="profile-title">Denis Chernova</div>
+                  <div class="profile-detail">
+                    <span>Painter</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artworks-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Museums Near You</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span (click)="changeTab('museums')">View All</span></div>
+            </div>
+            <div class="row artworks-content">
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img3.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Museum
+                  </div>
+                  <div class="label-detail">
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img4.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Museum
+                  </div>
+                  <div class="label-detail">
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img5.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Museum
+                  </div>
+                  <div class="label-detail">
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artworks-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Galleries Near You</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span (click)="changeTab('galleries')">View All</span></div>
+            </div>
+            <div class="row artworks-content">
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img2.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Gallery
+                  </div>
+                  <div class="label-detail">
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img4.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Gallery
+                  </div>
+                  <div class="label-detail">
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img3.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Gallery
+                  </div>
+                  <div class="label-detail">
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artworks-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Exhibitions Near You</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span (click)="changeTab('exhibitions')">View All</span></div>
+            </div>
+            <div class="row artworks-content">
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img5.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Exhibition
+                  </div>
+                  <div class="label-detail">
+                    <span>12 Jun 2020 - 20 Jun 2020</span>
+                    <br>
+                    <span>Taipei Fine Arts Museum</span>
+                    <br>
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img3.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Exhibition
+                  </div>
+                  <div class="label-detail">
+                    <span>12 Jun 2020 - 20 Jun 2020</span>
+                    <br>
+                    <span>Taipei Fine Arts Museum</span>
+                    <br>
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+              <div class="row card card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img1.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    Exhibition
+                  </div>
+                  <div class="label-detail">
+                    <span>12 Jun 2020 - 20 Jun 2020</span>
+                    <br>
+                    <span>Taipei Fine Arts Museum</span>
+                    <br>
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="artworks" [ngClass]="{'active': seletedTab === 'artworks'}" class="tab-pane ">
+          <div class="card search-section col-12">
+            <div class="row grid-divider">
+              <div class="col-lg-10">
+                <div class="row ">
+                  <div class="col-lg-6 search-container">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="row" style="height: 100%;">
+                      <div class="col-md-12 text-right advance-content">
+                        <img src="./assets/imgs/Filter.svg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="row" style="height: 100%;">
+                  <div class="col-lg-12 selectbox-content">
+                    <span class="location-label">Location:&nbsp;</span>
+                    <ng-select [items]="locations"
+                              bindLabel="title"
+                              bindValue="id"
+                              (change)="onLocation()"
+                              [(ngModel)]="selectedLocation"
+                              class="location-content">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artworks-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Artworks Near You</div>
+            </div>
+            <div class="row artworks-content">
+              <div class="row card card-content other-content" *ngFor="let artwork of artworks; let i = index" [ngClass]="i%3==2? 'third-child': ''">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img1.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    {{artwork.title}}
+                  </div>
+                  <div class="label-detail">
+                    <span>Joel Reynolds</span>
+                    <br>
+                    <span>Taipei Fine Arts Museum</span>
+                    <br>
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="artists" [ngClass]="{'active': seletedTab === 'artists'}" class="tab-pane ">
+          Artists
+        </div>
+        <div id="exhibitions" [ngClass]="{'active': seletedTab === 'exhibitions'}" class="tab-pane ">
+          <div class="card search-section col-12">
+            <div class="row grid-divider">
+              <div class="col-lg-10">
+                <div class="row ">
+                  <div class="col-lg-6 search-container">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="row" style="height: 100%;">
+                      <div class="col-md-12 text-right advance-content">
+                        <img src="./assets/imgs/Filter.svg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="row" style="height: 100%;">
+                  <div class="col-lg-12 selectbox-content">
+                    <span class="location-label">Location:&nbsp;</span>
+                    <ng-select [items]="locations"
+                              bindLabel="title"
+                              bindValue="id"
+                              (change)="onLocation()"
+                              [(ngModel)]="selectedLocation"
+                              class="location-content">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artworks-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Exhibitions Near You</div>
+            </div>
+            <div class="row artworks-content">
+              <div class="row card card-content other-content" *ngFor="let exhibition of exhibitions; let i = index" [ngClass]="i%3==2? 'third-child': ''">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img5.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    {{exhibition.title}}
+                  </div>
+                  <div class="label-detail">
+                    <span>12 Jun 2020 - 20 Jun 2020</span>
+                    <br>
+                    <span>Taipei Fine Arts Museum</span>
+                    <br>
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="museums" [ngClass]="{'active': seletedTab === 'museums'}" class="tab-pane ">
+          <div class="card search-section col-12">
+            <div class="row grid-divider">
+              <div class="col-lg-10">
+                <div class="row ">
+                  <div class="col-lg-6 search-container">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="row" style="height: 100%;">
+                      <div class="col-md-12 text-right advance-content">
+                        <img src="./assets/imgs/Filter.svg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="row" style="height: 100%;">
+                  <div class="col-lg-12 selectbox-content">
+                    <span class="location-label">Location:&nbsp;</span>
+                    <ng-select [items]="locations"
+                              bindLabel="title"
+                              bindValue="id"
+                              (change)="onLocation()"
+                              [(ngModel)]="selectedLocation"
+                              class="location-content">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artworks-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Museums Near You</div>
+            </div>
+            <div class="row artworks-content">
+              <div class="row card card-content other-content" *ngFor="let museum of museums; let i = index" [ngClass]="i%3==2? 'third-child': ''">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img3.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    {{museum.title}}
+                  </div>
+                  <div class="label-detail">
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="galleries" [ngClass]="{'active': seletedTab === 'galleries'}" class="tab-pane ">
+          <div class="card search-section col-12">
+            <div class="row grid-divider">
+              <div class="col-lg-10">
+                <div class="row ">
+                  <div class="col-lg-6 search-container">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="row" style="height: 100%;">
+                      <div class="col-md-12 text-right advance-content">
+                        <img src="./assets/imgs/Filter.svg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="row" style="height: 100%;">
+                  <div class="col-lg-12 selectbox-content">
+                    <span class="location-label">Location:&nbsp;</span>
+                    <ng-select [items]="locations"
+                              bindLabel="title"
+                              bindValue="id"
+                              (change)="onLocation()"
+                              [(ngModel)]="selectedLocation"
+                              class="location-content">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="artworks-section col-12">
+            <div class="title-content row">
+              <div class="main-title">Galleries Near You</div>
+            </div>
+            <div class="row artworks-content">
+              <div class="row card card-content other-content" *ngFor="let gallery of galleries; let i = index" [ngClass]="i%3==2? 'third-child': ''">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img2.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="label-title">
+                    {{gallery.title}}
+                  </div>
+                  <div class="label-detail">
+                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
+                    <br>
+                    <span>09.00 AM - 07.00 PM</span>
+                  </div>
+                  <div class="label-more">
+                    View details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="auctions" [ngClass]="{'active': seletedTab === 'auctions'}" class="tab-pane ">
+          Auctions
+        </div>
+        <div id="discussions" [ngClass]="{'active': seletedTab === 'discussions'}" class="tab-pane ">
+          Discussions
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

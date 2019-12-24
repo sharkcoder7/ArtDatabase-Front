@@ -2,7 +2,8 @@
   <div class="card search-section col-12">
     <div class="row grid-divider">
       <div class="col-lg-5" class="search-container">
-        <input type="search" class="form-control" id="search" placeholder="&#xF002;  Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
       </div>
       <div class="col-lg-5">
         <div class="row" style="height: 100%;">

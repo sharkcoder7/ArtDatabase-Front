@@ -48,7 +48,7 @@ export class ArtmapComponent implements OnInit {
     },
     {
       'id': 1,
-      'title': 'Exhibitions',
+      'title': 'Artworks',
     },
     {
       'id': 2,
@@ -56,19 +56,15 @@ export class ArtmapComponent implements OnInit {
     },
     {
       'id': 3,
-      'title': 'ArtWroks',
-    },
-    {
-      'id': 4,
       'title': 'Galleries',
     },
     {
-      'id': 5,
+      'id': 4,
       'title': 'Auctions',
     },
     {
-      'id': 6,
-      'title': 'Events',
+      'id': 5,
+      'title': 'Discussions',
     },
   ];
   selectedSort = 1;
@@ -80,10 +76,6 @@ export class ArtmapComponent implements OnInit {
     {
       'id': 2,
       'title': 'Name',
-    },
-    {
-      'id': 1,
-      'title': 'Address',
     },
   ];
   selectedLocation = 1;

@@ -1,0 +1,413 @@
+.main-container {
+  width: 1440px;
+  height: 1921px;
+  margin: 0 auto;
+  padding: 20px 20px 50px 20px;
+  background-color: #f9f9fb;
+}
+
+.banner-container {
+  margin: 0 auto;
+  width: 1400px;
+  height: 230px;
+}
+
+.banner-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.tab-container {
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 1400px;
+  height: 100%;
+}
+
+.nav-section {
+  width: 100%;
+  height: 28px;
+  padding: 0px 390px;
+  margin: 0 auto;
+}
+
+.nav-tabs {
+  border: none !important;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+span.menu-item {
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  opacity: 0.4;
+
+}
+ul li {
+  margin-right: 20px;
+  padding: 0px;
+}
+
+ul li:nth-last-child(1) {
+  margin-right: 0px;
+}
+
+ul a {
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+li:hover span.menu-item, a.active span.menu-item {
+  cursor: pointer;
+  border-bottom: 2px solid #7976ff;
+  opacity: 1;
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.tab-section {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.search-section {
+  overflow: visible;
+  width: 100%;
+  height: 57px;
+  padding: 0px;
+  margin: 20px 0px 0px 0px;
+  border-color: #EFEFEF;
+}
+
+.grid-divider {
+  position: relative;
+  margin: 0px;
+  height: 100%;
+}
+
+.grid-divider > [class*="col-"]:nth-child(n + 2):after {
+  content: "";
+  background-color: #EFEFEF;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: -4px; // quickfix to center line between columns
+  }
+  @media (min-width: 768px) {
+    width: 1px;
+    height: auto;
+    left: -1px; // quickfix to hide divider on left side
+  }
+}
+
+.search-container {
+  padding-left: 20px;
+  display: flex;
+}
+
+.form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 14px;
+  height: 14px;
+  line-height: 53px;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+input {
+  font-family: FontAwesome, "Brave Sans";
+  color: #111111;
+  font-size: 14px;
+  line-height: 17px;
+  opacity: 0.4;
+  padding-left: 26px;
+}
+
+#search {
+  margin: auto;
+  width: 560px;
+  border: 0px;
+  outline: none !important;
+  box-shadow: inset 0 0px 0 #ddd;
+}
+
+:host ::ng-deep div.ng-select-container {
+  border: 0px;
+  box-shadow: inset 0 0px 0 #ddd !important;
+}
+
+:host ::ng-deep div.ng-select-container.ng-has-value div.ng-value-container {
+  color: #7976FF;
+  font-family: "Brave Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+:host ::ng-deep div.ng-select-container.ng-has-value span.ng-clear-wrapper {
+  display: none;
+}
+
+.location-label {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 14px;
+  line-height: 24px;
+  margin: auto;
+}
+
+.location-content {
+  width: 100%;
+  margin: auto;
+  color: #7976FF;
+  font-family: "Brave Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  box-shadow: inset 0 0px 0 #ddd;
+}
+
+:host ::ng-deep div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
+  border: solid #7976FF;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+:host ::ng-deep .ng-select-opened>div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
+  border: solid #7976FF;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  top: 0px;
+}
+
+:host ::ng-deep ng-dropdown-panel div.ng-dropdown-panel-items.scroll-host {
+  overflow: visible;
+  max-height: 300px;
+  border: 0px;
+  border-color: #EFEFEF;
+}
+
+:host ::ng-deep ng-select ng-dropdown-panel {
+  border-color: #EFEFEF;
+}
+
+:host ::ng-deep ng-select ng-dropdown-panel.ng-select-bottom {
+  border-top-color: #EFEFEF;
+}
+
+.selectbox-content {
+  height: 100%;
+  padding-right: 0px;
+  display: flex;
+}
+
+.advance-content {
+  line-height: 53px;
+  height: 100%;
+}
+
+.advance-content img {
+  width: 18px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.artworks-section {
+  width: 100%;
+  height: 200px;
+  padding: 0px;
+  margin: 50px 0px 0px 0px;
+}
+
+.artworks-section:nth-last-child(4) {
+  margin: 30px 0px 0px 0px;
+}
+
+.main-title {
+	color: #444444;
+	font-family: "Brave Sans";
+	font-size: 18px;
+	font-weight: 500;
+  line-height: 20px;
+}
+
+.viewmore-title {
+  color: #7976FF;
+  font-family: "Brave Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  text-align: right;
+}
+
+.viewmore-title span {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.title-content {
+  margin: 0px 0px 20px 0px;
+  padding: 0px 10px;
+  width: 100%;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.artworks-content {
+  width: 100%;
+  height: 160px;
+  margin: 0px;
+  padding: 0px !important;
+  display: flex;
+}
+
+.card-content {
+  width: 450px;
+  height: 160px;
+  border-color: #EFEFEF;
+  padding: 10px;
+  margin: 0px 25px 0px 0px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.card-content:nth-last-child(1) {
+  margin: 0px;
+}
+
+.image-content {
+  width: 140px;
+  height: 138px;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+.image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.label-content {
+  color: #444444;
+  width: 280px;
+  font-family: "Brave Sans";
+  position: relative;
+  height: 100%;
+}
+
+.label-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 6px;
+}
+
+.label-detail {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.label-more {
+  position: absolute;
+  width: 100%;
+  color: #7976FF;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  bottom: 0px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.artists-section {
+  width: 100%;
+  height: 356px;
+  margin: 50px 0px 0px 0px;
+  padding: 0px;
+}
+
+.artists-content {
+  width: 100%;
+  height: 315px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.profile-section {
+  width: 260px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px 25px 0px 0px;
+}
+
+.profile-section:nth-last-child(1) {
+  margin: 0px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 261px;
+  margin-bottom: 9px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.profile-label {
+  color: #444444;
+  font-family: "Brave Sans";
+  width: 100%;
+  height: 100%;
+}
+
+.profile-title {
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.profile-detail {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.third-child {
+  margin: 0px;
+}
+
+.other-content {
+  margin-bottom: 20px;
+}
