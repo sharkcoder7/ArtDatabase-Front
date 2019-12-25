@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { PaginationInstance } from 'ngx-pagination';
 
 @Component({
   selector: 'app-artdatabase',
@@ -6,6 +7,12 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./artdatabase.component.scss']
 })
 export class ArtdatabaseComponent implements OnInit {
+
+  public config: PaginationInstance = {
+    id: 'custom',
+    itemsPerPage: 18,
+    currentPage:1
+  }
 
   public seletedTab: string = 'all';
   selectedLocation = 1;
@@ -35,20 +42,22 @@ export class ArtdatabaseComponent implements OnInit {
   exhibitions = [];
   galleries = [];
   museums = [];
+  totalResults = 0;
 
   constructor() {
-    for (let i = 0; i < 15; i++) {
+    this.totalResults = 156;
+    for (let i = 0; i < this.totalResults; i++) {
       this.artworks.push(
-        {title: 'Artwork'+i}
+        {title: 'Joel Reynolds'+i}
       )
       this.exhibitions.push(
-        {title: 'Exhibition'+i}
+        {title: 'Taipei Fine Arts Museum'+i}
       )
       this.galleries.push(
-        {title: 'Gallery'+i}
+        {title: 'Taipei Fine Arts Museum'+i}
       )
       this.museums.push(
-        {title: 'Museum'+i}
+        {title: 'Taipei Fine Arts Museum'+i}
       )
     }
   }
@@ -58,11 +67,16 @@ export class ArtdatabaseComponent implements OnInit {
 
   changeTab(tab: string) {
     this.seletedTab = tab;
+    this.config.currentPage = 1;
     window.scrollTo(0, 0);
   }
 
   onLocation() {
     console.log(this.selectedLocation);
+  }
+
+  pageChanged(event) {
+    this.config.currentPage = event;
   }
 
 }
