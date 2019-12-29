@@ -1,0 +1,29 @@
+<div class="main-container">
+  <div class="main-content">
+    <div class="image-content">
+      <img src="../../../assets/imgs/background.jpg" alt="background">
+    </div>
+    <div class="form-content">
+      <div class="logo-section">
+        <img src="../../../assets/imgs/Logo.svg" alt="logo">
+      </div>
+      <div class="title-section">
+        <span>Forgot Your Password?</span>
+      </div>
+      <form [formGroup]="forgotForm" (ngSubmit)="onSubmit()">
+        <div class="form-group input-section">
+          <span class="input-label">Email Address</span>
+          <br>
+          <input type="email" formControlName="email" placeholder="" class="form-control input-content" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+          </div>
+        </div>
+        <div class="form-group button-section">
+          <button><span>Submit</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

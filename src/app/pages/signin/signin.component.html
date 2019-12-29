@@ -1,0 +1,63 @@
+<div class="main-container">
+  <div class="main-content">
+    <div class="image-content">
+      <img src="../../../assets/imgs/background.jpg" alt="background">
+    </div>
+    <div class="form-content">
+      <div class="logo-section">
+        <img src="../../../assets/imgs/Logo.svg" alt="logo">
+      </div>
+      <div class="title-section">
+        <span>Please create new account.</span>
+      </div>
+      <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+        <div class="form-group email-section">
+          <span class="input-label">Email Address</span>
+          <br>
+          <input type="text" formControlName="email" placeholder="" class="form-control input-content" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+          </div>
+        </div>
+        <div class="form-group password-section">
+          <span class="input-label">Password</span>
+          <br>
+          <input type="password" formControlName="password" placeholder="" class="form-control input-content" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+          </div>
+        </div>
+        <div class="reset-section">
+          <div class="remember-section">
+            <label class="container">Remember me
+              <input type="checkbox" checked="checked">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="spacer"></div>
+          <div class="forgot-section">
+            <a routerLink='/password/forgot' routerLinkActive="active">Forgot Password?</a>
+          </div>
+        </div>
+        <div class="form-group button-section">
+          <button><span>Sign In</span></button>
+        </div>
+      </form>
+      <div class="social-section">
+        <div class="label-content">or continue with</div>
+        <div class="button-content">
+          <div class="row social-content">
+            <div class="col-lg-4 facebook-btn"><button><img src="../../../assets/imgs/Facebook.svg"><span>Facebook</span></button></div>
+            <div class="col-lg-4 google-btn"><button><img src="../../../assets/imgs/Google.svg"><span>Google</span></button></div>
+            <div class="col-lg-4 linkedin-btn"><button><img src="../../../assets/imgs/Linkedin.svg"><span>Linkedin</span></button></div>
+          </div>
+        </div>
+      </div>
+      <div class="signup-section">
+        New to ArtDatabase? <a routerLink='/signup' routerLinkActive="active">Sign Up.</a>
+      </div>
+    </div>
+  </div>
+</div>

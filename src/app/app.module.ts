@@ -23,7 +23,9 @@ import { NguiInviewDirective } from './ngui-inview.directive';
 import { DynamicComponentService } from './pages/museum-worklist/dynamic.component.service';
 import { AgGridModule } from '@ag-grid-community/angular';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
+export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 import {
   HeaderComponent,
@@ -54,7 +56,11 @@ import {
   ExhibitionComponent,
   ScrollTopComponent,
   DynamicPageComponent,
-  ArtmapComponent
+  ArtmapComponent,
+  SigninComponent,
+  SignupComponent,
+  ForgotPassComponent,
+  ResetPassComponent
 } from './pages';
 
 import {ChartsModule} from "ng2-charts";
@@ -91,7 +97,11 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     NewsCardComponent,
     ExhibitionComponent,
     ScrollTopComponent,
-    ArtmapComponent
+    ArtmapComponent,
+    SigninComponent,
+    SignupComponent,
+    ForgotPassComponent,
+    ResetPassComponent
   ],
   imports: [
     BrowserModule,
@@ -110,6 +120,7 @@ import { NewsCardComponent } from './components/news-card/news-card.component';
     NgMasonryGridModule,
     NgxPaginationModule,
     NgSelectModule,
+    NgxMaskModule.forRoot(options),
     CarouselModule.forRoot(),
     NgbModalModule.forRoot(),
     AgmCoreModule.forRoot({

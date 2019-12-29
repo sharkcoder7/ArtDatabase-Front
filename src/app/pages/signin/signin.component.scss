@@ -1,0 +1,311 @@
+.main-container {
+  display: flex;
+  width: 1440px;
+  height: 1024px;
+  margin: 0 auto;
+  background-color: #f9f9fb;
+}
+
+.main-content {
+  width: 900px;
+  height: 800px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #efefef;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  padding: 0px;
+  font-family: 'Brave Sans', Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+.image-content {
+  width: 468px;
+  margin: 1px;
+}
+
+.image-content img {
+  width: 100%;
+  height: 796px;
+  object-fit: cover;
+}
+
+.form-content {
+  width: 430px;
+  height: 100%;
+  padding: 30px;
+  position: relative;
+}
+
+.logo-section {
+  margin-bottom: 30px;
+}
+
+.title-section {
+	color: #444444;
+	font-size: 18px;
+	font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.01rem;
+  margin-bottom: 30px;
+}
+
+.email-section {
+  margin-bottom: 30px;
+}
+
+.email-section input {
+  color: #444444;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.input-label {
+	color: #444444;
+	font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.01rem;
+}
+
+.input-content {
+	box-sizing: border-box;
+	height: 44px;
+	width: 372px;
+	border: 1px solid #C4CDD5;
+	border-radius: 4px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  outline: 0px;
+}
+
+.password-section {
+  margin-bottom: 40px;
+}
+
+.password-section input {
+  color: #444444;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.reset-section {
+  display: flex;
+  line-height: 0px;
+  margin-bottom: 20px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  color: #444444;
+	font-size: 14px;
+  line-height: 16px;
+  margin: 0px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #7976ff;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.forgot-section a {
+  color: #7976FF;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+}
+
+.button-section {
+  height: 43px;
+  width: 371px;
+  margin-bottom: 20px;
+}
+
+.button-section button {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: #7976FF;
+  border: 0px;
+  outline: 0px;
+}
+
+.button-section button span {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+}
+
+.label-content {
+	color: #444444;
+	font-size: 14px;
+	line-height: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-content {
+  height: 42px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.facebook-btn {
+  padding: 0px 6px 0px 0px;
+}
+
+.facebook-btn button {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #3C5998;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  outline: 0px;
+}
+
+.facebook-btn button img {
+  width: 21px;
+  height: 21px;
+}
+
+.facebook-btn button span {
+	color: #3C5998;
+	font-size: 14px;
+	font-weight: 500;
+  line-height: 17px;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+.google-btn {
+  padding: 0px 3px;
+}
+
+.google-btn button {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #518ef8;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  outline: 0px;
+}
+
+.google-btn button img {
+  width: 21px;
+  height: 21px;
+}
+
+.google-btn button span {
+	color: #518EF8;
+	font-size: 14px;
+	font-weight: 500;
+  line-height: 17px;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+.linkedin-btn {
+  padding: 0px 0px 0px 6px;
+}
+
+.linkedin-btn button {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #0077B7;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  outline: 0px;
+}
+
+.linkedin-btn button img {
+  width: 21px;
+  height: 21px;
+}
+
+.linkedin-btn button span {
+	color: #0077B7;
+	font-size: 14px;
+	font-weight: 500;
+  line-height: 17px;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+.signup-section {
+  position: absolute;
+  bottom: 30px;
+  width: 370px;
+  margin: auto;
+  text-align: center;
+  color: #444444;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.signup-section a {
+  color: #7976FF;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-left: 6px;
+  cursor: pointer;
+}

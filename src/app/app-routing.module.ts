@@ -23,6 +23,10 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { MusuemWorklistComponent } from './pages/museum-worklist/museum-worklist.component';
 import { ExhibitionComponent } from './pages/exhibition/exhibition.component';
 import { ArtmapComponent } from './pages/artmap/artmap.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ForgotPassComponent } from './pages/forgot-pass/forgot-pass.component'
+import { ResetPassComponent } from './pages/reset-pass/reset-pass.component'
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -46,6 +50,10 @@ const routes: Routes = [
   {path: 'news/:id', component: NewsDetailComponent},
   {path: 'exhibition/:id', component: ExhibitionComponent},
   {path: 'artmap', component: ArtmapComponent},
+  {path: 'signin', component: SigninComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'password/forgot', component: ForgotPassComponent},
+  {path: 'password/reset', component: ResetPassComponent},
 
   {path: '**', redirectTo: '/'}
 ];

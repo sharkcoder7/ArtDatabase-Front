@@ -24,3 +24,7 @@ export * from './exhibition/exhibition.component';
 export * from './scroll-top/scroll-top.component';
 export * from './museum-worklist/dynamic-page.component';
 export * from './artmap/artmap.component';
+export * from './signin/signin.component';
+export * from './signup/signup.component';
+export * from './forgot-pass/forgot-pass.component';
+export * from './reset-pass/reset-pass.component';

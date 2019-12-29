@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61.1 (101010) - https://sketch.com -->
+    <title>1EB24226-BBDB-4110-B5F9-7FBFB2C448BB</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="270" y="112" width="900" height="800" rx="4"></rect>
+        <filter x="-1.7%" y="-1.9%" width="103.4%" height="103.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sign-In" transform="translate(-784.000000, -619.000000)">
+            <rect fill="#F9F9FB" x="0" y="0" width="1440" height="1024"></rect>
+            <g id="Rectangle">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use stroke="#EFEFEF" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Group-3" transform="translate(769.000000, 565.000000)">
+                <g id="Group" transform="translate(0.000000, 44.000000)">
+                    <g id="Facebook">
+                        <rect id="Rectangle" stroke="#3C5998" fill="#FFFFFF" x="0" y="0" width="120" height="43" rx="4"></rect>
+                        <g id="Icons/Social/Facebook" transform="translate(15.000000, 10.000000)">
+                            <g>
+                                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                                <path d="M18.5663032,3 L5.42436675,3 C4.08550122,3 3.00008802,4.08536919 3.00008802,5.42427873 L3.00008802,18.5663032 C3.00008802,19.9052127 4.08545721,20.9906699 5.42436675,20.9906699 L11.9059071,20.9906699 L11.9169535,14.5617213 L10.2467384,14.5617213 C10.0296822,14.5617213 9.853511,14.3862103 9.85267482,14.169154 L9.84466504,12.0968655 C9.84382885,11.878621 10.0205281,11.7012616 10.2387726,11.7012616 L11.9059511,11.7012616 L11.9059511,9.69890465 C11.9059511,7.37518826 13.3251345,6.10990709 15.3980391,6.10990709 L17.0990171,6.10990709 C17.3166455,6.10990709 17.4931247,6.2863423 17.4931247,6.50401467 L17.4931247,8.25137897 C17.4931247,8.46896333 17.3167775,8.64535452 17.0992372,8.64548655 L16.0553692,8.64597066 C14.9280587,8.64597066 14.7097702,9.1816577 14.7097702,9.9678044 L14.7097702,11.7013056 L17.1868606,11.7013056 C17.4228851,11.7013056 17.6060098,11.9074034 17.5781956,12.1417995 L17.332577,14.214088 C17.3090758,14.4123961 17.1409144,14.5618093 16.9412421,14.5618093 L14.7208166,14.5618093 L14.7097702,20.9906699 L18.5663912,20.9906699 C19.9052567,20.9906699 20.9906259,19.9053007 20.9906259,18.5664352 L20.9906259,5.42427873 C20.9906259,4.08536919 19.9052127,3 18.5663032,3 Z" id="Path" fill="#475993" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

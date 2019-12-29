@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61.1 (101010) - https://sketch.com -->
+    <title>931C4CD1-E0FD-466A-BEF7-B744A9FD0C3B</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="270" y="112" width="900" height="800" rx="4"></rect>
+        <filter x="-1.7%" y="-1.9%" width="103.4%" height="103.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sign-In" transform="translate(-1042.000000, -619.000000)">
+            <rect fill="#F9F9FB" x="0" y="0" width="1440" height="1024"></rect>
+            <g id="Rectangle">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use stroke="#EFEFEF" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Group-3" transform="translate(769.000000, 565.000000)">
+                <g id="Group" transform="translate(0.000000, 44.000000)">
+                    <g id="Linkedin" transform="translate(258.000000, 0.000000)">
+                        <rect id="Rectangle" stroke="#0077B7" fill="#FFFFFF" x="0" y="0" width="113" height="43" rx="4"></rect>
+                        <g id="Icons/Social/Linkedin" transform="translate(15.000000, 10.000000)">
+                            <g>
+                                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                                <path d="M19.3717539,3 L4.62824607,3 C3.729,3 3,3.729 3,4.62824607 L3,19.3717068 C3,20.271 3.729,21 4.62824607,21 L19.3717068,21 C20.271,21 21,20.271 21,19.3717068 L21,4.62824607 C21,3.729 20.271,3 19.3717539,3 Z M8.56996335,18.5423874 C8.56996335,18.8040942 8.35782723,19.0162304 8.09612042,19.0162304 L6.07908377,19.0162304 C5.81737696,19.0162304 5.60524084,18.8040942 5.60524084,18.5423874 L5.60524084,10.0870524 C5.60524084,9.82534555 5.81737696,9.61320942 6.07908377,9.61320942 L8.09612042,9.61320942 C8.35782723,9.61320942 8.56996335,9.82534555 8.56996335,10.0870524 L8.56996335,18.5423874 Z M7.08760209,8.81616754 C6.02932461,8.81616754 5.17140314,7.95824607 5.17140314,6.89996859 C5.17140314,5.8416911 6.02932461,4.98376963 7.08760209,4.98376963 C8.14587958,4.98376963 9.00380105,5.8416911 9.00380105,6.89996859 C9.00380105,7.95824607 8.1459267,8.81616754 7.08760209,8.81616754 Z M19.1109437,18.580555 C19.1109437,18.8211518 18.9158639,19.0162304 18.675267,19.0162304 L16.5108377,19.0162304 C16.2702408,19.0162304 16.0751623,18.8211518 16.0751623,18.580555 L16.0751623,14.6145236 C16.0751623,14.0228796 16.2487068,12.021911 14.529,12.021911 C13.1950681,12.021911 12.9245026,13.3915131 12.8701728,14.0061518 L12.8701728,18.580555 C12.8701728,18.8211518 12.6751414,19.0162304 12.4344974,19.0162304 L10.3411257,19.0162304 C10.1005288,19.0162304 9.90545026,18.8211518 9.90545026,18.580555 L9.90545026,10.0488848 C9.90545026,9.80828796 10.1005288,9.61320942 10.3411257,9.61320942 L12.4344974,9.61320942 C12.6750942,9.61320942 12.8701728,9.80828796 12.8701728,10.0488848 L12.8701728,10.786555 C13.3647958,10.044267 14.0998743,9.47132984 15.6649791,9.47132984 C19.1307801,9.47132984 19.1109437,12.7092565 19.1109437,14.4883351 L19.1109437,18.580555 L19.1109437,18.580555 Z" id="Shape" fill="#0077B7" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

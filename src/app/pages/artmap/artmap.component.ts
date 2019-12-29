@@ -68,7 +68,7 @@ export class ArtmapComponent implements OnInit {
     },
     {
       'id': 6,
-      'title': 'Events',
+      'title': 'Lectures',
     },
   ];
   selectedSort = 1;
