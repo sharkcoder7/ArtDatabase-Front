@@ -1,7 +1,4 @@
 <div class="main-container">
-  <div class="banner-container">
-    <img src="../../../assets/imgs/banner.jpeg">
-  </div>
   <div class="tab-container">
     <div class="nav-section">
       <ul class="nav nav-tabs row">
@@ -66,441 +63,541 @@
     <div class="tab-section">
       <div class="tab-content">
         <div id="all" [ngClass]="{'active': seletedTab === 'all'}" class="tab-pane ">
-          <div class="card search-section col-12">
-            <div class="row grid-divider">
-              <div class="col-lg-10">
-                <div class="row ">
-                  <div class="col-lg-6 search-container">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="row" style="height: 100%;">
-                      <div class="col-md-12 text-right advance-content">
-                        <img src="./assets/imgs/Filter.svg">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2">
-                <div class="row" style="height: 100%;">
-                  <div class="col-lg-12 selectbox-content">
-                    <span class="location-label">Location:&nbsp;</span>
-                    <ng-select [items]="locations"
-                              bindLabel="title"
-                              bindValue="id"
-                              (change)="onLocation()"
-                              [(ngModel)]="selectedLocation"
-                              class="location-content">
-                    </ng-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="artworks-section col-12">
+          <div class="item-content col-12">
             <div class="title-content row">
-              <div class="main-title">Artworks Near You</div>
+              <div class="main-title">Artworks</div>
               <div class="spacer"></div>
               <div class="viewmore-title"><span (click)="changeTab('artworks')">View All</span></div>
             </div>
-            <div class="row artworks-content">
-              <div class="row card card-content">
+            <div class="row item-section">
+              <div class="card-content">
                 <div class="image-content">
                   <img src="../../../assets/imgs/Img1.jpg">
                 </div>
                 <div class="label-content">
-                  <div class="label-title">
-                    Artwork
+                  <div class="star-content">
+                    <div><span class="label-detail">Untitle, 1990</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-detail">
-                    <span>Joel Reynolds</span>
-                    <br>
-                    <span>Taipei Fine Arts Museum</span>
-                    <br>
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
+                  <span class="label-detail">Paint by <span class="artist-label">Vincent van Gogh</span></span>
                 </div>
               </div>
-              <div class="row card card-content">
+              <div class="card-content">
                 <div class="image-content">
-                  <img src="../../../assets/imgs/Img2.jpg">
+                  <img src="../../../assets/imgs/Img1.jpg">
                 </div>
                 <div class="label-content">
-                  <div class="label-title">
-                    Artwork
+                  <div class="star-content">
+                    <div><span class="label-detail">Untitle, 1990</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-detail">
-                    <span>Joel Reynolds</span>
-                    <br>
-                    <span>Taipei Fine Arts Museum</span>
-                    <br>
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
+                  <span class="label-detail">Paint by <span class="artist-label">Vincent van Gogh</span></span>
                 </div>
               </div>
-              <div class="row card card-content">
+              <div class="card-content">
                 <div class="image-content">
-                  <img src="../../../assets/imgs/Img3.jpg">
+                  <img src="../../../assets/imgs/Img1.jpg">
                 </div>
                 <div class="label-content">
-                  <div class="label-title">
-                    Artwork
+                  <div class="star-content">
+                    <div><span class="label-detail">Untitle, 1990</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-detail">
-                    <span>Joel Reynolds</span>
-                    <br>
-                    <span>Taipei Fine Arts Museum</span>
-                    <br>
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
+                  <span class="label-detail">Paint by <span class="artist-label">Vincent van Gogh</span></span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img1.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Untitle, 1990</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-more">
-                    View details
-                  </div>
+                  <span class="label-detail">Paint by <span class="artist-label">Vincent van Gogh</span></span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="artists-section col-12">
+          <div class="item-content col-12">
             <div class="title-content row">
-              <div class="main-title">Artists Near You</div>
-              <div class="spacer"></div>
-              <div class="viewmore-title"><span>View All</span></div>
-            </div>
-            <div class="row artists-content">
-              <div class="profile-section">
-                <div class="profile-image">
-                  <img src="../../../assets/imgs/Oscar.png" alt="">
-                </div>
-                <div class="profile-label">
-                  <div class="profile-title">Michelangelo</div>
-                  <div class="profile-detail">
-                    <span>Sculptor, Painter</span>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-section">
-                <div class="profile-image">
-                  <img src="../../../assets/imgs/first-mate.jpg" alt="">
-                </div>
-                <div class="profile-label">
-                  <div class="profile-title">Antonio Finelli</div>
-                  <div class="profile-detail">
-                    <span>Artist</span>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-section">
-                <div class="profile-image">
-                  <img src="../../../assets/imgs/fourth-mate.jpg" alt="">
-                </div>
-                <div class="profile-label">
-                  <div class="profile-title">Raffaello Sanzio da Urbino</div>
-                  <div class="profile-detail">
-                    <span>Painter, Architect</span>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-section">
-                <div class="profile-image">
-                  <img src="../../../assets/imgs/Eugene.png" alt="">
-                </div>
-                <div class="profile-label">
-                  <div class="profile-title">Aleksander Balos</div>
-                  <div class="profile-detail">
-                    <span>Artist</span>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-section">
-                <div class="profile-image">
-                  <img src="../../../assets/imgs/third-mate.jpg" alt="">
-                </div>
-                <div class="profile-label">
-                  <div class="profile-title">Denis Chernova</div>
-                  <div class="profile-detail">
-                    <span>Painter</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="artworks-section col-12">
-            <div class="title-content row">
-              <div class="main-title">Museums Near You</div>
+              <div class="main-title">Museums</div>
               <div class="spacer"></div>
               <div class="viewmore-title"><span (click)="changeTab('museums')">View All</span></div>
             </div>
-            <div class="row artworks-content">
-              <div class="row card card-content">
-                <div class="image-content">
-                  <img src="../../../assets/imgs/Img3.jpg">
-                </div>
-                <div class="label-content">
-                  <div class="label-title">
-                    Museum
-                  </div>
-                  <div class="label-detail">
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
-                </div>
-              </div>
-              <div class="row card card-content">
-                <div class="image-content">
-                  <img src="../../../assets/imgs/Img4.jpg">
-                </div>
-                <div class="label-content">
-                  <div class="label-title">
-                    Museum
-                  </div>
-                  <div class="label-detail">
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
-                </div>
-              </div>
-              <div class="row card card-content">
-                <div class="image-content">
-                  <img src="../../../assets/imgs/Img5.jpg">
-                </div>
-                <div class="label-content">
-                  <div class="label-title">
-                    Museum
-                  </div>
-                  <div class="label-detail">
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="artworks-section col-12">
-            <div class="title-content row">
-              <div class="main-title">Galleries Near You</div>
-              <div class="spacer"></div>
-              <div class="viewmore-title"><span (click)="changeTab('galleries')">View All</span></div>
-            </div>
-            <div class="row artworks-content">
-              <div class="row card card-content">
+            <div class="row item-section">
+              <div class="card-content">
                 <div class="image-content">
                   <img src="../../../assets/imgs/Img2.jpg">
                 </div>
                 <div class="label-content">
-                  <div class="label-title">
-                    Gallery
+                  <div class="star-content">
+                    <div><span class="label-detail">Newark Museums</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-detail">
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
+                  <span class="label-detail">Museum in New York, USA</span>
                 </div>
               </div>
-              <div class="row card card-content">
+              <div class="card-content">
                 <div class="image-content">
-                  <img src="../../../assets/imgs/Img4.jpg">
+                  <img src="../../../assets/imgs/Img2.jpg">
                 </div>
                 <div class="label-content">
-                  <div class="label-title">
-                    Gallery
+                  <div class="star-content">
+                    <div><span class="label-detail">Newark Museums</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-detail">
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
+                  <span class="label-detail">Museum in New York, USA</span>
                 </div>
               </div>
-              <div class="row card card-content">
+              <div class="card-content">
                 <div class="image-content">
-                  <img src="../../../assets/imgs/Img3.jpg">
+                  <img src="../../../assets/imgs/Img2.jpg">
                 </div>
                 <div class="label-content">
-                  <div class="label-title">
-                    Gallery
+                  <div class="star-content">
+                    <div><span class="label-detail">Newark Museums</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-detail">
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
+                  <span class="label-detail">Museum in New York, USA</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img2.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Newark Museums</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-more">
-                    View details
-                  </div>
+                  <span class="label-detail">Museum in New York, USA</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="artworks-section col-12">
+          <div class="item-content col-12">
             <div class="title-content row">
-              <div class="main-title">Exhibitions Near You</div>
+              <div class="main-title">Galleries</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span (click)="changeTab('galleries')">View All</span></div>
+            </div>
+            <div class="row item-section">
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img4.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Newark Gallery</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Gallery in New York, USA</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img4.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Newark Gallery</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Gallery in New York, USA</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img4.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Newark Gallery</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Gallery in New York, USA</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img4.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Newark Gallery</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Gallery in New York, USA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-content col-12">
+            <div class="title-content row">
+              <div class="main-title">Exhibitions</div>
               <div class="spacer"></div>
               <div class="viewmore-title"><span (click)="changeTab('exhibitions')">View All</span></div>
             </div>
-            <div class="row artworks-content">
-              <div class="row card card-content">
-                <div class="image-content">
-                  <img src="../../../assets/imgs/Img5.jpg">
-                </div>
-                <div class="label-content">
-                  <div class="label-title">
-                    Exhibition
-                  </div>
-                  <div class="label-detail">
-                    <span>12 Jun 2020 - 20 Jun 2020</span>
-                    <br>
-                    <span>Taipei Fine Arts Museum</span>
-                    <br>
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
-                </div>
-              </div>
-              <div class="row card card-content">
+            <div class="row item-section">
+              <div class="card-content">
                 <div class="image-content">
                   <img src="../../../assets/imgs/Img3.jpg">
                 </div>
                 <div class="label-content">
-                  <div class="label-title">
-                    Exhibition
+                  <div class="star-content">
+                    <div><span class="label-detail">Heritage: Photographs</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-detail">
-                    <span>12 Jun 2020 - 20 Jun 2020</span>
-                    <br>
-                    <span>Taipei Fine Arts Museum</span>
-                    <br>
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
-                  </div>
-                  <div class="label-more">
-                    View details
-                  </div>
+                  <span class="label-detail">Exhibition in National Gallery of Art</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
                 </div>
               </div>
-              <div class="row card card-content">
+              <div class="card-content">
                 <div class="image-content">
-                  <img src="../../../assets/imgs/Img1.jpg">
+                  <img src="../../../assets/imgs/Img3.jpg">
                 </div>
                 <div class="label-content">
-                  <div class="label-title">
-                    Exhibition
+                  <div class="star-content">
+                    <div><span class="label-detail">Heritage: Photographs</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-detail">
-                    <span>12 Jun 2020 - 20 Jun 2020</span>
-                    <br>
-                    <span>Taipei Fine Arts Museum</span>
-                    <br>
-                    <span>401 North Michigan Avenue, Chicago, IL 60611</span>
-                    <br>
-                    <span>09.00 AM - 07.00 PM</span>
+                  <span class="label-detail">Exhibition in National Gallery of Art</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img3.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Heritage: Photographs</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
-                  <div class="label-more">
-                    View details
+                  <span class="label-detail">Exhibition in National Gallery of Art</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img3.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Heritage: Photographs</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
                   </div>
+                  <span class="label-detail">Exhibition in National Gallery of Art</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-content col-12">
+            <div class="title-content row">
+              <div class="main-title">Artists</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span (click)="changeTab('artists')">View All</span></div>
+            </div>
+            <div class="row item-section">
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Oscar.png">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Walter Gregory</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">12 Jun 1932 - 19 Oct 1984</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Oscar.png">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Walter Gregory</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">12 Jun 1932 - 19 Oct 1984</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Oscar.png">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Walter Gregory</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">12 Jun 1932 - 19 Oct 1984</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Oscar.png">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Walter Gregory</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">12 Jun 1932 - 19 Oct 1984</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-content col-12">
+            <div class="title-content row">
+              <div class="main-title">Events</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span (click)="changeTab('events')">View All</span></div>
+            </div>
+            <div class="row item-section">
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img5.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Itineris: Modern and Contemporary Art</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Event in Paris, France</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img5.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Itineris: Modern and Contemporary Art</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Event in Paris, France</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img5.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Itineris: Modern and Contemporary Art</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Event in Paris, France</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/Img5.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Itineris: Modern and Contemporary Art</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Event in Paris, France</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-content col-12">
+            <div class="title-content row">
+              <div class="main-title">Auctions</div>
+              <div class="spacer"></div>
+              <div class="viewmore-title"><span (click)="changeTab('auctions')">View All</span></div>
+            </div>
+            <div class="row item-section">
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/third-mate.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Oliver Clatworthy: Prints & Editions</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Auction in Paris, France</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/third-mate.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Oliver Clatworthy: Prints & Editions</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Auction in Paris, France</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/third-mate.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Oliver Clatworthy: Prints & Editions</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Auction in Paris, France</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="image-content">
+                  <img src="../../../assets/imgs/third-mate.jpg">
+                </div>
+                <div class="label-content">
+                  <div class="star-content">
+                    <div><span class="label-detail">Oliver Clatworthy: Prints & Editions</span></div>
+                    <div class="spacer"></div>
+                    <div class="star-section"><i class="fa fa-star-o"></i></div>
+                  </div>
+                  <span class="label-detail">Auction in Paris, France</span>
+                  <br>
+                  <span class="label-detail">12 Jun 2020 - 19 Oct 2020</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div id="artworks" [ngClass]="{'active': seletedTab === 'artworks'}" class="tab-pane ">
-          <div class="card search-section col-12">
-            <div class="row grid-divider">
-              <div class="col-lg-10">
-                <div class="row ">
-                  <div class="col-lg-6 search-container">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="row" style="height: 100%;">
-                      <div class="col-md-12 text-right advance-content">
-                        <img src="./assets/imgs/Filter.svg">
+          <div class="row view-section">
+            <div class="sidebar-section">
+              <div class="input-search">
+                <span class="input-label">Search Artwork</span>
+                <br>
+                <div class="form-group has-search">
+                  <span class="fa fa-search form-control-feedback"></span>
+                  <input type="text" class="form-control" placeholder="Search by artwork">
+                </div>
+              </div>
+              <div class="normal-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#artwork-type" (click)="onCollapse('artwork_type')">Artwork Type</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.artwork_type == true? 'plus': 'minus'" data-toggle="collapse" href="#artwork-type" (click)="onCollapse('artwork_type')"></div>
+                      </div>
+                    </div>
+                    <div id="artwork-type" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="input-search">
+                          <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Search by event type">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="checkbox-search">
+                          <div class="check-section" *ngFor="let type of artwork_types">
+                            <label class="container">{{type.title}}
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-2">
-                <div class="row" style="height: 100%;">
-                  <div class="col-lg-12 selectbox-content">
-                    <span class="location-label">Location:&nbsp;</span>
-                    <ng-select [items]="locations"
+            </div>
+            <div class="list-section">
+              <div class="title-content row">
+                <div class="page-title">Results 18 - 36 of {{totalResults}}</div>
+                <div class="spacer"></div>
+                <div class="viewmore-title">
+                  <div class="selectbox-content">
+                    <span class="sort-label">&nbsp;Sort&nbsp;by:&nbsp;</span>
+                    <ng-select [items]="sorts"
                               bindLabel="title"
                               bindValue="id"
-                              (change)="onLocation()"
-                              [(ngModel)]="selectedLocation"
-                              class="location-content">
+                              [(ngModel)]="selectedSort"
+                              (change)="onSort()"
+                              class="sort-content">
                     </ng-select>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="row view-section">
-            <div class="card sidebar-section"></div>
-            <div class="card right-section">
-              <div class="row artworks-content">
-                <div class="row card-content other-content" *ngFor="let artwork of artworks | paginate: config let i = index" [ngClass]="i%3==2? 'third-child': ''">
+              <div class="row item-section">
+                <div class="card-content other-content" *ngFor="let artwork of artworks | paginate: config let i = index" [ngClass]="i%3==2? 'third-child': ''">
                   <div class="image-content">
                     <img src="../../../assets/imgs/Img1.jpg">
                   </div>
-                  <div class="label-content otherlabel-content">
-                    <div class="label-title">
-                      {{artwork.title}}
+                  <div class="label-content">
+                    <div class="star-content">
+                      <div><span class="label-detail">Untitle, 1990</span></div>
+                      <div class="spacer"></div>
+                      <div class="star-section"><i class="fa fa-star-o"></i></div>
                     </div>
-                    <div class="label-detail">
-                      <span>Taipei Fine Arts Museum</span>
-                      <br>
-                      <span>401 North Michigan Avenue,</span>
-                      <br>
-                      <span>Chicago, IL 60611</span>
-                    </div>
-                    <div class="label-more">
-                      View details
-                    </div>
+                    <span class="label-detail">Paint by <span class="artist-label">{{ artwork.artist }}</span></span>
                   </div>
                 </div>
               </div>
               <div class="pagination-section">
-                <div class="pagination-label">Showing {{totalResults}} results</div>
+                <div class="pagination-label">Results 18 - 36 of {{totalResults}}</div>
                 <div class="spacer"></div>
                 <div class="pagination-content">
                   <pagination-template #p="paginationApi"
@@ -508,7 +605,7 @@
                      (pageChange)="pageChanged($event)">
                     <div class="custom-pagination">
                       <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
-                        <a *ngIf="!p.isFirstPage()" (click)="p.previous()"><i class="fas fa-chevron-left"></i></a>
+                        <a *ngIf="!p.isFirstPage()" (click)="p.previous()"><i class="fas fa-chevron-left"><span class="previous-label">Previous</span></i></a>
                       </div>
                       <div *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
                         <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
@@ -519,7 +616,7 @@
                         </div>
                       </div>
                       <div class="pagination-next" [class.disabled]="p.isLastPage()">
-                          <a *ngIf="!p.isLastPage()" (click)="p.next()"><i class="fas fa-chevron-right"></i></a>
+                        <a *ngIf="!p.isLastPage()" (click)="p.next()"><span class="next-label">Next</span><i class="fas fa-chevron-right"></i></a>
                       </div>
                     </div>
                   </pagination-template>
@@ -532,264 +629,13 @@
           Artists
         </div>
         <div id="exhibitions" [ngClass]="{'active': seletedTab === 'exhibitions'}" class="tab-pane ">
-          <div class="card search-section col-12">
-            <div class="row grid-divider">
-              <div class="col-lg-10">
-                <div class="row ">
-                  <div class="col-lg-6 search-container">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="row" style="height: 100%;">
-                      <div class="col-md-12 text-right advance-content">
-                        <img src="./assets/imgs/Filter.svg">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2">
-                <div class="row" style="height: 100%;">
-                  <div class="col-lg-12 selectbox-content">
-                    <span class="location-label">Location:&nbsp;</span>
-                    <ng-select [items]="locations"
-                              bindLabel="title"
-                              bindValue="id"
-                              (change)="onLocation()"
-                              [(ngModel)]="selectedLocation"
-                              class="location-content">
-                    </ng-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row view-section">
-            <div class="card sidebar-section"></div>
-            <div class="card right-section">
-              <div class="row artworks-content">
-                <div class="row card-content other-content" *ngFor="let exhibition of exhibitions | paginate: config let i = index" [ngClass]="i%3==2? 'third-child': ''">
-                  <div class="image-content">
-                    <img src="../../../assets/imgs/Img2.jpg">
-                  </div>
-                  <div class="label-content otherlabel-content">
-                    <div class="label-title">
-                      {{exhibition.title}}
-                    </div>
-                    <div class="label-detail">
-                      <span>17 Jun 2020 - 20 Jun 2020</span>
-                      <br>
-                      <span>401 North Michigan Avenue,</span>
-                      <br>
-                      <span>Chicago, IL 60611</span>
-                    </div>
-                    <div class="label-more">
-                      View details
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="pagination-section">
-                <div class="pagination-label">Showing {{totalResults}} results</div>
-                <div class="spacer"></div>
-                <div class="pagination-content">
-                  <pagination-template #p="paginationApi"
-                     [id]="config.id"
-                     (pageChange)="pageChanged($event)">
-                    <div class="custom-pagination">
-                      <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
-                        <a *ngIf="!p.isFirstPage()" (click)="p.previous()"><i class="fas fa-chevron-left"></i></a>
-                      </div>
-                      <div *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
-                        <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
-                          <span>{{ page.label }}</span>
-                        </a>
-                        <div *ngIf="p.getCurrent() === page.value">
-                          <span>{{ page.label }}</span>
-                        </div>
-                      </div>
-                      <div class="pagination-next" [class.disabled]="p.isLastPage()">
-                          <a *ngIf="!p.isLastPage()" (click)="p.next()"><i class="fas fa-chevron-right"></i></a>
-                      </div>
-                    </div>
-                  </pagination-template>
-                </div>
-              </div>
-            </div>
-          </div>
+          Exhibitions
         </div>
         <div id="museums" [ngClass]="{'active': seletedTab === 'museums'}" class="tab-pane ">
-          <div class="card search-section col-12">
-            <div class="row grid-divider">
-              <div class="col-lg-10">
-                <div class="row ">
-                  <div class="col-lg-6 search-container">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="row" style="height: 100%;">
-                      <div class="col-md-12 text-right advance-content">
-                        <img src="./assets/imgs/Filter.svg">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2">
-                <div class="row" style="height: 100%;">
-                  <div class="col-lg-12 selectbox-content">
-                    <span class="location-label">Location:&nbsp;</span>
-                    <ng-select [items]="locations"
-                              bindLabel="title"
-                              bindValue="id"
-                              (change)="onLocation()"
-                              [(ngModel)]="selectedLocation"
-                              class="location-content">
-                    </ng-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row view-section">
-            <div class="card sidebar-section"></div>
-            <div class="card right-section">
-              <div class="row artworks-content">
-                <div class="row card-content other-content" *ngFor="let museum of museums | paginate: config let i = index" [ngClass]="i%3==2? 'third-child': ''">
-                  <div class="image-content">
-                    <img src="../../../assets/imgs/Img3.jpg">
-                  </div>
-                  <div class="label-content otherlabel-content">
-                    <div class="label-title">
-                      {{museum.title}}
-                    </div>
-                    <div class="label-detail">
-                      <span>401 North Michigan Avenue,</span>
-                      <br>
-                      <span>Chicago, IL 60611</span>
-                    </div>
-                    <div class="label-more">
-                      View details
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="pagination-section">
-                <div class="pagination-label">Showing {{totalResults}} results</div>
-                <div class="spacer"></div>
-                <div class="pagination-content">
-                  <pagination-template #p="paginationApi"
-                     [id]="config.id"
-                     (pageChange)="pageChanged($event)">
-                    <div class="custom-pagination">
-                      <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
-                        <a *ngIf="!p.isFirstPage()" (click)="p.previous()"><i class="fas fa-chevron-left"></i></a>
-                      </div>
-                      <div *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
-                        <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
-                          <span>{{ page.label }}</span>
-                        </a>
-                        <div *ngIf="p.getCurrent() === page.value">
-                          <span>{{ page.label }}</span>
-                        </div>
-                      </div>
-                      <div class="pagination-next" [class.disabled]="p.isLastPage()">
-                          <a *ngIf="!p.isLastPage()" (click)="p.next()"><i class="fas fa-chevron-right"></i></a>
-                      </div>
-                    </div>
-                  </pagination-template>
-                </div>
-              </div>
-            </div>
-          </div>
+          Museums
         </div>
         <div id="galleries" [ngClass]="{'active': seletedTab === 'galleries'}" class="tab-pane ">
-          <div class="card search-section col-12">
-            <div class="row grid-divider">
-              <div class="col-lg-10">
-                <div class="row ">
-                  <div class="col-lg-6 search-container">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" id="search" placeholder="Search..." (oninput)="onSearch($event)" [(ngModel)]="searchValue">
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="row" style="height: 100%;">
-                      <div class="col-md-12 text-right advance-content">
-                        <img src="./assets/imgs/Filter.svg">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2">
-                <div class="row" style="height: 100%;">
-                  <div class="col-lg-12 selectbox-content">
-                    <span class="location-label">Location:&nbsp;</span>
-                    <ng-select [items]="locations"
-                              bindLabel="title"
-                              bindValue="id"
-                              (change)="onLocation()"
-                              [(ngModel)]="selectedLocation"
-                              class="location-content">
-                    </ng-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row view-section">
-            <div class="card sidebar-section"></div>
-            <div class="card right-section">
-              <div class="row artworks-content">
-                <div class="row card-content other-content" *ngFor="let gallery of galleries | paginate: config let i = index" [ngClass]="i%3==2? 'third-child': ''">
-                  <div class="image-content">
-                    <img src="../../../assets/imgs/Img4.jpg">
-                  </div>
-                  <div class="label-content otherlabel-content">
-                    <div class="label-title">
-                      {{gallery.title}}
-                    </div>
-                    <div class="label-detail">
-                      <span>401 North Michigan Avenue,</span>
-                      <br>
-                      <span>Chicago, IL 60611</span>
-                    </div>
-                    <div class="label-more">
-                      View details
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="pagination-section">
-                <div class="pagination-label">Showing {{totalResults}} results</div>
-                <div class="spacer"></div>
-                <div class="pagination-content">
-                  <pagination-template #p="paginationApi"
-                     [id]="config.id"
-                     (pageChange)="pageChanged($event)">
-                    <div class="custom-pagination">
-                      <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
-                        <a *ngIf="!p.isFirstPage()" (click)="p.previous()"><i class="fas fa-chevron-left"></i></a>
-                      </div>
-                      <div *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
-                        <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
-                          <span>{{ page.label }}</span>
-                        </a>
-                        <div *ngIf="p.getCurrent() === page.value">
-                          <span>{{ page.label }}</span>
-                        </div>
-                      </div>
-                      <div class="pagination-next" [class.disabled]="p.isLastPage()">
-                          <a *ngIf="!p.isLastPage()" (click)="p.next()"><i class="fas fa-chevron-right"></i></a>
-                      </div>
-                    </div>
-                  </pagination-template>
-                </div>
-              </div>
-            </div>
-          </div>
+          Galleries
         </div>
         <div id="auctions" [ngClass]="{'active': seletedTab === 'auctions'}" class="tab-pane ">
           Auctions
