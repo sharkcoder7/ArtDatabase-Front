@@ -13,6 +13,8 @@ export class ArtdatabaseComponent implements OnInit {
     itemsPerPage: 18,
     currentPage:1
   }
+  firstitem = 0;
+  enditem = 0;
 
   public seletedTab: string = 'artworks';
   selectedLocation = 1;
@@ -191,10 +193,11 @@ export class ArtdatabaseComponent implements OnInit {
       title: 'Materials'
     },
   ]
+  cards;
 
   constructor() {
-    this.totalResults = 156;
-    for (let i = 0; i < this.totalResults; i++) {
+    this.totalResults = 157;
+    for (let i = 1; i <= this.totalResults; i++) {
       this.artworks.push(
         {artist: 'Vincent van Gogh '+i}
       )
@@ -205,12 +208,14 @@ export class ArtdatabaseComponent implements OnInit {
         {title: 'Taipei Fine Arts Museum'+i}
       )
       this.museums.push(
-        {title: 'Taipei Fine Arts Museum'+i}
+        {title: 'Newark Museum'+i}
       )
     }
+    this.cards = Array(4).fill(4);
   }
 
   ngOnInit() {
+    this.setPageItem(1);
   }
 
   changeTab(tab: string) {
@@ -225,6 +230,8 @@ export class ArtdatabaseComponent implements OnInit {
 
   pageChanged(event) {
     this.config.currentPage = event;
+    this.setPageItem(event);
+    console.log(event)
   }
 
   onSort() {
@@ -234,6 +241,14 @@ export class ArtdatabaseComponent implements OnInit {
   onCollapse(item) {
     console.log(item);
     this.status[item] = !this.status[item];
+  }
+
+  setPageItem(num) {
+    this.firstitem = (num - 1) * this.config.itemsPerPage + 1;
+    this.enditem = (num - 1) * this.config.itemsPerPage + 18;
+    if (this.totalResults < this.enditem) {
+      this.enditem = this.enditem - (this.enditem - this.totalResults);
+    }
   }
 
 }
