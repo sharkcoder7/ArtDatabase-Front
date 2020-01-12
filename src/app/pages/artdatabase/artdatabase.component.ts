@@ -16,7 +16,7 @@ export class ArtdatabaseComponent implements OnInit {
   firstitem = 0;
   enditem = 0;
 
-  public seletedTab: string = 'artworks';
+  public seletedTab: string = 'all';
   selectedLocation = 1;
   locations = [
     {
@@ -202,13 +202,13 @@ export class ArtdatabaseComponent implements OnInit {
         {artist: 'Vincent van Gogh '+i}
       )
       this.exhibitions.push(
-        {title: 'Taipei Fine Arts Museum'+i}
+        {title: 'Taipei Fine Arts Museum '+i}
       )
       this.galleries.push(
-        {title: 'Taipei Fine Arts Museum'+i}
+        {title: 'Newark Gallery '+i}
       )
       this.museums.push(
-        {title: 'Newark Museum'+i}
+        {title: 'Newark Museum '+i}
       )
     }
     this.cards = Array(4).fill(4);
