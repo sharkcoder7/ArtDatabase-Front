@@ -310,6 +310,80 @@
                     </div>
                   </div>
                 </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')">Country & City</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.country_city == true? 'plus': 'minus'" data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')"></div>
+                      </div>
+                    </div>
+                    <div id="country-city" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="countries"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCountry"
+                              (change)="selectCountry()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="select-search">
+                          <ng-select [items]="cities"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCity"
+                              (change)="selectCity()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#creation-date" (click)="onCollapse('creation_date')">Creation Date</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.creation_date == true? 'plus': 'minus'" data-toggle="collapse" href="#creation-date" (click)="onCollapse('creation_date')"></div>
+                      </div>
+                    </div>
+                    <div id="creation-date" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="input-search">
+                          <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Search by year">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="checkbox-search">
+                          <div class="check-section" *ngFor="let year of years">
+                            <label class="container">{{ year.title }}
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="list-section">

@@ -16,7 +16,7 @@ export class ArtdatabaseComponent implements OnInit {
   firstitem = 0;
   enditem = 0;
 
-  public seletedTab: string = 'all';
+  public seletedTab: string = 'artworks';
   selectedLocation = 1;
   locations = [
     {
@@ -62,6 +62,7 @@ export class ArtdatabaseComponent implements OnInit {
   status = {
     artwork_type: true,
     country_city: true,
+    creation_date: true,
   }
 
   ///// dummy data////
@@ -195,8 +196,21 @@ export class ArtdatabaseComponent implements OnInit {
     {
       title: 'Materials'
     },
-  ]
+  ];
+  years = [];
   cards;
+  countries = [
+    {title: 'United States', id: 1},
+    {title: 'United Kingdom' , id: 2},
+  ]
+  selectedCountry = 1;
+  cities = [
+    {title: 'Washington' , id: 1},
+    {title: 'New York', id: 2},
+    {title: 'London' , id: 3},
+    {title: 'Manchester' , id: 4},
+  ]
+  selectedCity = 2;
 
   constructor() {
     this.totalResults = 157;
@@ -221,6 +235,11 @@ export class ArtdatabaseComponent implements OnInit {
       )
       this.events.push(
         {title: 'Itineris: Modern and Contemporary Art ' + i}
+      )
+    }
+    for (let i = 2000; i <= (new Date()).getFullYear(); i++) {
+      this.years.push(
+        { title: i }
       )
     }
     this.cards = Array(4).fill(4);
@@ -262,6 +281,14 @@ export class ArtdatabaseComponent implements OnInit {
     if (this.totalResults < this.enditem) {
       this.enditem = this.enditem - (this.enditem - this.totalResults);
     }
+  }
+
+  selectCountry() {
+    console.log(this.selectedCountry);
+  }
+
+  selectCity() {
+    console.log(this.selectedCity);
   }
 
 }

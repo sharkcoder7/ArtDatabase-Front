@@ -282,7 +282,7 @@ li:hover span.menu-item, a.active span.menu-item {
   display: none;
 }
 
-:host ::ng-deep div.ng-select-container.ng-has-value {
+:host ::ng-deep div.selectbox-content div.ng-select-container.ng-has-value {
   min-height: 16px !important;
   height: 16px;
   border: 0px;
@@ -291,12 +291,12 @@ li:hover span.menu-item, a.active span.menu-item {
   border-radius: 0px;
 }
 
-:host ::ng-deep div.ng-select-container.ng-has-value div.ng-value-container {
+:host ::ng-deep div.selectbox-content div.ng-select-container.ng-has-value div.ng-value-container {
   max-height: 16px !important;
   height: 16px;
 }
 
-:host ::ng-deep div.ng-select-container.ng-has-value div.ng-value-container {
+:host ::ng-deep div.selectbox-content div.ng-select-container.ng-has-value div.ng-value-container {
   color: #7976FF;
   font-family: "Brave Sans";
   font-size: 13px;
@@ -304,15 +304,15 @@ li:hover span.menu-item, a.active span.menu-item {
   line-height: 16px;
 }
 
-:host ::ng-deep div.ng-select-container.ng-has-value div.ng-value-container div.ng-input {
+:host ::ng-deep div.selectbox-content div.ng-select-container.ng-has-value div.ng-value-container div.ng-input {
   display: none;
 }
 
-:host ::ng-deep div.ng-select-container.ng-has-value span.ng-clear-wrapper {
+:host ::ng-deep div.selectbox-content div.ng-select-container.ng-has-value span.ng-clear-wrapper {
   display: none;
 }
 
-:host ::ng-deep div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
+:host ::ng-deep div.selectbox-content div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
   border: solid #7976FF;
   border-width: 0 1px 1px 0;
   display: inline-block;
@@ -322,7 +322,7 @@ li:hover span.menu-item, a.active span.menu-item {
   top: -3px;
 }
 
-:host ::ng-deep .ng-select-opened>div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
+:host ::ng-deep div.selectbox-content .ng-select-opened>div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
   border: solid #7976FF;
   border-width: 0 1px 1px 0;
   display: inline-block;
@@ -563,4 +563,49 @@ li:hover span.menu-item, a.active span.menu-item {
 
 .sub-detail {
   opacity: 0.5;
+}
+
+.select-search {
+margin-top: 20px;
+}
+
+.select-content {
+  border-radius: 0px;
+  border: 0px;
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 13px;
+  line-height: 16px;
+}
+
+:host ::ng-deep div.select-search div.ng-select-container {
+  box-sizing: border-box;
+  height: 38px;
+  width: 100%;
+  border: 1px solid #DFE3E8;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #EFEFEF 100%);
+}
+
+:host ::ng-deep div.select-search div.ng-select-container.ng-has-value div.ng-value-container {
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 13px;
+  line-height: 16px;
+}
+
+:host ::ng-deep div.select-search div.ng-select-container.ng-has-value div.ng-value-container div.ng-input {
+  display: none;
+}
+
+:host ::ng-deep div.select-search div.ng-select-container.ng-has-value span.ng-clear-wrapper {
+  display: none;
+}
+
+:host ::ng-deep div.select-search div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
+  border-top-color: #444444;
+}
+
+:host ::ng-deep div.select-search .ng-select-opened>div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
+  border-bottom-color: #444444;
 }
