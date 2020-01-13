@@ -454,6 +454,160 @@
                   </div>
                 </div>
               </div>
+              <div class="advanced-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title advanced-title">
+                          <a data-toggle="collapse" href="#advanced-filter" (click)="onAdvanced()">Advanced Filters</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-arrow">
+                        <div class="arrow" [ngClass]="advancedState == true? 'down': 'up'" data-toggle="collapse" href="#advanced-filter" (click)="onAdvanced()"></div>
+                      </div>
+                    </div>
+                    <div id="advanced-filter" class="panel-collapse collapse">
+                      <div class="panel-footer">
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#movement" (click)="onCollapse('movement')">Movement</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.movement == true? 'plus': 'minus'" data-toggle="collapse" href="#movement" (click)="onCollapse('movement')"></div>
+                              </div>
+                            </div>
+                            <div id="movement" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <div class="input-search">
+                                  <div class="form-group has-search">
+                                    <span class="fa fa-search form-control-feedback"></span>
+                                    <input type="text" class="form-control" placeholder="Search by movement">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="panel-footer">
+                                <div class="checkbox-search">
+                                  <div class="check-section" *ngFor="let label of labels">
+                                    <label class="container">{{ label.title }}
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#centuries" (click)="onCollapse('centuries')">Centuries</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#centuries" (click)="onCollapse('centuries')"></div>
+                              </div>
+                            </div>
+                            <div id="centuries" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <ejs-slider id="centuries" #centuries [type]="rangeType1" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesCreated()"></ejs-slider>
+                              </div>
+                              <div class="panel-footer">
+                                <div class="from-to">
+                                  <div class="from-content">
+                                    <div class="input-group input-group-sm mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">From</span>
+                                      </div>
+                                      <div class="inputDivider"></div>
+                                      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="10">
+                                    </div>
+                                  </div>
+                                  <div class="to-content">
+                                    <div class="input-group input-group-sm mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">To</span>
+                                      </div>
+                                      <div class="inputDivider"></div>
+                                      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="21">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#school" (click)="onCollapse('school')">School</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.school == true? 'plus': 'minus'" data-toggle="collapse" href="#school" (click)="onCollapse('school')"></div>
+                              </div>
+                            </div>
+                            <div id="school" class="panel-collapse collapse">
+                              <div class="panel-footer">
+                                <div class="select-search">
+                                  <ng-select [items]="schools"
+                                      bindLabel="title"
+                                      bindValue="id"
+                                      [(ngModel)]="selectedSchool"
+                                      (change)="selectSchool()"
+                                      class="select-content">
+                                  </ng-select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#role" (click)="onCollapse('role')">Role</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.role == true? 'plus': 'minus'" data-toggle="collapse" href="#role" (click)="onCollapse('role')"></div>
+                              </div>
+                            </div>
+                            <div id="role" class="panel-collapse collapse">
+                              <div class="panel-footer">
+                                <div class="select-search">
+                                  <ng-select [items]="roles"
+                                      bindLabel="title"
+                                      bindValue="id"
+                                      [(ngModel)]="selectedRole"
+                                      (change)="selectRole()"
+                                      class="select-content">
+                                  </ng-select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="list-section">
               <div class="title-content row">

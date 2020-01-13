@@ -658,3 +658,42 @@ margin-top: 20px;
   margin: 9px 0;
   background: #DFE3E8;
 }
+
+.advanced-search {
+  width: 100%;
+  margin-top: 20px;
+}
+.arrow {
+  border: solid #444444;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-right: 7px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.extension-arrow {
+  line-height: 15px;
+  cursor: pointer;
+}
+
+.advanced-title a {
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.panel-group {
+  margin-top: 30px;
+}
