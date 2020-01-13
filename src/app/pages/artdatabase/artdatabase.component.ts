@@ -46,6 +46,7 @@ export class ArtdatabaseComponent implements OnInit {
   museums = [];
   artists = [];
   auctions = [];
+  events = [];
   totalResults = 0;
   selectedSort = 0;
   sorts = [
@@ -217,6 +218,9 @@ export class ArtdatabaseComponent implements OnInit {
       )
       this.auctions.push(
         {title: 'Oliver Clatworthy: Prints & Editions ' + i}
+      )
+      this.events.push(
+        {title: 'Itineris: Modern and Contemporary Art ' + i}
       )
     }
     this.cards = Array(4).fill(4);
