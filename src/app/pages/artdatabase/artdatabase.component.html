@@ -384,6 +384,75 @@
                     </div>
                   </div>
                 </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#year-range" (click)="onCollapse('year_range')">Creation Year Range</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.year_range == true? 'plus': 'minus'" data-toggle="collapse" href="#year-range" (click)="onCollapse('year_range')"></div>
+                      </div>
+                    </div>
+                    <div id="year-range" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <ejs-slider id="range" #range [type]="rangeType" [min]="min" [max]="max" [value]="rangeValue" (created)="onCreated()"></ejs-slider>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="from-to">
+                          <div class="from-content">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">From</span>
+                              </div>
+                              <div class="inputDivider"></div>
+                              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="1800">
+                            </div>
+                          </div>
+                          <div class="to-content">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">To</span>
+                              </div>
+                              <div class="inputDivider"></div>
+                              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="1900">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#images" (click)="onCollapse('images')">Images</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.images == true? 'plus': 'minus'" data-toggle="collapse" href="#images" (click)="onCollapse('images')"></div>
+                      </div>
+                    </div>
+                    <div id="images" class="panel-collapse collapse">
+                      <div class="panel-footer" style="margin-top: 10px;">
+                        <div class="checkbox-search">
+                          <div class="check-section">
+                            <label class="container">Has Images
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="list-section">

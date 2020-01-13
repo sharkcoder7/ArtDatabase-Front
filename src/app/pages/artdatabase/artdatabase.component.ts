@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { PaginationInstance } from 'ngx-pagination';
+import { SliderType, SliderComponent, LimitDataModel } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
   selector: 'app-artdatabase',
@@ -15,6 +16,16 @@ export class ArtdatabaseComponent implements OnInit {
   }
   firstitem = 0;
   enditem = 0;
+
+  public range: SliderComponent;
+  public rangeValue: number[] = [1800, 1900];
+  public rangeType: SliderType = 'Range';
+  public min: number = 1800;
+  public max: number = 2020;
+  public sliderTrack: HTMLElement;
+  public sliderFirstHandle: HTMLElement;
+  public sliderSecondHandle: HTMLElement;
+  public rangeLimits: LimitDataModel = { enabled: true, minStart: 1800, minEnd: 1900, maxStart: 1900, maxEnd: 2020 };
 
   public seletedTab: string = 'artworks';
   selectedLocation = 1;
@@ -63,6 +74,8 @@ export class ArtdatabaseComponent implements OnInit {
     artwork_type: true,
     country_city: true,
     creation_date: true,
+    year_range: true,
+    images: true,
   }
 
   ///// dummy data////
@@ -289,6 +302,15 @@ export class ArtdatabaseComponent implements OnInit {
 
   selectCity() {
     console.log(this.selectedCity);
+  }
+
+  onCreated(): void {
+    this.sliderTrack = document.getElementById('range').querySelector('.e-range');
+    this.sliderFirstHandle = document.getElementById('range').querySelector('.e-handle.e-handle-first');
+    this.sliderSecondHandle = document.getElementById('range').querySelector('.e-handle.e-handle-second');
+    (this.sliderFirstHandle as HTMLElement).style.backgroundColor = '#7976ff';
+    (this.sliderSecondHandle as HTMLElement).style.backgroundColor = '#7976ff';
+    (this.sliderTrack as HTMLElement).style.backgroundColor = '#7976ff';
   }
 
 }

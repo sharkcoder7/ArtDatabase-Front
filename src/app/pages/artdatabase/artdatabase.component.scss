@@ -458,6 +458,7 @@ li:hover span.menu-item, a.active span.menu-item {
   position: relative;
   padding-left: 30px;
   cursor: pointer;
+  font-family: "Brave Sans";
   color: #444444;
 	font-size: 13px;
   line-height: 16px;
@@ -608,4 +609,52 @@ margin-top: 20px;
 
 :host ::ng-deep div.select-search .ng-select-opened>div.ng-select-container.ng-has-value span.ng-arrow-wrapper span.ng-arrow {
   border-bottom-color: #444444;
+}
+
+.panel-body ejs-slider {
+  width: 300px;
+  height: 38px;
+}
+
+.from-to {
+  display: flex;
+}
+
+.from-content {
+  margin-right: 10px;
+}
+
+.to-content {
+  margin-left: 10px;
+}
+
+.input-group input {
+  box-sizing: border-box;
+  height: 38px;
+  border: 1px solid #DFE3E8;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  outline: 0px;
+  box-shadow: inset 0 0px 0 #ddd !important;
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 13px;
+  line-height: 16px;
+  border-left: 0px;
+}
+
+.fromto-label {
+  color: #444444;
+  font-family: "Brave Sans";
+  font-size: 13px !important;
+  line-height: 16px !important;
+  background-color: white;
+  border-color: #DFE3E8;
+  border-right: 0px;
+}
+
+.inputDivider {
+  width: 1px;
+  margin: 9px 0;
+  background: #DFE3E8;
 }
