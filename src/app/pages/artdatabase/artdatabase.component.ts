@@ -202,7 +202,7 @@ export class ArtdatabaseComponent implements OnInit {
         {artist: 'Vincent van Gogh '+i}
       )
       this.exhibitions.push(
-        {title: 'Taipei Fine Arts Museum '+i}
+        {title: 'Heritage: Photographs '+i}
       )
       this.galleries.push(
         {title: 'Newark Gallery '+i}
@@ -222,6 +222,7 @@ export class ArtdatabaseComponent implements OnInit {
     this.seletedTab = tab;
     this.config.currentPage = 1;
     window.scrollTo(0, 0);
+    this.setPageItem(1);
   }
 
   onLocation() {
