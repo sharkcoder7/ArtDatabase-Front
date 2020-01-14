@@ -552,6 +552,162 @@
                             <div style="display: flex;">
                               <div class="panel-heading">
                                 <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#anonymity" (click)="onCollapse('anonymity')">Anonymity</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.anonymity == true? 'plus': 'minus'" data-toggle="collapse" href="#anonymity" (click)="onCollapse('anonymity')"></div>
+                              </div>
+                            </div>
+                            <div id="anonymity" class="panel-collapse collapse">
+                              <div class="panel-footer" style="margin-top: 10px;">
+                                <div class="checkbox-search">
+                                  <div class="check-section">
+                                    <label class="container">Is Anonymous
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#dimensions" (click)="onCollapse('dimensions')">Dimensions</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.dimensions == true? 'plus': 'minus'" data-toggle="collapse" href="#dimensions" (click)="onCollapse('dimensions')"></div>
+                              </div>
+                            </div>
+                            <div id="dimensions" class="panel-collapse collapse">
+                              <div class="panel-footer">
+                                <div class="multi-input">
+                                  <span>Width</span>
+                                  <div class="multi-inputcontent">
+                                    <div class="multi-from">
+                                      <input type="text" class="form-control" placeholder="From">
+                                    </div>
+                                    <div class="multi-to">
+                                      <input type="text" class="form-control" placeholder="To">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="multi-input">
+                                  <span>Length</span>
+                                  <div class="multi-inputcontent">
+                                    <div class="multi-from">
+                                      <input type="text" class="form-control" placeholder="From">
+                                    </div>
+                                    <div class="multi-to">
+                                      <input type="text" class="form-control" placeholder="To">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="multi-input">
+                                  <span>Height</span>
+                                  <div class="multi-inputcontent">
+                                    <div class="multi-from">
+                                      <input type="text" class="form-control" placeholder="From">
+                                    </div>
+                                    <div class="multi-to">
+                                      <input type="text" class="form-control" placeholder="To">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="multi-input">
+                                  <span>Depth</span>
+                                  <div class="multi-inputcontent">
+                                    <div class="multi-from">
+                                      <input type="text" class="form-control" placeholder="From">
+                                    </div>
+                                    <div class="multi-to">
+                                      <input type="text" class="form-control" placeholder="To">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="single-input">
+                                  <span>Unit</span>
+                                  <input type="text" class="form-control" placeholder="Unit">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#search-artist" (click)="onCollapse('search_artist')">Search by Artist</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.search_artist == true? 'plus': 'minus'" data-toggle="collapse" href="#search-artist" (click)="onCollapse('search_artist')"></div>
+                              </div>
+                            </div>
+                            <div id="search-artist" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <div class="input-search">
+                                  <div class="form-group has-search">
+                                    <span class="fa fa-search form-control-feedback"></span>
+                                    <input type="text" class="form-control" placeholder="Search by artist">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="panel-footer">
+                                <div class="checkbox-search">
+                                  <div class="check-section" *ngFor="let label of labels">
+                                    <label class="container">{{ label.title }}
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#artist" (click)="onCollapse('artist')">Artist</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.artist == true? 'plus': 'minus'" data-toggle="collapse" href="#artist" (click)="onCollapse('artist')"></div>
+                              </div>
+                            </div>
+                            <div id="artist" class="panel-collapse collapse">
+                              <div class="panel-footer" style="margin-top: 10px;">
+                                <div class="checkbox-search">
+                                  <div class="check-section">
+                                    <label class="container">Primary Artist
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
                                   <a data-toggle="collapse" href="#school" (click)="onCollapse('school')">School</a>
                                 </h4>
                               </div>
@@ -827,6 +983,127 @@
                 <div class="form-group has-search">
                   <span class="fa fa-search form-control-feedback"></span>
                   <input type="text" class="form-control" placeholder="Search by museum">
+                </div>
+              </div>
+              <div class="normal-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')">Country & City</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.country_city == true? 'plus': 'minus'" data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')"></div>
+                      </div>
+                    </div>
+                    <div id="country-city" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="countries"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCountry"
+                              (change)="selectCountry()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="select-search">
+                          <ng-select [items]="cities"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCity"
+                              (change)="selectCity()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#museum_centuries" (click)="onCollapse('museum_centuries')">Centuries</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.museum_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#museum_centuries" (click)="onCollapse('museum_centuries')"></div>
+                      </div>
+                    </div>
+                    <div id="museum_centuries" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <ejs-slider id="museum_centuries" #museum_centuries [type]="rangeType2" [min]="min2" [max]="max2" [value]="rangeValue2" (created)="centuriesMuseum()"></ejs-slider>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="from-to">
+                          <div class="from-content">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">From</span>
+                              </div>
+                              <div class="inputDivider"></div>
+                              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="10">
+                            </div>
+                          </div>
+                          <div class="to-content">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">To</span>
+                              </div>
+                              <div class="inputDivider"></div>
+                              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="21">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')">Date Duration</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.date_duration == true? 'plus': 'minus'" data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')"></div>
+                      </div>
+                    </div>
+                    <div id="date_duration" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="durations"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedDuration"
+                              (change)="selectDuration()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer mt-4">
+                        <div class="checkbox-search">
+                          <div class="check-section">
+                            <label class="container">Currently Open
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

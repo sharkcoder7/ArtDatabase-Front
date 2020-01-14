@@ -37,7 +37,17 @@ export class ArtdatabaseComponent implements OnInit {
   public sliderSecondHandle1: HTMLElement;
   public rangeLimits1: LimitDataModel = { enabled: true, minStart: 10, minEnd: 19, maxStart: 18, maxEnd: 21 };
 
-  public seletedTab: string = 'artworks';
+  public museum_centuries: SliderComponent;
+  public rangeValue2: number[] = [10, 20];
+  public rangeType2: SliderType = 'Range';
+  public min2: number = 10;
+  public max2: number = 21;
+  public sliderTrack2: HTMLElement;
+  public sliderFirstHandle2: HTMLElement;
+  public sliderSecondHandle2: HTMLElement;
+  public rangeLimits2: LimitDataModel = { enabled: true, minStart: 10, minEnd: 19, maxStart: 18, maxEnd: 21 };
+
+  public seletedTab: string = 'museums';
   selectedLocation = 1;
   locations = [
     {
@@ -90,6 +100,12 @@ export class ArtdatabaseComponent implements OnInit {
     role: true,
     centuries: true,
     movement: true,
+    anonymity: true,
+    artist: true,
+    search_artist: true,
+    dimensions: true,
+    museum_centuries: true,
+    date_duration: true,
   }
   advancedState = true;
 
@@ -249,6 +265,11 @@ export class ArtdatabaseComponent implements OnInit {
   ]
   selectedRole = 0;
 
+  durations = [
+    {title: 'Select Duration' , id: 0},
+  ]
+  selectedDuration = 0;
+
   constructor() {
     this.totalResults = 157;
     for (let i = 1; i <= this.totalResults; i++) {
@@ -341,6 +362,10 @@ export class ArtdatabaseComponent implements OnInit {
     console.log(this.selectedRole);
   }
 
+  selectDuration() {
+    console.log(this.selectedDuration);
+  }
+
   onCreated(): void {
     this.sliderTrack = document.getElementById('range').querySelector('.e-range');
     this.sliderFirstHandle = document.getElementById('range').querySelector('.e-handle.e-handle-first');
@@ -357,6 +382,15 @@ export class ArtdatabaseComponent implements OnInit {
     (this.sliderFirstHandle1 as HTMLElement).style.backgroundColor = '#7976ff';
     (this.sliderSecondHandle1 as HTMLElement).style.backgroundColor = '#7976ff';
     (this.sliderTrack1 as HTMLElement).style.backgroundColor = '#7976ff';
+  }
+
+  centuriesMuseum(): void {
+    this.sliderTrack2 = document.getElementById('museum_centuries').querySelector('.e-range');
+    this.sliderFirstHandle2 = document.getElementById('museum_centuries').querySelector('.e-handle.e-handle-first');
+    this.sliderSecondHandle2 = document.getElementById('museum_centuries').querySelector('.e-handle.e-handle-second');
+    (this.sliderFirstHandle2 as HTMLElement).style.backgroundColor = '#7976ff';
+    (this.sliderSecondHandle2 as HTMLElement).style.backgroundColor = '#7976ff';
+    (this.sliderTrack2 as HTMLElement).style.backgroundColor = '#7976ff';
   }
 
   onAdvanced() {
