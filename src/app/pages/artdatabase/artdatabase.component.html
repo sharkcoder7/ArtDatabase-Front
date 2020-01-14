@@ -398,7 +398,7 @@
                       </div>
                     </div>
                     <div id="year-range" class="panel-collapse collapse">
-                      <div class="panel-body">
+                      <div class="panel-body slider-body">
                         <ejs-slider id="range" #range [type]="rangeType" [min]="min" [max]="max" [value]="rangeValue" (created)="onCreated()"></ejs-slider>
                       </div>
                       <div class="panel-footer">
@@ -519,7 +519,7 @@
                               </div>
                             </div>
                             <div id="centuries" class="panel-collapse collapse">
-                              <div class="panel-body">
+                              <div class="panel-body slider-body">
                                 <ejs-slider id="centuries" #centuries [type]="rangeType" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesCreated()"></ejs-slider>
                               </div>
                               <div class="panel-footer">
@@ -852,7 +852,7 @@
                       </div>
                     </div>
                     <div id="years-range" class="panel-collapse collapse">
-                      <div class="panel-body">
+                      <div class="panel-body slider-body">
                         <ejs-slider id="years_range" #years_range [type]="rangeType" [min]="min" [max]="max" [value]="rangeValue" (created)="yearsRange()"></ejs-slider>
                       </div>
                       <div class="panel-footer">
@@ -1069,16 +1069,16 @@
                             <div style="display: flex;">
                               <div class="panel-heading">
                                 <h4 class="panel-title">
-                                  <a data-toggle="collapse" href="#artist_centuries" (click)="onCollapse('artist_centuries')">Centuries</a>
+                                  <a data-toggle="collapse" href="#artist-centuries" (click)="onCollapse('artist_centuries')">Centuries</a>
                                 </h4>
                               </div>
                               <div class="spacer"></div>
                               <div class="extension-icon">
-                                <div [ngClass]="status.artist_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#artist_centuries" (click)="onCollapse('artist_centuries')"></div>
+                                <div [ngClass]="status.artist_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#artist-centuries" (click)="onCollapse('artist_centuries')"></div>
                               </div>
                             </div>
-                            <div id="artist_centuries" class="panel-collapse collapse">
-                              <div class="panel-body">
+                            <div id="artist-centuries" class="panel-collapse collapse">
+                              <div class="panel-body slider-body">
                                 <ejs-slider id="artist_centuries" #artist_centuries [type]="rangeType" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesArtist()"></ejs-slider>
                               </div>
                               <div class="panel-footer">
@@ -1445,16 +1445,16 @@
                     <div style="display: flex;">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a data-toggle="collapse" href="#museum_centuries" (click)="onCollapse('museum_centuries')">Centuries</a>
+                          <a data-toggle="collapse" href="#museum-centuries" (click)="onCollapse('museum_centuries')">Centuries</a>
                         </h4>
                       </div>
                       <div class="spacer"></div>
                       <div class="extension-icon">
-                        <div [ngClass]="status.museum_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#museum_centuries" (click)="onCollapse('museum_centuries')"></div>
+                        <div [ngClass]="status.museum_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#museum-centuries" (click)="onCollapse('museum_centuries')"></div>
                       </div>
                     </div>
-                    <div id="museum_centuries" class="panel-collapse collapse">
-                      <div class="panel-body">
+                    <div id="museum-centuries" class="panel-collapse collapse">
+                      <div class="panel-body slider-body">
                         <ejs-slider id="museum_centuries" #museum_centuries [type]="rangeType" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesMuseum()"></ejs-slider>
                       </div>
                       <div class="panel-footer">
@@ -1639,16 +1639,16 @@
                     <div style="display: flex;">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a data-toggle="collapse" href="#gallery_centuries" (click)="onCollapse('gallery_centuries')">Centuries</a>
+                          <a data-toggle="collapse" href="#gallery-centuries" (click)="onCollapse('gallery_centuries')">Centuries</a>
                         </h4>
                       </div>
                       <div class="spacer"></div>
                       <div class="extension-icon">
-                        <div [ngClass]="status.gallery_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#gallery_centuries" (click)="onCollapse('gallery_centuries')"></div>
+                        <div [ngClass]="status.gallery_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#gallery-centuries" (click)="onCollapse('gallery_centuries')"></div>
                       </div>
                     </div>
-                    <div id="gallery_centuries" class="panel-collapse collapse">
-                      <div class="panel-body">
+                    <div id="gallery-centuries" class="panel-collapse collapse">
+                      <div class="panel-body slider-body">
                         <ejs-slider id="gallery_centuries" #gallery_centuries [type]="rangeType" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesGalley()"></ejs-slider>
                       </div>
                       <div class="panel-footer">
