@@ -17,7 +17,6 @@ export class ArtdatabaseComponent implements OnInit {
   firstitem = 0;
   enditem = 0;
 
-  public range: SliderComponent;
   public rangeValue: number[] = [1800, 1900];
   public rangeType: SliderType = 'Range';
   public min: number = 1800;
@@ -27,27 +26,19 @@ export class ArtdatabaseComponent implements OnInit {
   public sliderSecondHandle: HTMLElement;
   public rangeLimits: LimitDataModel = { enabled: true, minStart: 1800, minEnd: 1900, maxStart: 1900, maxEnd: 2020 };
 
-  public centuries: SliderComponent;
   public rangeValue1: number[] = [10, 20];
-  public rangeType1: SliderType = 'Range';
   public min1: number = 10;
   public max1: number = 21;
-  public sliderTrack1: HTMLElement;
-  public sliderFirstHandle1: HTMLElement;
-  public sliderSecondHandle1: HTMLElement;
   public rangeLimits1: LimitDataModel = { enabled: true, minStart: 10, minEnd: 19, maxStart: 18, maxEnd: 21 };
 
+  public range: SliderComponent;
+  public centuries: SliderComponent;
   public museum_centuries: SliderComponent;
-  public rangeValue2: number[] = [10, 20];
-  public rangeType2: SliderType = 'Range';
-  public min2: number = 10;
-  public max2: number = 21;
-  public sliderTrack2: HTMLElement;
-  public sliderFirstHandle2: HTMLElement;
-  public sliderSecondHandle2: HTMLElement;
-  public rangeLimits2: LimitDataModel = { enabled: true, minStart: 10, minEnd: 19, maxStart: 18, maxEnd: 21 };
+  public gallery_centuries: SliderComponent;
+  public years_range: SliderComponent;
+  public artist_centuries: SliderComponent;
 
-  public seletedTab: string = 'museums';
+  public seletedTab: string = 'all';
   selectedLocation = 1;
   locations = [
     {
@@ -86,7 +77,7 @@ export class ArtdatabaseComponent implements OnInit {
       'title': 'Default',
     },
     {
-      'id': 2,
+      'id': 1,
       'title': 'Name',
     },
   ];
@@ -106,6 +97,15 @@ export class ArtdatabaseComponent implements OnInit {
     dimensions: true,
     museum_centuries: true,
     date_duration: true,
+    gallery_centuries: true,
+    gallery: true,
+    event_type: true,
+    time: true,
+    years_range: true,
+    birth_place: true,
+    death_place: true,
+    nationality: true,
+    artist_centuries: true,
   }
   advancedState = true;
 
@@ -256,14 +256,21 @@ export class ArtdatabaseComponent implements OnInit {
     {title: 'Manchester' , id: 4},
   ]
   selectedCity = 2;
+
   schools = [
     {title: 'Select school' , id: 0},
   ]
   selectedSchool = 0;
+
   roles = [
     {title: 'Select role' , id: 0},
   ]
   selectedRole = 0;
+
+  times = [
+    {title: 'Select time' , id: 0},
+  ]
+  selectedTime = 0;
 
   durations = [
     {title: 'Select Duration' , id: 0},
@@ -366,31 +373,41 @@ export class ArtdatabaseComponent implements OnInit {
     console.log(this.selectedDuration);
   }
 
-  onCreated(): void {
-    this.sliderTrack = document.getElementById('range').querySelector('.e-range');
-    this.sliderFirstHandle = document.getElementById('range').querySelector('.e-handle.e-handle-first');
-    this.sliderSecondHandle = document.getElementById('range').querySelector('.e-handle.e-handle-second');
+  selectTime() {
+    console.log(this.selectedTime);
+  }
+
+  setSliderOption(elementId) {
+    this.sliderTrack = document.getElementById(elementId).querySelector('.e-range');
+    this.sliderFirstHandle = document.getElementById(elementId).querySelector('.e-handle.e-handle-first');
+    this.sliderSecondHandle = document.getElementById(elementId).querySelector('.e-handle.e-handle-second');
     (this.sliderFirstHandle as HTMLElement).style.backgroundColor = '#7976ff';
     (this.sliderSecondHandle as HTMLElement).style.backgroundColor = '#7976ff';
     (this.sliderTrack as HTMLElement).style.backgroundColor = '#7976ff';
   }
 
+  onCreated(): void {
+    this.setSliderOption('range');
+  }
+
   centuriesCreated(): void {
-    this.sliderTrack1 = document.getElementById('centuries').querySelector('.e-range');
-    this.sliderFirstHandle1 = document.getElementById('centuries').querySelector('.e-handle.e-handle-first');
-    this.sliderSecondHandle1 = document.getElementById('centuries').querySelector('.e-handle.e-handle-second');
-    (this.sliderFirstHandle1 as HTMLElement).style.backgroundColor = '#7976ff';
-    (this.sliderSecondHandle1 as HTMLElement).style.backgroundColor = '#7976ff';
-    (this.sliderTrack1 as HTMLElement).style.backgroundColor = '#7976ff';
+    this.setSliderOption('centuries');
   }
 
   centuriesMuseum(): void {
-    this.sliderTrack2 = document.getElementById('museum_centuries').querySelector('.e-range');
-    this.sliderFirstHandle2 = document.getElementById('museum_centuries').querySelector('.e-handle.e-handle-first');
-    this.sliderSecondHandle2 = document.getElementById('museum_centuries').querySelector('.e-handle.e-handle-second');
-    (this.sliderFirstHandle2 as HTMLElement).style.backgroundColor = '#7976ff';
-    (this.sliderSecondHandle2 as HTMLElement).style.backgroundColor = '#7976ff';
-    (this.sliderTrack2 as HTMLElement).style.backgroundColor = '#7976ff';
+    this.setSliderOption('museum_centuries');
+  }
+
+  centuriesGalley(): void {
+    this.setSliderOption('gallery_centuries');
+  }
+
+  centuriesArtist(): void {
+    this.setSliderOption('artist_centuries');
+  }
+
+  yearsRange(): void {
+    this.setSliderOption('years_range');
   }
 
   onAdvanced() {

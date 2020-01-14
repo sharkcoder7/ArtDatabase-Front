@@ -45,16 +45,16 @@
           </a>
         </li>
         <li class="">
-          <a  class="m-auto" data-toggle="tab" (click)="changeTab('auctions')" [ngClass]="{'active': seletedTab === 'auctions'}">
+          <a  class="m-auto" data-toggle="tab" (click)="changeTab('events')" [ngClass]="{'active': seletedTab === 'events'}">
             <span class="menu-item">
-              Auctions
+              Events
             </span>
           </a>
         </li>
         <li class="">
-          <a  class="m-auto" data-toggle="tab" (click)="changeTab('events')" [ngClass]="{'active': seletedTab === 'events'}">
+          <a  class="m-auto" data-toggle="tab" (click)="changeTab('auctions')" [ngClass]="{'active': seletedTab === 'auctions'}">
             <span class="menu-item">
-              Events
+              Auctions
             </span>
           </a>
         </li>
@@ -520,7 +520,7 @@
                             </div>
                             <div id="centuries" class="panel-collapse collapse">
                               <div class="panel-body">
-                                <ejs-slider id="centuries" #centuries [type]="rangeType1" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesCreated()"></ejs-slider>
+                                <ejs-slider id="centuries" #centuries [type]="rangeType" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesCreated()"></ejs-slider>
                               </div>
                               <div class="panel-footer">
                                 <div class="from-to">
@@ -837,6 +837,307 @@
                   <input type="text" class="form-control" placeholder="Search by artist">
                 </div>
               </div>
+              <div class="normal-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#years-range" (click)="onCollapse('years_range')">Years Range</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.years_range == true? 'plus': 'minus'" data-toggle="collapse" href="#years-range" (click)="onCollapse('years_range')"></div>
+                      </div>
+                    </div>
+                    <div id="years-range" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <ejs-slider id="years_range" #years_range [type]="rangeType" [min]="min" [max]="max" [value]="rangeValue" (created)="yearsRange()"></ejs-slider>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="from-to">
+                          <div class="from-content">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">From</span>
+                              </div>
+                              <div class="inputDivider"></div>
+                              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="1800">
+                            </div>
+                          </div>
+                          <div class="to-content">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">To</span>
+                              </div>
+                              <div class="inputDivider"></div>
+                              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="1900">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#birth_place" (click)="onCollapse('birth_place')">Birth Place</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.birth_place == true? 'plus': 'minus'" data-toggle="collapse" href="#birth_place" (click)="onCollapse('birth_place')"></div>
+                      </div>
+                    </div>
+                    <div id="birth_place" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="input-search">
+                          <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Search by place">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="checkbox-search">
+                          <div class="check-section" *ngFor="let label of labels">
+                            <label class="container">{{ label.title }}
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#death_place" (click)="onCollapse('death_place')">Death Place</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.death_place == true? 'plus': 'minus'" data-toggle="collapse" href="#death_place" (click)="onCollapse('death_place')"></div>
+                      </div>
+                    </div>
+                    <div id="death_place" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="input-search">
+                          <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Search by place">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="checkbox-search">
+                          <div class="check-section" *ngFor="let label of labels">
+                            <label class="container">{{ label.title }}
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#nationality" (click)="onCollapse('nationality')">Nationality</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.nationality == true? 'plus': 'minus'" data-toggle="collapse" href="#nationality" (click)="onCollapse('nationality')"></div>
+                      </div>
+                    </div>
+                    <div id="nationality" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="input-search">
+                          <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Search by nationality">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="checkbox-search">
+                          <div class="check-section" *ngFor="let label of labels">
+                            <label class="container">{{ label.title }}
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#images" (click)="onCollapse('images')">Images</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.images == true? 'plus': 'minus'" data-toggle="collapse" href="#images" (click)="onCollapse('images')"></div>
+                      </div>
+                    </div>
+                    <div id="images" class="panel-collapse collapse">
+                      <div class="panel-footer" style="margin-top: 10px;">
+                        <div class="checkbox-search">
+                          <div class="check-section">
+                            <label class="container">Has Images
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="advanced-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title advanced-title">
+                          <a data-toggle="collapse" href="#advanced-filter" (click)="onAdvanced()">Advanced Filters</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-arrow">
+                        <div class="arrow" [ngClass]="advancedState == true? 'down': 'up'" data-toggle="collapse" href="#advanced-filter" (click)="onAdvanced()"></div>
+                      </div>
+                    </div>
+                    <div id="advanced-filter" class="panel-collapse collapse">
+                      <div class="panel-footer">
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#movement" (click)="onCollapse('movement')">Movement</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.movement == true? 'plus': 'minus'" data-toggle="collapse" href="#movement" (click)="onCollapse('movement')"></div>
+                              </div>
+                            </div>
+                            <div id="movement" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <div class="input-search">
+                                  <div class="form-group has-search">
+                                    <span class="fa fa-search form-control-feedback"></span>
+                                    <input type="text" class="form-control" placeholder="Search by movement">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="panel-footer">
+                                <div class="checkbox-search">
+                                  <div class="check-section" *ngFor="let label of labels">
+                                    <label class="container">{{ label.title }}
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#artist_centuries" (click)="onCollapse('artist_centuries')">Centuries</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.artist_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#artist_centuries" (click)="onCollapse('artist_centuries')"></div>
+                              </div>
+                            </div>
+                            <div id="artist_centuries" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <ejs-slider id="artist_centuries" #artist_centuries [type]="rangeType" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesArtist()"></ejs-slider>
+                              </div>
+                              <div class="panel-footer">
+                                <div class="from-to">
+                                  <div class="from-content">
+                                    <div class="input-group input-group-sm mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">From</span>
+                                      </div>
+                                      <div class="inputDivider"></div>
+                                      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="10">
+                                    </div>
+                                  </div>
+                                  <div class="to-content">
+                                    <div class="input-group input-group-sm mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">To</span>
+                                      </div>
+                                      <div class="inputDivider"></div>
+                                      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="21">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div style="display: flex;">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#anonymity" (click)="onCollapse('anonymity')">Anonymity</a>
+                                </h4>
+                              </div>
+                              <div class="spacer"></div>
+                              <div class="extension-icon">
+                                <div [ngClass]="status.anonymity == true? 'plus': 'minus'" data-toggle="collapse" href="#anonymity" (click)="onCollapse('anonymity')"></div>
+                              </div>
+                            </div>
+                            <div id="anonymity" class="panel-collapse collapse">
+                              <div class="panel-footer" style="margin-top: 10px;">
+                                <div class="checkbox-search">
+                                  <div class="check-section">
+                                    <label class="container">Is Anonymous
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="list-section">
               <div class="title-content row">
@@ -908,6 +1209,120 @@
                 <div class="form-group has-search">
                   <span class="fa fa-search form-control-feedback"></span>
                   <input type="text" class="form-control" placeholder="Search by exhibition">
+                </div>
+              </div>
+              <div class="normal-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')">Country & City</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.country_city == true? 'plus': 'minus'" data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')"></div>
+                      </div>
+                    </div>
+                    <div id="country-city" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="countries"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCountry"
+                              (change)="selectCountry()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="select-search">
+                          <ng-select [items]="cities"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCity"
+                              (change)="selectCity()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')">Date Duration</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.date_duration == true? 'plus': 'minus'" data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')"></div>
+                      </div>
+                    </div>
+                    <div id="date_duration" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="durations"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedDuration"
+                              (change)="selectDuration()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer mt-4">
+                        <div class="checkbox-search">
+                          <div class="check-section">
+                            <label class="container">Currently Open
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#gallery" (click)="onCollapse('gallery')">Gallery</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.gallery == true? 'plus': 'minus'" data-toggle="collapse" href="#gallery" (click)="onCollapse('gallery')"></div>
+                      </div>
+                    </div>
+                    <div id="gallery" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="input-search">
+                          <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Search by gallery">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="checkbox-search">
+                          <div class="check-section" *ngFor="let label of labels">
+                            <label class="container">{{ label.title }}
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1040,7 +1455,7 @@
                     </div>
                     <div id="museum_centuries" class="panel-collapse collapse">
                       <div class="panel-body">
-                        <ejs-slider id="museum_centuries" #museum_centuries [type]="rangeType2" [min]="min2" [max]="max2" [value]="rangeValue2" (created)="centuriesMuseum()"></ejs-slider>
+                        <ejs-slider id="museum_centuries" #museum_centuries [type]="rangeType" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesMuseum()"></ejs-slider>
                       </div>
                       <div class="panel-footer">
                         <div class="from-to">
@@ -1179,6 +1594,127 @@
                   <input type="text" class="form-control" placeholder="Search by gallery">
                 </div>
               </div>
+              <div class="normal-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')">Country & City</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.country_city == true? 'plus': 'minus'" data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')"></div>
+                      </div>
+                    </div>
+                    <div id="country-city" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="countries"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCountry"
+                              (change)="selectCountry()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="select-search">
+                          <ng-select [items]="cities"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCity"
+                              (change)="selectCity()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#gallery_centuries" (click)="onCollapse('gallery_centuries')">Centuries</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.gallery_centuries == true? 'plus': 'minus'" data-toggle="collapse" href="#gallery_centuries" (click)="onCollapse('gallery_centuries')"></div>
+                      </div>
+                    </div>
+                    <div id="gallery_centuries" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <ejs-slider id="gallery_centuries" #gallery_centuries [type]="rangeType" [min]="min1" [max]="max1" [value]="rangeValue1" (created)="centuriesGalley()"></ejs-slider>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="from-to">
+                          <div class="from-content">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">From</span>
+                              </div>
+                              <div class="inputDivider"></div>
+                              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="10">
+                            </div>
+                          </div>
+                          <div class="to-content">
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text fromto-label" id="inputGroup-sizing-sm">To</span>
+                              </div>
+                              <div class="inputDivider"></div>
+                              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="21">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')">Date Duration</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.date_duration == true? 'plus': 'minus'" data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')"></div>
+                      </div>
+                    </div>
+                    <div id="date_duration" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="durations"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedDuration"
+                              (change)="selectDuration()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer mt-4">
+                        <div class="checkbox-search">
+                          <div class="check-section">
+                            <label class="container">Currently Open
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="list-section">
               <div class="title-content row">
@@ -1250,6 +1786,113 @@
                 <div class="form-group has-search">
                   <span class="fa fa-search form-control-feedback"></span>
                   <input type="text" class="form-control" placeholder="Search by auction">
+                </div>
+              </div>
+              <div class="normal-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')">Country & City</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.country_city == true? 'plus': 'minus'" data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')"></div>
+                      </div>
+                    </div>
+                    <div id="country-city" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="countries"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCountry"
+                              (change)="selectCountry()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="select-search">
+                          <ng-select [items]="cities"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCity"
+                              (change)="selectCity()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')">Date Duration</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.date_duration == true? 'plus': 'minus'" data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')"></div>
+                      </div>
+                    </div>
+                    <div id="date_duration" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="durations"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedDuration"
+                              (change)="selectDuration()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer mt-4">
+                        <div class="checkbox-search">
+                          <div class="check-section">
+                            <label class="container">Currently Open
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#time" (click)="onCollapse('time')">Time</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.time == true? 'plus': 'minus'" data-toggle="collapse" href="#time" (click)="onCollapse('time')"></div>
+                      </div>
+                    </div>
+                    <div id="time" class="panel-collapse collapse">
+                      <div class="panel-footer">
+                        <div class="select-search">
+                          <ng-select [items]="times"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedTime"
+                              (change)="selectTime()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1325,6 +1968,120 @@
                 <div class="form-group has-search">
                   <span class="fa fa-search form-control-feedback"></span>
                   <input type="text" class="form-control" placeholder="Search by event">
+                </div>
+              </div>
+              <div class="normal-search">
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#event_type" (click)="onCollapse('event_type')">Event Type</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.event_type == true? 'plus': 'minus'" data-toggle="collapse" href="#event_type" (click)="onCollapse('event_type')"></div>
+                      </div>
+                    </div>
+                    <div id="event_type" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="input-search">
+                          <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Event type">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="checkbox-search">
+                          <div class="check-section" *ngFor="let label of labels">
+                            <label class="container">{{ label.title }}
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')">Country & City</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.country_city == true? 'plus': 'minus'" data-toggle="collapse" href="#country-city" (click)="onCollapse('country_city')"></div>
+                      </div>
+                    </div>
+                    <div id="country-city" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="countries"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCountry"
+                              (change)="selectCountry()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer">
+                        <div class="select-search">
+                          <ng-select [items]="cities"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedCity"
+                              (change)="selectCity()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div style="display: flex;">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')">Date Duration</a>
+                        </h4>
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="extension-icon">
+                        <div [ngClass]="status.date_duration == true? 'plus': 'minus'" data-toggle="collapse" href="#date_duration" (click)="onCollapse('date_duration')"></div>
+                      </div>
+                    </div>
+                    <div id="date_duration" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <div class="select-search">
+                          <ng-select [items]="durations"
+                              bindLabel="title"
+                              bindValue="id"
+                              [(ngModel)]="selectedDuration"
+                              (change)="selectDuration()"
+                              class="select-content">
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="panel-footer mt-4">
+                        <div class="checkbox-search">
+                          <div class="check-section">
+                            <label class="container">Currently Open
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
